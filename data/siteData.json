@@ -1,0 +1,918 @@
+{
+  "InsuranceIndustries": {
+    "templateComponents": {
+      "template-1": {
+        "shared": {
+          "Topbar": "InsuranceTopbar1",
+          "Header": "InsuranceHeader1",
+          "Footer": "InsuranceFooter1",
+          "CtaBanner": "InsuranceCtaBanner1"
+        },
+        "pages": {
+          "home": {
+            "components": [
+              { "key": "Banner", "component": "InsuranceBanner1" },
+              { "key": "About", "component": "InsuranceAbout1" },
+              { "key": "Plans", "component": "InsurancePlans1" },
+              { "key": "Process", "component": "InsuranceProcess1" },
+              { "key": "Choose", "component": "InsuranceChoose1" },
+              { "key": "Testimonial", "component": "InsuranceTestimonial1" },
+              { "key": "Partners", "component": "InsurancePartners1" },
+              { "key": "Blog", "component": "InsuranceBlog1" }
+            ]
+          }
+        }
+      }
+    },
+    "sections": {
+      "Topbar": {
+        "variants": {
+          "InsuranceTopbar1": {
+            "address": "30 Commercial Road Fratton, Australia",
+            "email": "needhelp@company.com",
+            "socialLinks": [
+              { "label": "facebook", "href": "https://www.facebook.com/" },
+              { "label": "twitter", "href": "https://www.twitter.com/" },
+              { "label": "pinterest", "href": "https://www.pinterest.com/" },
+              { "label": "youtube", "href": "https://www.youtube.com/" }
+            ],
+            "button": {
+              "label": "Get a Quote",
+              "href": "/contact"
+            }
+          }
+        }
+      },
+      "Header": {
+        "variants": {
+          "InsuranceHeader1": {
+            "site": {
+              "siteName": "InsureWise",
+              "tagline": "PROTECTION FOR A BRIGHTER TOMORROW",
+              "logo": {
+                "light": "/logo.png",
+                "normal": "/InsureWise_logo_transparent.png"
+              }
+            },
+            "meta": {
+              "siteTitle": "InsureWise | Protection For A Brighter Tomorrow",
+              "siteDescription": "InsureWise helps individuals and families find the right insurance solutions with expert guidance, trusted partners and a commitment to a safer tomorrow.",
+              "keywords": [
+                "insurance agency",
+                "life insurance",
+                "health insurance",
+                "home insurance",
+                "travel insurance",
+                "motor insurance",
+                "insurance plans",
+                "family protection",
+                "insurance quote",
+                "policy holders"
+              ]
+            },
+            "nav": [
+              { "label": "Home", "href": "/" },
+              {
+                "label": "About Us",
+                "href": "#",
+                "children": [
+                  {
+                    "label": "About Us",
+                    "href": "/about-us"
+                  },
+
+                  {
+                    "label": "Why Choose Us",
+                    "href": "/choose"
+                  },
+                  {
+                    "label": "Mission & Vision",
+                    "href": "/mission"
+                  }
+                ]
+              },
+              { "label": "Insurance", "href": "/insurance" },
+              { "label": "Services", "href": "/services" },
+              { "label": "Faqs", "href": "/faq" },
+              { "label": "Blogs", "href": "/blog" },
+              { "label": "Contact", "href": "/contact" }
+            ],
+            "phoneBlock": {
+              "label": "Emergency call",
+              "phone": "+92 3800 8060",
+              "phoneHref": "tel:+9238008060"
+            }
+          }
+        }
+      },
+      "Banner": {
+        "variants": {
+          "InsuranceBanner1": {
+            "slides": [
+              {
+                "id": 1,
+                "badge": "HOME INSURANCE",
+                "title": "Let's plan your",
+                "highlightedTitle": "home",
+                "postTitle": "insurance",
+                "desc": "A safer home today for a brighter tomorrow. Protect what matters most with InsureWise.",
+                "buttons": [
+                  {
+                    "label": "Get a Free Quote",
+                    "href": "/contact",
+                    "variant": "primary"
+                  }
+                ],
+                "image": {
+                  "src": "/insurance_img/paper-cut-out-family-home-car-with-hands-businessman.jpg",
+                  "alt": "Happy family sitting together at home"
+                }
+              },
+              {
+                "id": 2,
+                "badge": "HEALTH INSURANCE",
+                "title": "Protect your family's",
+                "highlightedTitle": "health",
+                "postTitle": "& wellness",
+                "desc": "Comprehensive medical coverage designed to keep you and your loved ones secure at every stage of life.",
+                "buttons": [
+                  {
+                    "label": "Explore Health Plans",
+                    "href": "/insurance/health-insurance",
+                    "variant": "primary"
+                  }
+                ],
+                "image": {
+                  "src": "/insurance_img/health-insurance-web-site-brisk-registration-system.jpg",
+                  "alt": "Family outdoors enjoying healthy lifestyle"
+                }
+              },
+              {
+                "id": 3,
+                "badge": "MOTOR INSURANCE",
+                "title": "Drive with complete",
+                "highlightedTitle": "peace",
+                "postTitle": "of mind",
+                "desc": "Enjoy complete road protection with hassle-free claims and 24/7 emergency assistance everywhere.",
+                "buttons": [
+                  {
+                    "label": "Get Motor Quote",
+                    "href": "/insurance/motor-insurance",
+                    "variant": "primary"
+                  }
+                ],
+                "image": {
+                  "src": "/insurance_img/car-insurance-online-website-computer-screen-insure-snugly.jpg",
+                  "alt": "Car driving on open scenic road"
+                }
+              }
+            ],
+            "carousel": {
+              "slidesCount": 3,
+              "activeSlide": 0,
+              "hasArrows": true,
+              "autoplay": true,
+              "autoplayInterval": 5000
+            }
+          }
+        }
+      },
+      "About": {
+        "variants": {
+          "InsuranceAbout1": {
+            "badge": "About InsureWise",
+            "title": {
+              "normal": "Building a Safer",
+              "highlighted": "Tomorrow Together."
+            },
+            "desc": "At InsureWise, we believe insurance is more than just a policy — it's a promise of a safer, brighter future. Since 2024, we have been dedicated to providing reliable, transparent, and customer-focused insurance solutions that help individuals, families, and businesses stay protected at every stage of life.",
+            "stats": [
+              {
+                "id": 1,
+                "number": 98,
+                "suffix": "K+",
+                "label": "People Protected Worldwide",
+                "icon": "users"
+              },
+              {
+                "id": 2,
+                "number": 361,
+                "suffix": "K+",
+                "label": "Satisfied Policy Holders",
+                "icon": "handshake"
+              },
+              {
+                "id": 3,
+                "number": 76,
+                "suffix": "K+",
+                "label": "Years of Trusted Growth",
+                "icon": "growth"
+              }
+            ],
+            "image": {
+              "src": "/insurance_img/hand-holding-tablet-with-concept-family.jpg",
+              "alt": "Family smiling together"
+            },
+            "secondaryImage": {
+              "src": "/insurance_img/insurance-concept-insurance-agent-clients-insurance-company-wide-banner-composition-with-bokeh-background-high-quality-photo.jpg",
+              "alt": "Insurance advisor meeting with a client"
+            },
+            "caption": "Protecting What Matters Most.",
+            "features": [
+              { "id": 1, "icon": "shield", "title": "Life Insurance" },
+              { "id": 2, "icon": "home", "title": "Home Insurance" },
+              { "id": 3, "icon": "heart", "title": "Health Insurance" },
+              { "id": 4, "icon": "plane", "title": "Travel Insurance" }
+            ],
+            "button": {
+              "label": "Learn More About Us",
+              "href": "/about-us"
+            },
+            "banner": {
+              "title": "About Us",
+              "breadcrumbs": [
+                { "label": "Home", "href": "/" },
+                { "label": "About Us" }
+              ],
+              "bgImage": "/insurance_img/hand-holding-tablet-with-concept-family.jpg"
+            }
+          }
+        }
+      },
+      "Plans": {
+        "variants": {
+          "InsurancePlans1": {
+            "badge": "Our Insurance Plans",
+            "title": {
+              "normal": "We Protect What",
+              "highlighted": "Matters Most"
+            },
+            "desc": "At InsureWise, we offer a range of insurance solutions designed to keep you, your loved ones, and your assets secure at every stage of life.",
+            "plans": [
+              {
+                "id": 1,
+                "slug": "health-insurance",
+                "icon": "heart-pulse",
+                "title": "Health Insurance",
+                "description": "Comprehensive health coverage for you and your family, because good health builds brighter tomorrows.",
+                "image": "/insurance_img/health-insurance-web-site-brisk-registration-system.jpg",
+                "button": {
+                  "label": "Learn More",
+                  "href": "/insurance/health-insurance"
+                }
+              },
+              {
+                "id": 2,
+                "slug": "motor-insurance",
+                "icon": "car",
+                "title": "Motor Insurance",
+                "description": "Drive with confidence. Get complete protection for your vehicle, on every journey.",
+                "image": "/insurance_img/car-insurance-online-website-computer-screen-insure-snugly.jpg",
+                "button": {
+                  "label": "Learn More",
+                  "href": "/insurance/motor-insurance"
+                }
+              },
+              {
+                "id": 3,
+                "slug": "home-insurance",
+                "icon": "home",
+                "title": "Home Insurance",
+                "description": "Protect your home and everything that makes it special from the unexpected.",
+                "image": "/insurance_img/man-holding-house-with-house-icon-screen.jpg",
+                "button": {
+                  "label": "Learn More",
+                  "href": "/insurance/home-insurance"
+                }
+              },
+              {
+                "id": 4,
+                "slug": "travel-insurance",
+                "icon": "plane",
+                "title": "Travel Insurance",
+                "description": "Explore the world with peace of mind. Stay protected, no matter where your journey takes you.",
+                "image": "/insurance_img/hand-holding-globe-with-word-insurance-itai.jpg",
+                "button": {
+                  "label": "Learn More",
+                  "href": "/insurance/travel-insurance"
+                }
+              },
+              {
+                "id": 5,
+                "slug": "life-insurance",
+                "icon": "shield",
+                "title": "Life Insurance",
+                "description": "Secure your family's financial future with customizable term and whole life plans.",
+                "image": "/insurance_img/paper-cut-out-family-home-car-with-hands-businessman.jpg",
+                "button": {
+                  "label": "Learn More",
+                  "href": "/insurance/life-insurance"
+                }
+              },
+              {
+                "id": 6,
+                "slug": "business-insurance",
+                "icon": "briefcase",
+                "title": "Business Insurance",
+                "description": "Safeguard your enterprise, workforce, and commercial assets against operational risks.",
+                "image": "/insurance_img/business-insurance-management-concept.jpg",
+                "button": {
+                  "label": "Learn More",
+                  "href": "/insurance/business-insurance"
+                }
+              },
+              {
+                "id": 7,
+                "slug": "pet-insurance",
+                "icon": "paw",
+                "title": "Pet Insurance",
+                "description": "Ensure your furry companions receive the best veterinary care whenever they need it.",
+                "image": "/insurance_img/hand-holding-tablet-with-concept-family.jpg",
+                "button": {
+                  "label": "Learn More",
+                  "href": "/insurance/pet-insurance"
+                }
+              },
+              {
+                "id": 8,
+                "slug": "cyber-insurance",
+                "icon": "lock",
+                "title": "Cyber Insurance",
+                "description": "Protect digital assets and sensitive personal data against security breaches and online threats.",
+                "image": "/insurance_img/online-insurance-concept-insurance-assurance-icons-including-family-health-real-estate-car-financial-risk-management-concept-online-insurance.jpg",
+                "button": {
+                  "label": "Learn More",
+                  "href": "/insurance/cyber-insurance"
+                }
+              },
+              {
+                "id": 9,
+                "slug": "marine-insurance",
+                "icon": "ship",
+                "title": "Marine Insurance",
+                "description": "Comprehensive protection for cargo, vessels, and marine transport operations worldwide.",
+                "image": "/insurance_img/customer-client-reading-term-agreement-contract-prodigy (1).jpg",
+                "button": {
+                  "label": "Learn More",
+                  "href": "/insurance/marine-insurance"
+                }
+              },
+              {
+                "id": 10,
+                "slug": "disability-insurance",
+                "icon": "user",
+                "title": "Disability Insurance",
+                "description": "Maintain your income stream and lifestyle continuity in case of unforeseen medical leave.",
+                "image": "/insurance_img/man-business-suit-is-sitting-front-laptop-with-man-with-light-bulb-it.jpg",
+                "button": {
+                  "label": "Learn More",
+                  "href": "/insurance/disability-insurance"
+                }
+              },
+              {
+                "id": 11,
+                "slug": "critical-illness",
+                "icon": "stethoscope",
+                "title": "Critical Illness",
+                "description": "Lump-sum payouts to manage medical treatments and recovery costs for major health events.",
+                "image": "/insurance_img/customer-client-reading-term-agreement-contract-prodigy.jpg",
+                "button": {
+                  "label": "Learn More",
+                  "href": "/insurance/critical-illness"
+                }
+              },
+              {
+                "id": 12,
+                "slug": "property-insurance",
+                "icon": "building",
+                "title": "Property Insurance",
+                "description": "Protection for commercial real estate, equipment, and structural investments.",
+                "image": "/insurance_img/happy-business-team-meeting-collaboration-success.jpg",
+                "button": {
+                  "label": "Learn More",
+                  "href": "/insurance/property-insurance"
+                }
+              }
+            ],
+            "carousel": {
+              "slidesPerView": 4,
+              "hasArrows": true,
+              "hasDots": true,
+              "activeDot": 0,
+              "totalDots": 3
+            }
+          }
+        }
+      },
+      "Process": {
+        "variants": {
+          "InsuranceProcess1": {
+            "badge": "Our Process",
+            "title": {
+              "normal": "How It",
+              "highlighted": "Works"
+            },
+            "desc": "Getting insured with InsureWise is simple, transparent, and hassle-free. Follow these easy steps to secure your future.",
+            "steps": [
+              {
+                "id": 1,
+                "stepNumber": "01",
+                "icon": "file-text",
+                "title": "Get a Quote",
+                "description": "Share a few details and get a personalized insurance quote in minutes."
+              },
+              {
+                "id": 2,
+                "stepNumber": "02",
+                "icon": "clipboard-check",
+                "title": "Choose Your Plan",
+                "description": "Compare plans and select the coverage that fits your needs."
+              },
+              {
+                "id": 3,
+                "stepNumber": "03",
+                "icon": "shield-check",
+                "title": "Stay Protected",
+                "description": "Complete the process and enjoy peace of mind for a brighter tomorrow."
+              }
+            ]
+          }
+        }
+      },
+      "Choose": {
+        "variants": {
+          "InsuranceChoose1": {
+            "badge": "Why Choose Us",
+            "title": {
+              "normal": "Your Trusted Partner",
+              "highlighted": "for a Safer Tomorrow."
+            },
+            "desc": "At InsureWise, we go beyond policies — we build long-term relationships based on trust, transparency, and care. Our customer-first approach ensures you and your loved ones stay protected at every stage of life.",
+            "highlightCard": {
+              "icon": "badge-percent",
+              "title": "Get a Free Quote",
+              "subtitle": "Quick, Simple, Hassle-Free."
+            },
+            "bulletPoints": [
+              "Personalized insurance solutions for your unique needs.",
+              "Dedicated support from our experienced team."
+            ],
+            "button": {
+              "label": "Learn More",
+              "href": "/about-us"
+            },
+            "sideImage": {
+              "src": "/insurance_img/customer-client-reading-term-agreement-contract-prodigy.jpg",
+              "alt": "Insurance advisor with a family reviewing a policy"
+            },
+            "floatingBadges": [
+              {
+                "id": 1,
+                "icon": "users",
+                "title": "Trusted by",
+                "highlight": "98K+ Families"
+              },
+              {
+                "id": 2,
+                "title": "Secure Today",
+                "highlight": "Brighter Tomorrow"
+              },
+              {
+                "id": 3,
+                "icon": "shield-check",
+                "title": "Protection",
+                "highlight": "For Every Stage"
+              }
+            ],
+            "banner": {
+              "title": "Why Choose Us",
+              "breadcrumbs": [
+                { "label": "Home", "href": "/" },
+                { "label": "Why Choose Us" }
+              ],
+              "bgImage": "/insurance_img/insurance-concept-insurance-agent-clients-insurance-company-wide-banner-composition-with-bokeh-background-high-quality-photo.jpg"
+            }
+          }
+        }
+      },
+      "Testimonial": {
+        "variants": {
+          "InsuranceTestimonial1": {
+            "badge": "Testimonials",
+            "title": {
+              "normal": "Real Stories.",
+              "highlighted": "Lasting Protection."
+            },
+            "desc": "Thousands of individuals and families trust InsureWise for a safer and more secure future. Here's what they have to say about their experience with us.",
+            "ratingBadges": [
+              {
+                "id": 1,
+                "icon": "users",
+                "label": "Avg. Rating 4.9"
+              },
+              {
+                "id": 2,
+                "icon": "google",
+                "label": "Google Reviews",
+                "value": "4.7"
+              }
+            ],
+            "testimonialItems": [
+              {
+                "id": 1,
+                "name": "Priya Sharma",
+                "role": "Working Professional",
+                "image": "/people/women1.png",
+                "quote": "InsureWise made the entire process so simple and hassle-free. Their team explained everything clearly and helped me choose the right plan for my family. I now feel more confident about our future. Highly recommended!",
+                "rating": 5
+              },
+              {
+                "id": 2,
+                "quote": "Finding the right health insurance used to be overwhelming, but InsureWise broke down every option transparently. Exceptional customer service and prompt responses whenever I needed support!",
+                "name": "Rajesh Kumar",
+                "role": "Business Owner",
+                "image": "/people/men2.png",
+                "rating": 5
+              },
+              {
+                "id": 3,
+                "quote": "The claim settlement process was remarkably quick when my family needed it most. No hidden clauses, no delays. Truly a trusted insurance partner you can rely on.",
+                "name": "Ananya Patel",
+                "role": "Software Engineer",
+                "image": "/people/women3.png",
+                "rating": 5
+              },
+              {
+                "id": 4,
+                "quote": "Great pricing and customized coverage! I was able to bundle home and auto insurance easily while saving a significant amount on annual premiums.",
+                "name": "Vikram Malhotra",
+                "role": "Senior Consultant",
+                "image": "/people/men3.png",
+                "rating": 5
+              }
+            ],
+            "carousel": {
+              "hasArrows": true,
+              "hasDots": true,
+              "activeDot": 1,
+              "totalDots": 5
+            }
+          }
+        }
+      },
+      "CtaBanner": {
+        "variants": {
+          "InsuranceCtaBanner1": {
+            "badge": "We're Here for You",
+            "title": {
+              "normal": "Have questions?",
+              "highlighted": "Get in touch!"
+            },
+            "desc": "Our experts are ready to help you find the right coverage for you and your family.",
+            "buttons": [
+              {
+                "label": "Contact Us",
+                "href": "/contact",
+                "icon": "mail",
+                "variant": "outline"
+              },
+              {
+                "label": "+1 234 567 8910",
+                "href": "tel:+12345678910",
+                "icon": "phone",
+                "variant": "primary"
+              }
+            ]
+          }
+        }
+      },
+      "Partners": {
+        "variants": {
+          "InsurancePartners1": {
+            "badge": "Our Partners",
+            "title": {
+              "normal": "Trusted Partners for",
+              "highlighted": "a Brighter Tomorrow"
+            },
+            "desc": "We collaborate with leading insurance providers to bring you reliable coverage, greater choices, and greater peace of mind.",
+            "partners": [
+              {
+                "id": 1,
+                "name": "HDFC Life",
+                "logo": "/partners/hdfc.jpg"
+              },
+              {
+                "id": 2,
+                "name": "ICICI Prudential",
+                "logo": "/partners/icici.jpg"
+              },
+              { "id": 3, "name": "LIC", "logo": "/partners/lic.jpg" },
+              { "id": 4, "name": "SBI Life", "logo": "/partners/sbi.jpg" },
+              {
+                "id": 5,
+                "name": "Max Life Insurance",
+                "logo": "/partners/max.jpg"
+              },
+              {
+                "id": 6,
+                "name": "TATA AIA Life Insurance",
+                "logo": "/partners/tata.jpg"
+              },
+              {
+                "id": 7,
+                "name": "Bajaj Allianz",
+                "logo": "/partners/bajaj.jpg"
+              },
+              {
+                "id": 8,
+                "name": "Kotak Life",
+                "logo": "/partners/kotak.jpg"
+              },
+              {
+                "id": 9,
+                "name": "Birla Sun Life Insurance",
+                "logo": "/partners/birla.jpg"
+              },
+              {
+                "id": 10,
+                "name": "PNB MetLife",
+                "logo": "/partners/pnb.jpg"
+              }
+            ],
+            "banner": {
+              "title": "Our Partners",
+              "breadcrumbs": [
+                { "label": "Home", "href": "/" },
+                { "label": "Our Partners" }
+              ],
+              "bgImage": "/insurance_img/happy-business-team-meeting-collaboration-success.jpg"
+            }
+          }
+        }
+      },
+      "Blog": {
+        "variants": {
+          "InsuranceBlog1": {
+            "badge": "Our Blog",
+            "title": {
+              "normal": "Latest News & Articles",
+              "highlighted": "from Our Blog"
+            },
+            "desc": "Stay informed with expert tips, industry updates and helpful guides to make better decisions for you and your family.",
+            "posts": [
+              {
+                "id": 1,
+                "slug": "how-to-choose-the-right-insurance-plan-for-your-family",
+                "image": "/insurance_img/young-business-man-touching-insurance-icon.jpg",
+                "day": "20",
+                "month": "JAN",
+                "comments": "2",
+                "title": "How to Choose the Right Insurance Plan for Your Family",
+                "description": "A complete guide to help you understand your needs and select the best coverage for a secure future.",
+                "readMoreText": "Read More"
+              },
+              {
+                "id": 2,
+                "slug": "top-5-reasons-why-life-insurance-is-essential",
+                "image": "/insurance_img/online-insurance-concept-insurance-assurance-icons-including-family-health-real-estate-car-financial-risk-management-concept-online-insurance.jpg",
+                "day": "18",
+                "month": "JAN",
+                "comments": "6",
+                "title": "Top 5 Reasons Why Life Insurance is Essential",
+                "description": "Discover how life insurance can protect your loved ones and give you long-term peace of mind.",
+                "readMoreText": "Read More"
+              },
+              {
+                "id": 3,
+                "slug": "health-insurance-myths-vs-facts-what-you-should-know",
+                "image": "/insurance_img/customer-client-reading-term-agreement-contract-prodigy (1).jpg",
+                "day": "15",
+                "month": "JAN",
+                "comments": "3",
+                "title": "Health Insurance Myths vs Facts – What You Should Know",
+                "description": "Let's bust the common myths and help you make informed decisions about health insurance.",
+                "readMoreText": "Read More"
+              },
+              {
+                "id": 4,
+                "slug": "business-insurance-securing-your-company-for-the-long-run",
+                "image": "/insurance_img/man-business-suit-is-sitting-front-laptop-with-man-with-light-bulb-it.jpg",
+                "day": "12",
+                "month": "JAN",
+                "comments": "8",
+                "title": "Business Insurance: Securing Your Company for the Long Run",
+                "description": "From liability coverage to employee protection, learn how business insurance shields your enterprise.",
+                "readMoreText": "Read More"
+              },
+              {
+                "id": 5,
+                "slug": "what-young-professionals-need-to-know-about-insurance",
+                "image": "/insurance_img/business-insurance-management-concept.jpg",
+                "day": "10",
+                "month": "JAN",
+                "comments": "5",
+                "title": "What Young Professionals Need to Know About Insurance",
+                "description": "A beginner-friendly guide to building a smart insurance portfolio early in your career.",
+                "readMoreText": "Read More"
+              },
+              {
+                "id": 6,
+                "slug": "travel-insurance-why-it-is-a-must-before-your-next-trip",
+                "image": "/insurance_img/hand-holding-globe-with-word-insurance-itai.jpg",
+                "day": "08",
+                "month": "JAN",
+                "comments": "4",
+                "title": "Travel Insurance: Why It's a Must Before Your Next Trip",
+                "description": "From lost baggage to medical emergencies, travel insurance keeps unexpected costs worry-free.",
+                "readMoreText": "Read More"
+              }
+            ],
+            "banner": {
+              "title": "Our Blog",
+              "breadcrumbs": [
+                { "label": "Home", "href": "/" },
+                { "label": "Our Blog" }
+              ],
+              "bgImage": "/insurance_img/online-insurance-concept-insurance-assurance-icons-including-family-health-real-estate-car-financial-risk-management-concept-online-insurance.jpg"
+            }
+          }
+        }
+      },
+      "Footer": {
+        "variants": {
+          "InsuranceFooter1": {
+            "logoImage": "/InsureWise_logo_transparent.png",
+            "siteName": "InsureWise",
+            "tagline": "PROTECTION FOR A BRIGHTER TOMORROW",
+            "desc": "We help individuals and families find the right insurance solutions with expert guidance, trusted partners, and a commitment to a safer tomorrow.",
+            "columns": [
+              {
+                "title": "Quick Links",
+                "links": [
+                  { "label": "Home", "href": "/" },
+                  { "label": "About Us", "href": "/about-us" },
+                  { "label": "Awards", "href": "/award" },
+                  { "label": "Our Partners", "href": "/partners" },
+                  { "label": "Blogs", "href": "/blog" },
+                  { "label": "FAQs", "href": "/faq" },
+                  { "label": "Contact Us", "href": "/contact" }
+                ]
+              }
+            ],
+            "footerContact": {
+              "title": "Contact Information",
+              "callLabel": "Call Us",
+              "phone": "+91 98765 43210",
+              "phoneHref": "tel:+919876543210",
+              "emailLabel": "Email Us",
+              "email": "support@insurewise.com",
+              "officeLabel": "Our Office",
+              "address": "123 Business Park, Sector 62 Noida, Uttar Pradesh 201309",
+              "hoursLabel": "Working Hours",
+              "hours": ["Sat: 9:00 AM - 6:00 PM", "Sun: 9:00 AM - 2:00 PM"]
+            },
+            "sideBlock": {
+              "title": "Building a Safer",
+              "highlightedTitle": "Tomorrow Together",
+              "images": [
+                "/insurance_img/business-insurance-management-concept.jpg",
+                "/insurance_img/man-holding-house-with-house-icon-screen.jpg",
+                "/insurance_img/hand-holding-globe-with-word-insurance-itai.jpg",
+                "/insurance_img/happy-business-team-meeting-collaboration-success.jpg"
+              ],
+              "button": {
+                "label": "Get in Touch",
+                "href": "/contact"
+              }
+            },
+            "socialLinks": [
+              { "label": "facebook", "href": "https://www.facebook.com/" },
+              { "label": "instagram", "href": "https://www.instagram.com/" },
+              { "label": "linkedin", "href": "https://www.linkedin.com/" },
+              { "label": "youtube", "href": "https://www.youtube.com/" },
+              { "label": "twitter", "href": "https://www.twitter.com/" }
+            ],
+            "followText": "Follow Us For latest updates",
+            "copyright": "Copyright © 2026. All rights reserved. Powered by Lestow.",
+            "legalLinks": [
+              { "label": "Privacy Policy", "href": "/privacy" },
+              { "label": "Terms & Conditions", "href": "/terms" },
+              { "label": "Sitemap", "href": "/sitemap" }
+            ],
+            "backToTop": true
+          }
+        }
+      },
+      "Mission": {
+        "variants": {
+          "InsuranceMission1": {
+            "banner": {
+              "title": "Mission & Vision",
+              "breadcrumbs": [
+                { "label": "Home", "href": "/" },
+                { "label": "Mission & Vision" }
+              ],
+              "bgImage": "/insurance_img/online-insurance-concept-insurance-assurance-icons-including-family-health-real-estate-car-financial-risk-management-concept-online-insurance.jpg"
+            },
+            "vision": {
+              "subtitle": "OUR VISION",
+              "title": "A Safer, Brighter",
+              "highlightedTitle": "Tomorrow for Everyone",
+              "description": "To be the most trusted insurance partner, empowering individuals, families, and businesses to live with confidence through innovative solutions, unwavering support, and a commitment to a safer, brighter tomorrow.",
+              "buttonLabel": "Learn More",
+              "buttonLink": "#",
+              "image": "/insurance_img/customer-client-reading-term-agreement-contract-prodigy (1).jpg",
+              "imageOverlayText": "A CLEARER TOMORROW"
+            },
+            "mission": {
+              "subtitle": "OUR MISSION",
+              "title": "Protecting",
+              "highlightedTitle": "What Matters Most",
+              "description": "Our mission is to deliver simple, reliable, and personalized insurance solutions that protect what matters most. We are committed to exceptional service, ethical practices, and long-term relationships, helping our customers navigate life's uncertainties with peace of mind.",
+              "buttonLabel": "Discover Our Mission",
+              "buttonLink": "#",
+              "image": "/insurance_img/customer-client-reading-term-agreement-contract-prodigy.jpg",
+              "imageOverlayText": "FOCUSED ON A SAFER TOMORROW"
+            },
+            "highlightBox": {
+              "title": "Committed to Your Peace of Mind",
+              "description": "Our promise is simple — reliable coverage, ethical practices, and a partnership you can trust through every stage of life.",
+              "buttonLabel": "Learn More",
+              "buttonLink": "/about-us"
+            }
+          }
+        }
+      },
+      "Award": {
+        "variants": {
+          "InsuranceAward1": {
+            "banner": {
+              "title": "Awards",
+              "breadcrumbs": [
+                { "label": "Home", "href": "/" },
+                { "label": "Awards" }
+              ],
+              "bgImage": "/insurance_img/online-insurance-concept-insurance-assurance-icons-including-family-health-real-estate-car-financial-risk-management-concept-online-insurance.jpg"
+            },
+            "header": {
+              "subtitle": "OUR ACHIEVEMENTS",
+              "title": "Recognized for",
+              "highlightedTitle": "Excellence",
+              "description": "Explore some of the prestigious awards and recognitions received throughout our journey, reflecting our commitment to trusted service, innovation, and customer satisfaction."
+            },
+            "awardsList": [
+              {
+                "id": 1,
+                "year": "2026",
+                "title": "Excellence Award",
+                "description": "Recognized for outstanding performance and commitment to excellence in the insurance industry.",
+                "image": "/trophy/trophy_1.png"
+              },
+              {
+                "id": 2,
+                "year": "2025",
+                "title": "Best Industry Performance",
+                "description": "Awarded for exceptional industry performance and service standards.",
+                "image": "/trophy/trophy_2.png"
+              },
+              {
+                "id": 3,
+                "year": "2025",
+                "title": "Leadership Recognition",
+                "description": "Honoured for strong leadership and contribution to sustainable growth.",
+                "image": "/trophy/trophy_3.png"
+              },
+              {
+                "id": 4,
+                "year": "2024",
+                "title": "Customer Trust Award",
+                "description": "Recognized for building long-lasting relationships and delivering trusted solutions.",
+                "image": "/trophy/trophy_4.png"
+              },
+              {
+                "id": 5,
+                "year": "2024",
+                "title": "Innovation in Insurance",
+                "description": "Awarded for innovative solutions that create greater value for our customers.",
+                "image": "/trophy/trophy_5.png"
+              },
+              {
+                "id": 6,
+                "year": "2023",
+                "title": "Social Impact Award",
+                "description": "Recognized for our commitment to community well-being and a safer tomorrow.",
+                "image": "/trophy/trophy_6.png"
+              }
+            ],
+            "highlightBox": {
+              "title": "Driven by Purpose, Recognized by the World",
+              "description": "These achievements motivate us to continue making a positive difference in the lives of individuals, families, and businesses.",
+              "buttonLabel": "Partner With Us",
+              "buttonLink": "/contact"
+            }
+          }
+        }
+      }
+    }
+  }
+}
