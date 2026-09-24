@@ -110,7 +110,7 @@ export default function Choose({ className = "" }: SectionProps<InsuranceChooseD
           <div className="lg:col-span-6 flex flex-col items-start z-10">
             
             {/* FLOATING BADGE */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0b3366] text-white text-xs sm:text-sm font-semibold mb-3 border border-[#0066ff]/40 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0b3366] text-white text-sm sm:text-sm font-semibold mb-3 border border-[#0066ff]/40 shadow-sm">
               <ChooseIcon name="shield" className="w-6 h-6 text-[#0084ff]" />
               <span>{badge}</span>
             </div>
@@ -138,7 +138,7 @@ export default function Choose({ className = "" }: SectionProps<InsuranceChooseD
                   <h4 className="text-base sm:text-lg font-semibold text-white leading-snug">
                     {quoteBox.title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-slate-300 font-normal">
+                  <p className="text-sm sm:text-sm text-slate-300 font-normal">
                     {quoteBox.subtitle}
                   </p>
                 </div>
@@ -166,7 +166,7 @@ export default function Choose({ className = "" }: SectionProps<InsuranceChooseD
             {/* FEATURE BULLETS */}
             <div className="flex flex-col gap-3 my-3">
               {features.map((feature: string, idx: number) => (
-                <div key={idx} className="flex items-center gap-3 text-slate-200 text-xs sm:text-sm font-medium">
+                <div key={idx} className="flex items-center gap-3 text-slate-200 text-sm sm:text-sm font-medium">
                   <ChooseIcon name="chevron-double" className="w-4 h-4 text-[#0084ff] shrink-0" />
                   <span>{feature}</span>
                 </div>
@@ -219,7 +219,7 @@ export default function Choose({ className = "" }: SectionProps<InsuranceChooseD
                   <p className="text-[11px] sm:text-sm text-gray-500 font-semibold leading-tight">
                     {topBadge.title}
                   </p>
-                  <p className="text-xs sm:text-sm font-extrabold text-[#0a1c3a]">
+                  <p className="text-sm sm:text-sm font-extrabold text-[#0a1c3a]">
                     {topBadge.value}
                   </p>
                 </div>
@@ -231,10 +231,10 @@ export default function Choose({ className = "" }: SectionProps<InsuranceChooseD
                   <ChooseIcon name="shield" className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <p className="text-[11px] sm:text-xs text-gray-500 font-semibold leading-tight">
+                  <p className="text-[11px] sm:text-sm text-gray-500 font-semibold leading-tight">
                     {bottomBadge.title}
                   </p>
-                  <p className="text-xs sm:text-sm font-extrabold text-[#0a1c3a]">
+                  <p className="text-sm sm:text-sm font-extrabold text-[#0a1c3a]">
                     {bottomBadge.value}
                   </p>
                 </div>

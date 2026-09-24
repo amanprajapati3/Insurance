@@ -61,7 +61,7 @@ export default function Mission() {
             {/* LEFT CONTENT */}
             <div className="flex flex-col items-start space-y-4">
               <div className="flex items-center gap-2">
-                <span className="text-xs sm:text-sm font-bold tracking-wider text-[#1a73e8] uppercase">
+                <span className="text-sm sm:text-sm font-bold tracking-wider text-[#1a73e8] uppercase">
                   {vision.subtitle}
                 </span>
                 <div className="w-8 h-[2px] bg-[#1a73e8]" />
@@ -78,7 +78,7 @@ export default function Mission() {
 
               <a
                 href={vision.buttonLink}
-                className="inline-flex items-center gap-2 bg-[#1a73e8] hover:bg-[#1557b0] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full shadow-md transition-all duration-300 mt-2"
+                className="inline-flex items-center gap-2 bg-[#1a73e8] hover:bg-[#1557b0] text-white font-bold text-sm sm:text-sm px-6 py-3 rounded-full shadow-md transition-all duration-300 mt-2"
               >
                 <span>{vision.buttonLabel}</span>
                 <svg
@@ -107,7 +107,7 @@ export default function Mission() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               {vision.imageOverlayText && (
                 <div className="absolute top-6 right-8 text-right">
-                  <span className="text-xs sm:text-sm font-semibold tracking-widest text-white/90 uppercase drop-shadow-md">
+                  <span className="text-sm sm:text-sm font-semibold tracking-widest text-white/90 uppercase drop-shadow-md">
                     {vision.imageOverlayText}
                   </span>
                 </div>
@@ -131,7 +131,7 @@ export default function Mission() {
               <div className="absolute inset-0 bg-gradient-to-tr from-black/50 via-transparent to-transparent" />
               {mission.imageOverlayText && (
                 <div className="absolute bottom-6 left-8 text-left">
-                  <span className="text-xs sm:text-sm font-semibold tracking-widest text-white/90 uppercase drop-shadow-md">
+                  <span className="text-sm sm:text-sm font-semibold tracking-widest text-white/90 uppercase drop-shadow-md">
                     {mission.imageOverlayText}
                   </span>
                 </div>
@@ -141,7 +141,7 @@ export default function Mission() {
             {/* RIGHT CONTENT */}
             <div className="flex flex-col items-start space-y-4 order-1 lg:order-2">
               <div className="flex items-center gap-2">
-                <span className="text-xs sm:text-sm font-bold tracking-wider text-[#1a73e8] uppercase">
+                <span className="text-sm sm:text-sm font-bold tracking-wider text-[#1a73e8] uppercase">
                   {mission.subtitle}
                 </span>
                 <div className="w-8 h-[2px] bg-[#1a73e8]" />
@@ -158,7 +158,7 @@ export default function Mission() {
 
               <a
                 href={mission.buttonLink}
-                className="inline-flex items-center gap-2 bg-[#082b5e] hover:bg-[#061e42] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full shadow-md transition-all duration-300 mt-2"
+                className="inline-flex items-center gap-2 bg-[#082b5e] hover:bg-[#061e42] text-white font-bold text-sm sm:text-sm px-6 py-3 rounded-full shadow-md transition-all duration-300 mt-2"
               >
                 <span>{mission.buttonLabel}</span>
                 <svg

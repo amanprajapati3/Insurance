@@ -53,14 +53,14 @@ export default function Ctabanner2({
             <div className="hidden lg:block w-[1px] h-12 bg-blue-400/20" />
 
             {/* MIDDLE DESCRIPTION */}
-            <p className="text-slate-200 text-xs sm:text-sm leading-relaxed max-w-xl">
+            <p className="text-slate-200 text-sm sm:text-sm leading-relaxed max-w-xl">
               {highlightBox.description}
             </p>
 
             {/* RIGHT BUTTON */}
             <a
               href={highlightBox.buttonLink}
-              className="inline-flex items-center gap-2 bg-[#1a73e8] hover:bg-[#1557b0] text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full shadow-md transition-all duration-300 whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-2 bg-[#1a73e8] hover:bg-[#1557b0] text-white font-bold text-sm sm:text-sm px-6 py-3 rounded-full shadow-md transition-all duration-300 whitespace-nowrap shrink-0"
             >
               <span>{highlightBox.buttonLabel}</span>
             </a>

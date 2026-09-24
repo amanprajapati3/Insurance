@@ -45,7 +45,7 @@ export default function Partners({ className = "" }: SectionProps<InsurancePartn
         <div className="flex flex-col items-center text-center mb-8">
           
           {/* BADGE */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f2ff] text-[#0066ff] text-xs sm:text-sm font-bold mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f2ff] text-[#0066ff] text-sm sm:text-sm font-bold mb-4 shadow-sm">
             <PartnerBadgeIcon className="w-4 h-4 text-[#0066ff]" />
             <span>{badge}</span>
           </div>
@@ -56,7 +56,7 @@ export default function Partners({ className = "" }: SectionProps<InsurancePartn
           </h2>
 
           {/* SUBTITLE */}
-          <p className="text-gray-500 text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl whitespace-pre-line font-medium">
+          <p className="text-gray-500 text-sm sm:text-sm md:text-base leading-relaxed max-w-2xl whitespace-pre-line font-medium">
             {description}
           </p>
         </div>

@@ -147,7 +147,7 @@ export default function Banner({
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-12 w-full py-12 ">
         <div className="max-w-lg  text-white">
           {/* BADGE WITH DASH */}
-          <div className="flex items-center gap-3 text-xs sm:text-sm font-bold tracking-[0.2em] text-slate-200 uppercase mb-2">
+          <div className="flex items-center gap-3 text-sm sm:text-sm font-bold tracking-[0.2em] text-slate-200 uppercase mb-2">
             <span>{currentSlide.badge}</span>
             <span className="w-10 sm:w-14 h-[2px] bg-slate-300/40 rounded-full" />
           </div>

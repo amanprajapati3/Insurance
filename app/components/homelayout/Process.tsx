@@ -175,7 +175,7 @@ export default function Process({
         {/* HEADER SECTION */}
         <div className="flex flex-col items-center text-center mb-0">
           {/* BADGE */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f2ff] text-[#0066ff] text-xs sm:text-sm  font-bold mb-2 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f2ff] text-[#0066ff] text-sm sm:text-sm  font-bold mb-2 shadow-sm">
             <ProcessIcon name="gear" className="w-6 h-6 text-[#0066ff]" />
             <span>{badge}</span>
           </div>
@@ -222,7 +222,7 @@ export default function Process({
               </h3>
 
               {/* STEP DESCRIPTION */}
-              <p className="text-gray-500 text-xs sm:text-sm md:text-xs lg:text-sm leading-relaxed max-w-[260px] lg:max-w-[280px] mx-auto font-normal">
+              <p className="text-gray-500 text-sm sm:text-sm md:text-sm lg:text-sm leading-relaxed max-w-[260px] lg:max-w-[280px] mx-auto font-normal">
                 {step.description}
               </p>
             </div>

@@ -40,6 +40,30 @@ export type InsuranceMissionData =
   typeof insuranceData.InsuranceIndustries.sections.Mission.variants.InsuranceMission1;
 export type InsuranceAwardData =
   typeof insuranceData.InsuranceIndustries.sections.Award.variants.InsuranceAward1;
+export type InsuranceLegalData =
+  typeof insuranceData.InsuranceIndustries.sections.Legal.variants.InsuranceLegal1;
+export type InsuranceNotFoundData =
+  typeof insuranceData.InsuranceIndustries.sections.NotFound.variants.InsuranceNotFound1;
+export type InsuranceContactData =
+  typeof insuranceData.InsuranceIndustries.sections.Contact.variants.InsuranceContact1;
+export type InsuranceFaqData =
+  typeof insuranceData.InsuranceIndustries.sections.Faq.variants.InsuranceFaq1;
+export type InsuranceQuoteData =
+  typeof insuranceData.InsuranceIndustries.sections.Quote.variants.InsuranceQuote1;
+export type InsuranceCareerData =
+  typeof insuranceData.InsuranceIndustries.sections.Career.variants.InsuranceCareer1;
+export type InsuranceFaqItem = InsuranceFaqData["faqs"][number];
+export type InsuranceLegalSectionKey = keyof InsuranceLegalData;
+export type InsuranceLegalSection = InsuranceLegalData[InsuranceLegalSectionKey];
+export type InsuranceLegalPoint = InsuranceLegalSection["points"][number];
+export type InsuranceLegalContact = InsuranceLegalSection["contact"];
+export type InsuranceGalleryData =
+  typeof insuranceData.InsuranceIndustries.sections.Gallery.variants.InsuranceGallery1;
+export type InsuranceGalleryImage = InsuranceGalleryData["images"][number];
+export type InsuranceGalleryVideo = InsuranceGalleryData["videos"]["items"][number];
+export type InsuranceTeamData =
+  typeof insuranceData.InsuranceIndustries.sections.Team.variants.InsuranceTeam1;
+export type InsuranceTeamMember = InsuranceTeamData["members"][number];
 export type InsuranceStatItem = InsuranceAboutData["stats"][number];
 export type InsuranceFeatureItem = InsuranceAboutData["features"][number];
 
@@ -50,7 +74,6 @@ export type InsuranceProcessStep = InsuranceProcessData["steps"][number];
 export type InsuranceChooseBullet = InsuranceChooseData["bulletPoints"][number];
 export type InsuranceFloatingBadge = InsuranceChooseData["floatingBadges"][number];
 
-export type InsuranceRatingBadge = InsuranceTestimonialData["ratingBadges"][number];
 export type InsuranceTestimonialItem =
   InsuranceTestimonialData["testimonialItems"][number];
 
@@ -64,7 +87,8 @@ export type InsuranceFooterColumn = InsuranceFooterData["columns"][number];
 export type InsuranceFooterLink = InsuranceFooterColumn["links"][number];
 export type InsuranceLegalLink = InsuranceFooterData["legalLinks"][number];
 export type InsuranceFooterHour = InsuranceFooterData["footerContact"]["hours"][number];
-
+export type InsuranceCareerPerk = InsuranceCareerData["perks"][number];
+export type InsuranceJobItem = InsuranceCareerData["jobs"][number];
 const sec = insuranceData.InsuranceIndustries.sections;
 
 export const site = {
@@ -83,6 +107,13 @@ export const site = {
   footer: sec.Footer.variants.InsuranceFooter1,
   mission: sec.Mission.variants.InsuranceMission1,
   award: sec.Award.variants.InsuranceAward1,
+  legal: sec.Legal.variants.InsuranceLegal1,
+  gallery: sec.Gallery.variants.InsuranceGallery1,
+  team: sec.Team.variants.InsuranceTeam1,
+  contact: sec.Contact.variants.InsuranceContact1,
+  faq: sec.Faq.variants.InsuranceFaq1,
+  quote: sec.Quote.variants.InsuranceQuote1,
+  career: sec.Career.variants.InsuranceCareer1,
 };
 
 const planItems = sec.Plans.variants.InsurancePlans1.plans as InsurancePlanItem[];
@@ -91,6 +122,7 @@ const partnerItems = sec.Partners.variants.InsurancePartners1
   .partners as PartnerItem[];
 
 const blogPosts = sec.Blog.variants.InsuranceBlog1.posts as InsuranceBlogPost[];
+const careerJobs = sec.Career.variants.InsuranceCareer1.jobs as InsuranceJobItem[];
 
 export function getPlanBySlug(slug: string): InsurancePlanItem | null {
   return planItems.find((plan) => plan.slug === slug) || null;
@@ -119,6 +151,32 @@ export function getBlogPostBySlug(slug: string): InsuranceBlogPost | null {
 
 export function getBlogPostSlugs(): InsuranceBlogPost[] {
   return blogPosts;
+}
+
+export function getCareerJobs(): InsuranceJobItem[] {
+  return careerJobs;
+}
+
+export function getCareerJobBySlug(slug: string): InsuranceJobItem | null {
+  const cleanSlug = slug.replace(/^career\//, "");
+  return careerJobs.find((job) => job.slug === cleanSlug) || null;
+}
+
+const teamMembers =
+  sec.Team.variants.InsuranceTeam1.members as InsuranceTeamMember[];
+
+export function getTeamMembers(): InsuranceTeamMember[] {
+  return teamMembers;
+}
+
+export function getTeamMemberBySlug(slug: string): InsuranceTeamMember | null {
+  const cleanSlug = slug.replace(/^team\//, "");
+  return (
+    teamMembers.find(
+      (member) =>
+        member.slug === cleanSlug || member.slug.endsWith(cleanSlug),
+    ) || null
+  );
 }
 
 export default insuranceData;

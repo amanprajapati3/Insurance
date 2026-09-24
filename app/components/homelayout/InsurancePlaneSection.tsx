@@ -324,7 +324,7 @@ export default function InsurancePlanSection({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-5">
           <div className="lg:col-span-7 text-white">
             {/* BADGE */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0066ff] text-white text-xs sm:text-sm font-bold mb-1 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0066ff] text-white text-sm sm:text-sm font-bold mb-1 shadow-sm">
               <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
                 <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
               </svg>
@@ -401,7 +401,7 @@ export default function InsurancePlanSection({
                         </div>
 
                         {/* DESCRIPTION */}
-                        <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-2 font-normal">
+                        <p className="text-gray-500 text-sm sm:text-sm leading-relaxed mb-2 font-normal">
                           {plan.description}
                         </p>
                       </div>

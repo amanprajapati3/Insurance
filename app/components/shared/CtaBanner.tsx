@@ -91,7 +91,7 @@ export default function Ctabanner({ className = "" }: SectionProps<InsuranceCtaB
             {/* LEFT CONTENT AREA */}
             <div className="max-w-2xl">
               {/* BADGE */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white text-xs sm:text-sm font-medium mb-4 border border-white/10 shadow-sm">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white text-sm sm:text-sm font-medium mb-4 border border-white/10 shadow-sm">
                 <CtaIcon name="headset" className="w-4 h-4 text-white" />
                 <span>{badge}</span>
               </div>
@@ -102,7 +102,7 @@ export default function Ctabanner({ className = "" }: SectionProps<InsuranceCtaB
               </h2>
 
               {/* DESCRIPTION */}
-              <p className="text-slate-200 text-xs sm:text-sm lg:text-base font-normal leading-relaxed opacity-90">
+              <p className="text-slate-200 text-sm sm:text-sm lg:text-base font-normal leading-relaxed opacity-90">
                 {description}
               </p>
             </div>
@@ -113,11 +113,11 @@ export default function Ctabanner({ className = "" }: SectionProps<InsuranceCtaB
               {/* BUTTON 1: CONTACT US (White Pill with Embedded Blue Circle Arrow) */}
               <a
                 href={contactButton.link}
-                className="inline-flex items-center justify-between gap-3 bg-white text-[#082b5e] font-bold text-xs sm:text-sm pl-5 pr-1.5 py-1.5 rounded-full shadow-md hover:bg-slate-50 transition-all duration-300 group w-full sm:w-auto"
+                className="inline-flex items-center justify-between gap-3 bg-white text-[#082b5e] font-bold text-sm sm:text-sm pl-5 pr-1.5 py-1.5 rounded-full shadow-md hover:bg-slate-50 transition-all duration-300 group w-full sm:w-auto"
               >
                 <div className="flex items-center gap-2">
                   <CtaIcon name="mail" className="w-4 h-4 text-[#082b5e]" />
-                  <span className="tracking-wide uppercase text-xs sm:text-sm font-extrabold">{contactButton.label}</span>
+                  <span className="tracking-wide uppercase text-sm sm:text-sm font-extrabold">{contactButton.label}</span>
                 </div>
                 <div className="w-8 h-8 rounded-full bg-[#1a73e8] text-white flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0.5">
                   <CtaIcon name="arrow-right" className="w-4 h-4" />
@@ -127,12 +127,12 @@ export default function Ctabanner({ className = "" }: SectionProps<InsuranceCtaB
               {/* BUTTON 2: PHONE NUMBER (Bright Blue Pill with Embedded White Circle Phone Icon) */}
               <a
                 href={phoneButton.link}
-                className="inline-flex items-center gap-3 bg-[#1a73e8] text-white font-bold text-xs sm:text-sm pl-1.5 pr-6 py-1.5 rounded-full shadow-md hover:bg-[#1557b0] transition-all duration-300 w-full sm:w-auto"
+                className="inline-flex items-center gap-3 bg-[#1a73e8] text-white font-bold text-sm sm:text-sm pl-1.5 pr-6 py-1.5 rounded-full shadow-md hover:bg-[#1557b0] transition-all duration-300 w-full sm:w-auto"
               >
                 <div className="w-8 h-8 rounded-full bg-white text-[#1a73e8] flex items-center justify-center shrink-0">
                   <CtaIcon name="phone" className="w-4 h-4" />
                 </div>
-                <span className="tracking-wide font-extrabold text-xs sm:text-sm whitespace-nowrap">{phoneButton.number}</span>
+                <span className="tracking-wide font-extrabold text-sm sm:text-sm whitespace-nowrap">{phoneButton.number}</span>
               </a>
 
             </div>

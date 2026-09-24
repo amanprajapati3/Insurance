@@ -55,7 +55,7 @@ export default function BlogSection({
         <div className="flex flex-col items-center text-center mb-8">
           
           {/* BADGE */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f2ff] text-[#0066ff] text-xs sm:text-sm font-bold mb-1 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f2ff] text-[#0066ff] text-sm sm:text-sm font-bold mb-3 shadow-sm">
             <BlogIcon name="document-text" className="w-4 h-4 text-[#0066ff]" />
             <span>{badge}</span>
           </div>
@@ -93,7 +93,7 @@ export default function BlogSection({
                     <span className="text-xl sm:text-2xl font-black text-[#081f44] leading-none">
                       {post.day}
                     </span>
-                    <span className="text-[10px] sm:text-xs font-bold text-slate-400 mt-0.5 tracking-wider uppercase">
+                    <span className="text-[10px] sm:text-sm font-bold text-slate-400 mt-0.5 tracking-wider uppercase">
                       {post.month}
                     </span>
                   </div>
@@ -103,7 +103,7 @@ export default function BlogSection({
                 <div className="p-3 pt-4 flex flex-col">
                   
                   {/* COMMENT META */}
-                  <div className="flex items-center gap-2 text-[#0066ff] text-xs sm:text-sm font-semibold mb-3">
+                  <div className="flex items-center gap-2 text-[#0066ff] text-sm sm:text-sm font-semibold mb-3">
                     <BlogIcon name="comment" className="w-4 h-4 text-[#0066ff]" />
                     <span>{post.comments} Comments</span>
                   </div>
@@ -127,7 +127,7 @@ export default function BlogSection({
               >
                 {/* LEFT 80% DARK NAVY BLOCK WITH SLANTED CUT */}
                 <div
-                  className="absolute inset-0 bg-[#081f44] text-white flex items-center pl-6 font-bold text-xs sm:text-sm transition-colors duration-300 group-hover:bg-[#061735]"
+                  className="absolute inset-0 bg-[#081f44] text-white flex items-center pl-6 font-bold text-sm sm:text-sm transition-colors duration-300 group-hover:bg-[#061735]"
                   style={{
                     clipPath: "polygon(0 0, 82% 0, 75% 100%, 0 100%)",
                   }}

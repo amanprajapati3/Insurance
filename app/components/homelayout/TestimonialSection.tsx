@@ -199,7 +199,7 @@ export default function TestimonialSection({
           <div className="lg:col-span-5 flex flex-col justify-between pr-0 lg:pr-6">
             <div>
               {/* BADGE */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f2ff] text-[#0066ff] text-xs sm:text-sm font-bold mb-5 shadow-sm">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f2ff] text-[#0066ff] text-sm sm:text-sm font-bold mb-5 shadow-sm">
                 <TestimonialIcon
                   name="chat"
                   className="w-6 h-6 text-[#0066ff]"
@@ -229,7 +229,7 @@ export default function TestimonialSection({
                   <TestimonialIcon name="people" className="w-8 h-8" />
                 </div>
                 <div>
-                  <p className="text-xs sm:text-sm font-bold text-[#4267a1] leading-tight">
+                  <p className="text-sm sm:text-sm font-bold text-[#4267a1] leading-tight">
                     {avgRating.label} {avgRating.score}
                   </p>
                   <div className="flex items-center gap-1 mt-1">
@@ -250,7 +250,7 @@ export default function TestimonialSection({
                   <TestimonialIcon name="google" className="w-8 h-8" />
                 </div>
                 <div>
-                  <p className="text-xs sm:text-sm font-bold text-[#3861a1] leading-tight flex items-center gap-1.5">
+                  <p className="text-sm sm:text-sm font-bold text-[#3861a1] leading-tight flex items-center gap-1.5">
                     <span>{googleReviews.label}</span>
                     <span className="text-sm font-extrabold">
                       {googleReviews.score}
@@ -317,7 +317,7 @@ export default function TestimonialSection({
                         <h4 className="text-base sm:text-lg font-semibold text-[#0b50be] leading-tight">
                           {item.name}
                         </h4>
-                        <p className="text-xs sm:text-sm text-gray-400 font-normal mt-0.5">
+                        <p className="text-sm sm:text-sm text-gray-400 font-normal mt-0.5">
                           {item.role}
                         </p>
                       </div>

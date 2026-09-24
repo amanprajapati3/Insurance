@@ -273,7 +273,7 @@ export default function AboutUs({
                 </h3>
 
                 {/* Label */}
-                <p className="text-xs sm:text-sm font-semibold text-gray-500 max-w-[150px] leading-snug">
+                <p className="text-sm sm:text-sm font-semibold text-gray-500 max-w-[150px] leading-snug">
                   {stat.label}
                 </p>
               </div>
@@ -311,7 +311,7 @@ export default function AboutUs({
           {/* ================= RIGHT CONTENT SECTION ================= */}
           <div className="order-1 lg:order-3 lg:col-span-5 flex flex-col justify-center lg:pl-4">
             {/* BADGE WITH ICON */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f2ff] text-[#0066ff] text-xs sm:text-sm md:text-base font-bold w-fit mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f2ff] text-[#0066ff] text-sm sm:text-sm md:text-base font-bold w-fit mb-4">
               {/* Building/Document Icon */}
               <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
                 <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4V5h12v10z" />

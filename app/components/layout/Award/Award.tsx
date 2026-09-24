@@ -101,7 +101,7 @@ export default function Award() {
           {/* SECTION HEADER */}
           <div className="text-center max-w-2xl mx-auto mb-8">
             <div className="inline-flex items-center justify-center gap-2 mb-1">
-              <span className="text-xs sm:text-sm font-bold tracking-widest text-[#1a73e8] uppercase">
+              <span className="text-sm sm:text-sm font-bold tracking-widest text-[#1a73e8] uppercase">
                 {header.subtitle}
               </span>
               <div className="w-10 h-[2px] bg-[#1a73e8]" />
@@ -112,7 +112,7 @@ export default function Award() {
               <span className="text-[#1a73e8]">{header.highlightedTitle}</span>
             </h2>
 
-            <p className="text-slate-600 text-xs sm:text-sm lg:text-base leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-sm lg:text-base leading-relaxed">
               {header.description}
             </p>
           </div>

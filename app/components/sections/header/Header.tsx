@@ -60,7 +60,7 @@ export default function Header() {
         style={{ backgroundColor: NAVY }}
         className="relative z-20 text-white"
       >
-        <div className="mx-auto flex items-center justify-between px-4 py-2 text-xs sm:px-6 sm:text-sm lg:px-5">
+        <div className="mx-auto flex items-center justify-between px-4 py-2 text-sm sm:px-6 sm:text-sm lg:px-5">
           {/* Address & Email — Desktop (Shifted right to give room to the overlapping logo badge) */}
           <div className="hidden items-center gap-6 pl-48 md:flex lg:pl-84">
             <span className="inline-flex items-center gap-2 font-medium text-white/90">
@@ -108,7 +108,7 @@ export default function Header() {
 
             <Link
               href={topbar.button.href}
-              className="hidden rounded-md px-4 py-1.5 text-xs font-bold text-white shadow-sm transition-all hover:brightness-110 sm:inline-block"
+              className="hidden rounded-md px-4 py-1.5 text-sm font-bold text-white shadow-sm transition-all hover:brightness-110 sm:inline-block"
               style={{ backgroundColor: HEADER_BLUE }}
             >
               {topbar.button.label}
@@ -259,7 +259,7 @@ export default function Header() {
 
               {/* Phone Text Block */}
               <div className="leading-tight">
-                <span className="block text-xs font-semibold text-slate-500">
+                <span className="block text-sm font-semibold text-slate-500">
                   {header.phoneBlock.label || "Emergency call"}
                 </span>
                 <a
@@ -401,7 +401,7 @@ export default function Header() {
                 <Phone className="h-4 w-4" />
               </span>
               <div className="leading-tight">
-                <span className="block text-xs text-white/60">
+                <span className="block text-sm text-white/60">
                   {header.phoneBlock.label || "Emergency call"}
                 </span>
                 <a
