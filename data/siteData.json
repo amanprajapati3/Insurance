@@ -468,6 +468,654 @@
                 }
               }
             ],
+            "planDetails": {
+              "life-insurance": {
+                "eyebrow": "LIFE INSURANCE",
+                "titleStart": "Because Their",
+                "titleHighlight": "Tomorrow Matters",
+                "intro": "Life insurance provides financial security to your loved ones, ensuring they continue to live their dreams even in your absence.",
+                "whyTitle": "Why Choose Life Insurance?",
+                "whyDesc": "Life is unpredictable, but your family's future doesn't have to be. A life insurance plan helps you stay prepared for life's uncertainties.",
+                "pillars": [
+                  { "icon": "shield", "label": "Financial Security" },
+                  { "icon": "users", "label": "Long-Term Benefits" },
+                  { "icon": "heart", "label": "Peace of Mind" }
+                ],
+                "benefits": [
+                  {
+                    "title": "Income Protection",
+                    "description": "Provides financial support to your family in your absence.",
+                    "icon": "wallet"
+                  },
+                  {
+                    "title": "Debt Coverage",
+                    "description": "Helps clear outstanding loans and financial obligations.",
+                    "icon": "file-contract"
+                  },
+                  {
+                    "title": "Education Support",
+                    "description": "Ensures your children's education and future goals are never compromised.",
+                    "icon": "graduation-cap"
+                  },
+                  {
+                    "title": "Long-Term Security",
+                    "description": "Builds a stable financial foundation for your loved ones.",
+                    "icon": "chart-line"
+                  }
+                ],
+                "steps": [
+                  {
+                    "number": "01",
+                    "title": "Choose a Plan",
+                    "description": "Select a plan that fits your needs."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Pay Premium",
+                    "description": "Make regular premium payments."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Stay Protected",
+                    "description": "Your loved ones receive financial support."
+                  }
+                ]
+              },
+              "health-insurance": {
+                "eyebrow": "HEALTH INSURANCE",
+                "titleStart": "Healthier Days,",
+                "titleHighlight": "Safer Tomorrows",
+                "intro": "Comprehensive health coverage designed to keep medical emergencies stress-free and protect your hard-earned savings.",
+                "whyTitle": "Why Choose Health Insurance?",
+                "whyDesc": "Medical care costs are rising daily. A robust health insurance plan protects your family with cashless treatment and quick claims.",
+                "pillars": [
+                  { "icon": "heartbeat", "label": "Cashless Care" },
+                  { "icon": "shield", "label": "Full Coverage" },
+                  { "icon": "heart", "label": "Preventive Care" }
+                ],
+                "benefits": [
+                  {
+                    "title": "Hospitalisation Cover",
+                    "description": "Support for eligible treatment and hospital expenses.",
+                    "icon": "heartbeat"
+                  },
+                  {
+                    "title": "Cashless Network",
+                    "description": "Access a wide network of trusted healthcare providers.",
+                    "icon": "wallet"
+                  },
+                  {
+                    "title": "Preventive Support",
+                    "description": "Stay ahead with health benefits designed around wellbeing.",
+                    "icon": "shield"
+                  },
+                  {
+                    "title": "Family Protection",
+                    "description": "One thoughtful plan for the people who matter most.",
+                    "icon": "users"
+                  }
+                ],
+                "steps": [
+                  {
+                    "number": "01",
+                    "title": "Select Coverage",
+                    "description": "Choose a plan tailored to family needs."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Instant Policy",
+                    "description": "Pay online and get instant coverage."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Cashless Claims",
+                    "description": "Get treated with zero hassle."
+                  }
+                ]
+              },
+              "motor-insurance": {
+                "eyebrow": "MOTOR INSURANCE",
+                "titleStart": "Protect What Matters With",
+                "titleHighlight": "Motor Insurance",
+                "intro": "Drive with confidence. Get complete protection for your vehicle, on every journey.",
+                "whyTitle": "Why Choose Motor Insurance?",
+                "whyDesc": "A thoughtful motor insurance plan helps you stay prepared for life's uncertainties and protect what you value most.",
+                "pillars": [
+                  { "icon": "shield", "label": "Financial Security" },
+                  { "icon": "users", "label": "Long-Term Benefits" },
+                  { "icon": "heart", "label": "Peace of Mind" }
+                ],
+                "benefits": [
+                  {
+                    "title": "Financial Security",
+                    "description": "Provides financial support to your family when needed.",
+                    "icon": "money-bill"
+                  },
+                  {
+                    "title": "Comprehensive Cover",
+                    "description": "Helps clear obligations and emergency expenses.",
+                    "icon": "shield"
+                  },
+                  {
+                    "title": "Expert Guidance",
+                    "description": "Get advice tailored to your long-term goals.",
+                    "icon": "users"
+                  },
+                  {
+                    "title": "Peace of Mind",
+                    "description": "Builds a stable foundation for your future.",
+                    "icon": "heart"
+                  }
+                ],
+                "steps": [
+                  {
+                    "number": "01",
+                    "title": "Choose a Plan",
+                    "description": "Select a plan that fits your needs."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Pay Premium",
+                    "description": "Make regular premium payments."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Stay Protected",
+                    "description": "Receive financial support when you need it."
+                  }
+                ]
+              },
+              "home-insurance": {
+                "eyebrow": "HOME INSURANCE",
+                "titleStart": "Protect What Matters With",
+                "titleHighlight": "Home Insurance",
+                "intro": "Protect your home and everything that makes it special from the unexpected.",
+                "whyTitle": "Why Choose Home Insurance?",
+                "whyDesc": "A thoughtful home insurance plan helps you stay prepared for life's uncertainties and protect what you value most.",
+                "pillars": [
+                  { "icon": "shield", "label": "Financial Security" },
+                  { "icon": "users", "label": "Long-Term Benefits" },
+                  { "icon": "heart", "label": "Peace of Mind" }
+                ],
+                "benefits": [
+                  {
+                    "title": "Financial Security",
+                    "description": "Provides financial support to your family when needed.",
+                    "icon": "money-bill"
+                  },
+                  {
+                    "title": "Comprehensive Cover",
+                    "description": "Helps clear obligations and emergency expenses.",
+                    "icon": "shield"
+                  },
+                  {
+                    "title": "Expert Guidance",
+                    "description": "Get advice tailored to your long-term goals.",
+                    "icon": "users"
+                  },
+                  {
+                    "title": "Peace of Mind",
+                    "description": "Builds a stable foundation for your future.",
+                    "icon": "heart"
+                  }
+                ],
+                "steps": [
+                  {
+                    "number": "01",
+                    "title": "Choose a Plan",
+                    "description": "Select a plan that fits your needs."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Pay Premium",
+                    "description": "Make regular premium payments."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Stay Protected",
+                    "description": "Receive financial support when you need it."
+                  }
+                ]
+              },
+              "travel-insurance": {
+                "eyebrow": "TRAVEL INSURANCE",
+                "titleStart": "Protect What Matters With",
+                "titleHighlight": "Travel Insurance",
+                "intro": "Explore the world with peace of mind. Stay protected, no matter where your journey takes you.",
+                "whyTitle": "Why Choose Travel Insurance?",
+                "whyDesc": "A thoughtful travel insurance plan helps you stay prepared for life's uncertainties and protect what you value most.",
+                "pillars": [
+                  { "icon": "shield", "label": "Financial Security" },
+                  { "icon": "users", "label": "Long-Term Benefits" },
+                  { "icon": "heart", "label": "Peace of Mind" }
+                ],
+                "benefits": [
+                  {
+                    "title": "Financial Security",
+                    "description": "Provides financial support to your family when needed.",
+                    "icon": "money-bill"
+                  },
+                  {
+                    "title": "Comprehensive Cover",
+                    "description": "Helps clear obligations and emergency expenses.",
+                    "icon": "shield"
+                  },
+                  {
+                    "title": "Expert Guidance",
+                    "description": "Get advice tailored to your long-term goals.",
+                    "icon": "users"
+                  },
+                  {
+                    "title": "Peace of Mind",
+                    "description": "Builds a stable foundation for your future.",
+                    "icon": "heart"
+                  }
+                ],
+                "steps": [
+                  {
+                    "number": "01",
+                    "title": "Choose a Plan",
+                    "description": "Select a plan that fits your needs."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Pay Premium",
+                    "description": "Make regular premium payments."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Stay Protected",
+                    "description": "Receive financial support when you need it."
+                  }
+                ]
+              },
+              "business-insurance": {
+                "eyebrow": "BUSINESS INSURANCE",
+                "titleStart": "Protect What Matters With",
+                "titleHighlight": "Business Insurance",
+                "intro": "Safeguard your enterprise, workforce, and commercial assets against operational risks.",
+                "whyTitle": "Why Choose Business Insurance?",
+                "whyDesc": "A thoughtful business insurance plan helps you stay prepared for life's uncertainties and protect what you value most.",
+                "pillars": [
+                  { "icon": "shield", "label": "Financial Security" },
+                  { "icon": "users", "label": "Long-Term Benefits" },
+                  { "icon": "heart", "label": "Peace of Mind" }
+                ],
+                "benefits": [
+                  {
+                    "title": "Financial Security",
+                    "description": "Provides financial support to your family when needed.",
+                    "icon": "money-bill"
+                  },
+                  {
+                    "title": "Comprehensive Cover",
+                    "description": "Helps clear obligations and emergency expenses.",
+                    "icon": "shield"
+                  },
+                  {
+                    "title": "Expert Guidance",
+                    "description": "Get advice tailored to your long-term goals.",
+                    "icon": "users"
+                  },
+                  {
+                    "title": "Peace of Mind",
+                    "description": "Builds a stable foundation for your future.",
+                    "icon": "heart"
+                  }
+                ],
+                "steps": [
+                  {
+                    "number": "01",
+                    "title": "Choose a Plan",
+                    "description": "Select a plan that fits your needs."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Pay Premium",
+                    "description": "Make regular premium payments."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Stay Protected",
+                    "description": "Receive financial support when you need it."
+                  }
+                ]
+              },
+              "pet-insurance": {
+                "eyebrow": "PET INSURANCE",
+                "titleStart": "Protect What Matters With",
+                "titleHighlight": "Pet Insurance",
+                "intro": "Ensure your furry companions receive the best veterinary care whenever they need it.",
+                "whyTitle": "Why Choose Pet Insurance?",
+                "whyDesc": "A thoughtful pet insurance plan helps you stay prepared for life's uncertainties and protect what you value most.",
+                "pillars": [
+                  { "icon": "shield", "label": "Financial Security" },
+                  { "icon": "users", "label": "Long-Term Benefits" },
+                  { "icon": "heart", "label": "Peace of Mind" }
+                ],
+                "benefits": [
+                  {
+                    "title": "Financial Security",
+                    "description": "Provides financial support to your family when needed.",
+                    "icon": "money-bill"
+                  },
+                  {
+                    "title": "Comprehensive Cover",
+                    "description": "Helps clear obligations and emergency expenses.",
+                    "icon": "shield"
+                  },
+                  {
+                    "title": "Expert Guidance",
+                    "description": "Get advice tailored to your long-term goals.",
+                    "icon": "users"
+                  },
+                  {
+                    "title": "Peace of Mind",
+                    "description": "Builds a stable foundation for your future.",
+                    "icon": "heart"
+                  }
+                ],
+                "steps": [
+                  {
+                    "number": "01",
+                    "title": "Choose a Plan",
+                    "description": "Select a plan that fits your needs."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Pay Premium",
+                    "description": "Make regular premium payments."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Stay Protected",
+                    "description": "Receive financial support when you need it."
+                  }
+                ]
+              },
+              "cyber-insurance": {
+                "eyebrow": "CYBER INSURANCE",
+                "titleStart": "Protect What Matters With",
+                "titleHighlight": "Cyber Insurance",
+                "intro": "Protect digital assets and sensitive personal data against security breaches and online threats.",
+                "whyTitle": "Why Choose Cyber Insurance?",
+                "whyDesc": "A thoughtful cyber insurance plan helps you stay prepared for life's uncertainties and protect what you value most.",
+                "pillars": [
+                  { "icon": "shield", "label": "Financial Security" },
+                  { "icon": "users", "label": "Long-Term Benefits" },
+                  { "icon": "heart", "label": "Peace of Mind" }
+                ],
+                "benefits": [
+                  {
+                    "title": "Financial Security",
+                    "description": "Provides financial support to your family when needed.",
+                    "icon": "money-bill"
+                  },
+                  {
+                    "title": "Comprehensive Cover",
+                    "description": "Helps clear obligations and emergency expenses.",
+                    "icon": "shield"
+                  },
+                  {
+                    "title": "Expert Guidance",
+                    "description": "Get advice tailored to your long-term goals.",
+                    "icon": "users"
+                  },
+                  {
+                    "title": "Peace of Mind",
+                    "description": "Builds a stable foundation for your future.",
+                    "icon": "heart"
+                  }
+                ],
+                "steps": [
+                  {
+                    "number": "01",
+                    "title": "Choose a Plan",
+                    "description": "Select a plan that fits your needs."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Pay Premium",
+                    "description": "Make regular premium payments."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Stay Protected",
+                    "description": "Receive financial support when you need it."
+                  }
+                ]
+              },
+              "marine-insurance": {
+                "eyebrow": "MARINE INSURANCE",
+                "titleStart": "Protect What Matters With",
+                "titleHighlight": "Marine Insurance",
+                "intro": "Comprehensive protection for cargo, vessels, and marine transport operations worldwide.",
+                "whyTitle": "Why Choose Marine Insurance?",
+                "whyDesc": "A thoughtful marine insurance plan helps you stay prepared for life's uncertainties and protect what you value most.",
+                "pillars": [
+                  { "icon": "shield", "label": "Financial Security" },
+                  { "icon": "users", "label": "Long-Term Benefits" },
+                  { "icon": "heart", "label": "Peace of Mind" }
+                ],
+                "benefits": [
+                  {
+                    "title": "Financial Security",
+                    "description": "Provides financial support to your family when needed.",
+                    "icon": "money-bill"
+                  },
+                  {
+                    "title": "Comprehensive Cover",
+                    "description": "Helps clear obligations and emergency expenses.",
+                    "icon": "shield"
+                  },
+                  {
+                    "title": "Expert Guidance",
+                    "description": "Get advice tailored to your long-term goals.",
+                    "icon": "users"
+                  },
+                  {
+                    "title": "Peace of Mind",
+                    "description": "Builds a stable foundation for your future.",
+                    "icon": "heart"
+                  }
+                ],
+                "steps": [
+                  {
+                    "number": "01",
+                    "title": "Choose a Plan",
+                    "description": "Select a plan that fits your needs."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Pay Premium",
+                    "description": "Make regular premium payments."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Stay Protected",
+                    "description": "Receive financial support when you need it."
+                  }
+                ]
+              },
+              "disability-insurance": {
+                "eyebrow": "DISABILITY INSURANCE",
+                "titleStart": "Protect What Matters With",
+                "titleHighlight": "Disability Insurance",
+                "intro": "Maintain your income stream and lifestyle continuity in case of unforeseen medical leave.",
+                "whyTitle": "Why Choose Disability Insurance?",
+                "whyDesc": "A thoughtful disability insurance plan helps you stay prepared for life's uncertainties and protect what you value most.",
+                "pillars": [
+                  { "icon": "shield", "label": "Financial Security" },
+                  { "icon": "users", "label": "Long-Term Benefits" },
+                  { "icon": "heart", "label": "Peace of Mind" }
+                ],
+                "benefits": [
+                  {
+                    "title": "Financial Security",
+                    "description": "Provides financial support to your family when needed.",
+                    "icon": "money-bill"
+                  },
+                  {
+                    "title": "Comprehensive Cover",
+                    "description": "Helps clear obligations and emergency expenses.",
+                    "icon": "shield"
+                  },
+                  {
+                    "title": "Expert Guidance",
+                    "description": "Get advice tailored to your long-term goals.",
+                    "icon": "users"
+                  },
+                  {
+                    "title": "Peace of Mind",
+                    "description": "Builds a stable foundation for your future.",
+                    "icon": "heart"
+                  }
+                ],
+                "steps": [
+                  {
+                    "number": "01",
+                    "title": "Choose a Plan",
+                    "description": "Select a plan that fits your needs."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Pay Premium",
+                    "description": "Make regular premium payments."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Stay Protected",
+                    "description": "Receive financial support when you need it."
+                  }
+                ]
+              },
+              "critical-illness": {
+                "eyebrow": "CRITICAL ILLNESS",
+                "titleStart": "Protect What Matters With",
+                "titleHighlight": "Critical Illness",
+                "intro": "Lump-sum payouts to manage medical treatments and recovery costs for major health events.",
+                "whyTitle": "Why Choose Critical Illness?",
+                "whyDesc": "A thoughtful critical illness plan helps you stay prepared for life's uncertainties and protect what you value most.",
+                "pillars": [
+                  { "icon": "shield", "label": "Financial Security" },
+                  { "icon": "users", "label": "Long-Term Benefits" },
+                  { "icon": "heart", "label": "Peace of Mind" }
+                ],
+                "benefits": [
+                  {
+                    "title": "Financial Security",
+                    "description": "Provides financial support to your family when needed.",
+                    "icon": "money-bill"
+                  },
+                  {
+                    "title": "Comprehensive Cover",
+                    "description": "Helps clear obligations and emergency expenses.",
+                    "icon": "shield"
+                  },
+                  {
+                    "title": "Expert Guidance",
+                    "description": "Get advice tailored to your long-term goals.",
+                    "icon": "users"
+                  },
+                  {
+                    "title": "Peace of Mind",
+                    "description": "Builds a stable foundation for your future.",
+                    "icon": "heart"
+                  }
+                ],
+                "steps": [
+                  {
+                    "number": "01",
+                    "title": "Choose a Plan",
+                    "description": "Select a plan that fits your needs."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Pay Premium",
+                    "description": "Make regular premium payments."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Stay Protected",
+                    "description": "Receive financial support when you need it."
+                  }
+                ]
+              },
+              "property-insurance": {
+                "eyebrow": "PROPERTY INSURANCE",
+                "titleStart": "Protect What Matters With",
+                "titleHighlight": "Property Insurance",
+                "intro": "Protection for commercial real estate, equipment, and structural investments.",
+                "whyTitle": "Why Choose Property Insurance?",
+                "whyDesc": "A thoughtful property insurance plan helps you stay prepared for life's uncertainties and protect what you value most.",
+                "pillars": [
+                  { "icon": "shield", "label": "Financial Security" },
+                  { "icon": "users", "label": "Long-Term Benefits" },
+                  { "icon": "heart", "label": "Peace of Mind" }
+                ],
+                "benefits": [
+                  {
+                    "title": "Financial Security",
+                    "description": "Provides financial support to your family when needed.",
+                    "icon": "money-bill"
+                  },
+                  {
+                    "title": "Comprehensive Cover",
+                    "description": "Helps clear obligations and emergency expenses.",
+                    "icon": "shield"
+                  },
+                  {
+                    "title": "Expert Guidance",
+                    "description": "Get advice tailored to your long-term goals.",
+                    "icon": "users"
+                  },
+                  {
+                    "title": "Peace of Mind",
+                    "description": "Builds a stable foundation for your future.",
+                    "icon": "heart"
+                  }
+                ],
+                "steps": [
+                  {
+                    "number": "01",
+                    "title": "Choose a Plan",
+                    "description": "Select a plan that fits your needs."
+                  },
+                  {
+                    "number": "02",
+                    "title": "Pay Premium",
+                    "description": "Make regular premium payments."
+                  },
+                  {
+                    "number": "03",
+                    "title": "Stay Protected",
+                    "description": "Receive financial support when you need it."
+                  }
+                ]
+              }
+            },
+            "needAssistance": {
+              "icon": "headset",
+              "title": "Need Assistance?",
+              "description": "Our experts are here to help you choose the right plan.",
+              "phone": "+919876543210",
+              "phoneDisplay": "+91 98765 43210",
+              "buttonLabel": "Talk to an Expert",
+              "buttonHref": "/contact"
+            },
+            "ctaBanner": {
+              "title": "Plan Today for a Safer Tomorrow",
+              "description": "Get expert advice and find the right {plan} plan for your family's future.",
+              "buttonLabel": "Get a Quote",
+              "buttonHref": "/quote",
+              "checklist": [
+                "100% Secure Process",
+                "Expert Guidance",
+                "Customized Plans",
+                "No Hidden Charges"
+              ],
+              "image": "/insurance/2.jpg"
+            },
             "carousel": {
               "slidesPerView": 4,
               "hasArrows": true,
@@ -2209,6 +2857,83 @@
                   "requirements": ["Bachelor’s degree or relevant technical certification.", "2-4 years of experience in IT support.", "Strong troubleshooting and problem-solving skills.", "Good understanding of networks, devices, and cloud tools.", "Clear communication with technical and non-technical users.", "Able to work independently in a hybrid environment."],
                   "benefits": ["Competitive Salary", "Performance Incentives", "Health Insurance", "Career Growth", "Flexible Work Environment", "Training & Development", "Supportive Team Culture", "Employee Wellness Programs"]
                 }
+              }
+            ]
+          }
+        }
+      },
+      "Sitemap": {
+        "variants": {
+          "InsuranceSitemap1": {
+            "banner": {
+              "title": "Sitemap",
+              "breadcrumbs": [
+                { "label": "Home", "href": "/" },
+                { "label": "Sitemap" }
+              ],
+              "bgImage": "/insurance_img/online-insurance-concept-insurance-assurance-icons-including-family-health-real-estate-car-financial-risk-management-concept-online-insurance.jpg"
+            },
+            "heading": {
+              "title": "Explore InsureWise Sitemap",
+              "description": "Find the page you are looking for quickly. Browse our complete site structure with clear links to every section, from our main pages and insurance plans to blogs, support and legal information."
+            },
+            "groups": [
+              {
+                "title": "Main Pages",
+                "links": [
+                  { "label": "Home", "href": "/" },
+                  { "label": "About Us", "href": "/about-us" },
+                  { "label": "Insurance Plans", "href": "/insurance" },
+                  { "label": "Health Insurance", "href": "/insurance/health-insurance" },
+                  { "label": "Our Blog", "href": "/blog" },
+                  { "label": "Contact Us", "href": "/contact" },
+                  { "label": "Get a Quote", "href": "/quote" }
+                ]
+              },
+              {
+                "title": "Other Pages",
+                "links": [
+                  { "label": "Our Team", "href": "/team" },
+                  { "label": "Career", "href": "/career" },
+                  { "label": "Testimonials", "href": "/testimonial" },
+                  { "label": "Our Partners", "href": "/partners" },
+                  { "label": "Gallery", "href": "/gallery" },
+                  { "label": "Awards", "href": "/award" },
+                  { "label": "Our Mission", "href": "/mission" }
+                ]
+              },
+              {
+                "title": "Blog",
+                "links": [
+                  { "label": "All Blog Posts", "href": "/blog" },
+                  { "label": "Blog Details", "href": "/blog/how-to-choose-the-right-insurance-plan-for-your-family" }
+                ]
+              },
+              {
+                "title": "Insurance Plan",
+                "links": [
+                  { "label": "All Insurance Plans", "href": "/insurance" },
+                  { "label": "Insurance Details", "href": "insurance/motor-insurance" }
+                ]
+              },
+              {
+                "title": "Support",
+                "links": [
+                  { "label": "Contact Us", "href": "/contact" },
+                  { "label": "Frequently Asked Questions", "href": "/faq" },
+                  { "label": "Get a Quote", "href": "/quote" },
+                  { "label": "Testimonials", "href": "/testimonial" },
+                  { "label": "Talk to an Expert", "href": "/contact" }
+                ]
+              },
+              {
+                "title": "Legal",
+                "links": [
+                  { "label": "Privacy Policy", "href": "/privacy" },
+                  { "label": "Terms & Conditions", "href": "/terms" },
+                  { "label": "Cookie Policy", "href": "/cookie" },
+                  { "label": "Disclaimer", "href": "/disclaimer" }
+                ]
               }
             ]
           }

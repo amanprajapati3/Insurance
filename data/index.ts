@@ -52,6 +52,10 @@ export type InsuranceQuoteData =
   typeof insuranceData.InsuranceIndustries.sections.Quote.variants.InsuranceQuote1;
 export type InsuranceCareerData =
   typeof insuranceData.InsuranceIndustries.sections.Career.variants.InsuranceCareer1;
+export type InsuranceSitemapData =
+  typeof insuranceData.InsuranceIndustries.sections.Sitemap.variants.InsuranceSitemap1;
+export type InsuranceSitemapGroup = InsuranceSitemapData["groups"][number];
+export type InsuranceSitemapLink = InsuranceSitemapGroup["links"][number];
 export type InsuranceFaqItem = InsuranceFaqData["faqs"][number];
 export type InsuranceLegalSectionKey = keyof InsuranceLegalData;
 export type InsuranceLegalSection = InsuranceLegalData[InsuranceLegalSectionKey];
@@ -68,6 +72,9 @@ export type InsuranceStatItem = InsuranceAboutData["stats"][number];
 export type InsuranceFeatureItem = InsuranceAboutData["features"][number];
 
 export type InsurancePlanItem = InsurancePlansData["plans"][number];
+type InsurancePlanDetailsData = InsurancePlansData["planDetails"];
+export type InsurancePlanDetailItem =
+  InsurancePlanDetailsData[keyof InsurancePlanDetailsData];
 
 export type InsuranceProcessStep = InsuranceProcessData["steps"][number];
 
@@ -98,6 +105,9 @@ export const site = {
   aboutUs: sec.About.variants.InsuranceAbout1,
   about: sec.About.variants.InsuranceAbout1,
   plans: sec.Plans.variants.InsurancePlans1,
+  planDetails: sec.Plans.variants.InsurancePlans1.planDetails,
+  needAssistance: sec.Plans.variants.InsurancePlans1.needAssistance,
+  planCtaBanner: sec.Plans.variants.InsurancePlans1.ctaBanner,
   process: sec.Process.variants.InsuranceProcess1,
   choose: sec.Choose.variants.InsuranceChoose1,
   testimonial: sec.Testimonial.variants.InsuranceTestimonial1,
@@ -114,6 +124,7 @@ export const site = {
   faq: sec.Faq.variants.InsuranceFaq1,
   quote: sec.Quote.variants.InsuranceQuote1,
   career: sec.Career.variants.InsuranceCareer1,
+  sitemap: sec.Sitemap.variants.InsuranceSitemap1,
 };
 
 const planItems = sec.Plans.variants.InsurancePlans1.plans as InsurancePlanItem[];
