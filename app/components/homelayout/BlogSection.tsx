@@ -1,32 +1,24 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { site, SectionProps, InsuranceBlogData } from "@/data/index";
+import ScrollReveal from "../shared/ScrollReveal";
+import { FiArrowRight, FiFileText } from "react-icons/fi";
+import { FaComment } from "react-icons/fa";
+
+const BLOG_ICONS: Record<string, { Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>; strokeWidth?: number }> = {
+  "document-text": { Icon: FiFileText },
+  comment: { Icon: FaComment },
+  "arrow-right": { Icon: FiArrowRight, strokeWidth: 2.5 },
+};
 
 // Helper Icon Component
 function BlogIcon({ name, className = "w-5 h-5" }: { name: string; className?: string }) {
-  switch (name) {
-    case "document-text":
-      return (
-        <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-        </svg>
-      );
-    case "comment":
-      return (
-        <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2z" />
-        </svg>
-      );
-    case "arrow-right":
-      return (
-        <svg className={className} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-        </svg>
-      );
-    default:
-      return null;
-  }
+  const entry = BLOG_ICONS[name];
+  if (!entry) return null;
+  const { Icon, strokeWidth } = entry;
+  return <Icon className={className} strokeWidth={strokeWidth} />;
 }
 
 export default function BlogSection({
@@ -52,7 +44,7 @@ export default function BlogSection({
       <div className="container mx-auto px-4 md:px-10">
         
         {/* HEADER SECTION */}
-        <div className="flex flex-col items-center text-center mb-8">
+        <ScrollReveal direction="up" className="flex flex-col items-center text-center mb-8">
           
           {/* BADGE */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f2ff] text-[#0066ff] text-sm sm:text-sm font-bold mb-3 shadow-sm">
@@ -70,22 +62,27 @@ export default function BlogSection({
           <p className="text-gray-500 text-sm md:text-base leading-relaxed max-w-2xl whitespace-pre-line font-medium">
             {description}
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* POSTS GRID: 3 cols Desktop, 2 cols Tablet, 1 col Mobile */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {posts.map((post, index) => (
-            <div
+            <ScrollReveal
               key={post.id || index}
+              direction="up"
+              index={index}
+              staggerChildren={0.1}
               className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between border border-gray-100 group"
             >
               <div>
                 {/* IMAGE CONTAINER WITH OVERLAPPING FLOATING DATE BADGE */}
                 <div className="relative w-full h-56 sm:h-60  bg-gray-100">
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
-                    className="w-full h-full object-cover object-center rounded-xl transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover object-center rounded-xl transition-transform duration-500 group-hover:scale-105"
                   />
 
                   {/* FLOATING DATE BADGE */}
@@ -146,7 +143,7 @@ export default function BlogSection({
                 </div>
               </a>
 
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 

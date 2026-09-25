@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Bannerpage from "../../shared/Bannerpage";
+import ScrollReveal from "../../shared/ScrollReveal";
 import { site } from "@/data";
 
 type SitemapLink = {
@@ -101,7 +102,7 @@ export default function Sitemap() {
           
           {/* OPTIONAL HEADING / DESCRIPTION (IF AVAILABLE) */}
           {sitemapData?.heading && (
-            <div className="mb-10 sm:mb-14">
+            <ScrollReveal direction="up" className="mb-10 sm:mb-14">
               <h1 className="text-3xl sm:text-4xl font-bold text-[#082b5e] mb-3">
                 {sitemapData.heading.title}
               </h1>
@@ -110,13 +111,13 @@ export default function Sitemap() {
                   {sitemapData.heading.description}
                 </p>
               )}
-            </div>
+            </ScrollReveal>
           )}
 
           {/* SITEMAP GRID LAYOUT */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 lg:gap-x-16 gap-y-12 sm:gap-y-14">
-            {groups.map((group) => (
-              <div key={group.title} className="flex flex-col">
+            {groups.map((group, index) => (
+              <ScrollReveal key={group.title} direction="up" index={index} staggerChildren={0.1} className="flex flex-col">
                 
                 {/* CATEGORY TITLE WITH UNDERLINE */}
                 <div className="border-b border-[#e2edff] pb-2.5 mb-4 sm:mb-5">
@@ -139,7 +140,7 @@ export default function Sitemap() {
                   ))}
                 </ul>
 
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 

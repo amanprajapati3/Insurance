@@ -129,6 +129,7 @@ export default function Header() {
                 src="/logo12.png"
                 alt=""
                 fill
+                sizes="(max-width: 640px) 220px, (max-width: 768px) 270px, 360px"
                 className="object-contain "
                 priority
               />

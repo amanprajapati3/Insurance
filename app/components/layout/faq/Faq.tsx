@@ -1,9 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Bannerpage from "../../shared/Bannerpage";
+import ScrollReveal from "../../shared/ScrollReveal";
 import { site, type InsuranceFaqItem } from "@/data";
-import { FaHeadphonesAlt } from "react-icons/fa";
+import { FaHeadphonesAlt, FaPhoneAlt } from "react-icons/fa";
+import { FiClock, FiMail, FiMinus, FiPlus } from "react-icons/fi";
 
 
 export default function Faq() {
@@ -47,7 +50,7 @@ export default function Faq() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
             
             {/* LEFT COLUMN: GENERAL FAQS */}
-            <div className="lg:col-span-7 xl:col-span-8 flex flex-col justify-between h-full">
+            <ScrollReveal direction="left" className="lg:col-span-7 xl:col-span-8 flex flex-col justify-between h-full">
               <div>
                 {/* SECTION HEADER */}
                 <div className="mb-6">
@@ -68,11 +71,14 @@ export default function Faq() {
 
                 {/* ACCORDION LIST */}
                 <div className="space-y-2">
-                  {faqsList.map((item) => {
+                  {faqsList.map((item, index) => {
                     const isOpen = openId === item.id;
                     return (
-                      <div
+                      <ScrollReveal
                         key={item.id}
+                        direction="up"
+                        index={index}
+                        staggerChildren={0.08}
                         className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                           isOpen
                             ? "bg-[#edf4ff] border-blue-200/80 shadow-sm"
@@ -106,13 +112,9 @@ export default function Faq() {
                           {/* TOGGLE ICON (+ / -) */}
                           <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#dbe8ff] text-[#0066ff] flex items-center justify-center shrink-0">
                             {isOpen ? (
-                              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
-                              </svg>
+                              <FiMinus className="w-3.5 h-3.5 sm:w-4 sm:h-4" strokeWidth={3} />
                             ) : (
-                              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[3]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
-                              </svg>
+                              <FiPlus className="w-3.5 h-3.5 sm:w-4 sm:h-4" strokeWidth={3} />
                             )}
                           </div>
                         </button>
@@ -125,25 +127,27 @@ export default function Faq() {
                             </p>
                           </div>
                         )}
-                      </div>
+                      </ScrollReveal>
                     );
                   })}
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* RIGHT COLUMN: STILL HAVE QUESTIONS CARD */}
-            <div className="lg:col-span-5 xl:col-span-4 flex flex-col justify-between h-full">
+            <ScrollReveal direction="right" className="lg:col-span-5 xl:col-span-4 flex flex-col justify-between h-full">
               <div className="bg-[#edf4ff] rounded-3xl border border-slate-200/80  flex flex-col justify-between h-full shadow-sm">
                 
                 {/* TOP CONTENT */}
                 <div>
                   {/* AGENT PHOTO */}
                   <div className="relative rounded-2xl overflow-hidden mb-6 h-60 sm:h-84 w-full shadow-sm">
-                    <img
+                    <Image
                       src={supportCard.image || "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"}
                       alt="Customer Support"
-                      className="w-full h-full object-cover object-top"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 35vw"
+                      className="object-cover object-top"
                     />
                   </div>
 
@@ -161,25 +165,19 @@ export default function Faq() {
                     href={`tel:${supportCard.phone?.replace(/\s+/g, "") || "+919876543210"}`}
                     className="w-[87%] ml-5 bg-[#0066ff] hover:bg-[#0052cc] text-white font-bold py-3.5 px-6 rounded-full transition-all duration-300 flex items-center justify-center gap-2.5 shadow-md shadow-blue-500/20 text-base mb-6 cursor-pointer"
                   >
-                    <svg className="w-8 h-8 fill-current" viewBox="0 0 24 24">
-                      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.27c1.21.49 2.53.76 3.88.76a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.35.27 2.67.76 3.88a1 1 0 01-.27 1.11l-2.37 2.37z" />
-                    </svg>
+                    <FaPhoneAlt className="w-8 h-8" />
                     <span>{supportCard.phone || "+91 98765 43210"}</span>
                   </a>
 
                   {/* EMAIL & WORKING HOURS */}
                   <div className="space-y-3 ml-5 pt-2 pb-6 border-b border-slate-200/80">
                     <div className="flex items-center gap-3 text-slate-700 text-sm sm:text-sm font-medium">
-                      <svg className="w-8 h-8 text-[#0066ff] shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
+                      <FiMail className="w-8 h-8 text-[#0066ff] shrink-0" strokeWidth={2} />
                       <span className="truncate">{supportCard.email || "support@insurewise.com"}</span>
                     </div>
 
                     <div className="flex items-center gap-3 text-slate-700 text-sm sm:text-sm font-medium">
-                      <svg className="w-8 h-8 text-[#0066ff] shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                      <FiClock className="w-8 h-8 text-[#0066ff] shrink-0" strokeWidth={2} />
                       <span>{supportCard.hours || "Mon - Sat, 9:00 AM - 6:00 PM"}</span>
                     </div>
                   </div>
@@ -201,7 +199,7 @@ export default function Faq() {
                 </div>
 
               </div>
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>

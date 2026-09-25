@@ -3,6 +3,7 @@
 import React from "react";
 import Bannerpage from "./components/shared/Bannerpage";
 import { site } from "@/data";
+import { FiArrowRight } from "react-icons/fi";
 
 export default function NotFound() {
   const notFoundData = (site as any)?.notFound;
@@ -92,19 +93,7 @@ export default function NotFound() {
             className="inline-flex items-center justify-center gap-2.5 bg-[#0066ff] hover:bg-[#0052cc] text-white font-bold text-sm sm:text-sm px-7 py-3.5 rounded-xl shadow-lg shadow-blue-500/20 hover:shadow-blue-500/35 transition-all duration-300 group"
           >
             <span>{buttonLabel}</span>
-            <svg
-              className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
+            <FiArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
           </a>
         </div>
       </section>

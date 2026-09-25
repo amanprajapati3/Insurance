@@ -6,33 +6,28 @@ import {
   FaArrowRight,
   FaBriefcase,
   FaBuilding,
+  FaChartLine,
   FaCheckCircle,
   FaClock,
   FaEnvelope,
   FaFileUpload,
   FaGraduationCap,
   FaHeart,
+  FaLeaf,
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaShieldAlt,
   FaUsers,
 } from "react-icons/fa";
 import Bannerpage from "../../shared/Bannerpage";
+import ScrollReveal from "../../shared/ScrollReveal";
 import type { InsuranceJobItem } from "@/data";
 
 type CareerDetailProps = {
   job: InsuranceJobItem;
 };
 
-const benefitIcons = [FaBriefcase, FaChartIcon, FaShieldAlt, FaChartIcon, FaUsers, FaGraduationCap, FaHeart, FaLeaf];
-
-function FaChartIcon({ className }: { className?: string }) {
-  return <FaBriefcase className={className} />;
-}
-
-function FaLeaf({ className }: { className?: string }) {
-  return <FaHeart className={className} />;
-}
+const benefitIcons = [FaBriefcase, FaChartLine, FaShieldAlt, FaChartLine, FaUsers, FaGraduationCap, FaHeart, FaLeaf];
 
 export default function CareerDetail({ job }: CareerDetailProps) {
   const [submitted, setSubmitted] = useState(false);
@@ -49,14 +44,15 @@ export default function CareerDetail({ job }: CareerDetailProps) {
         title="Career Details"
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Career Details" },
+          { label: "Career", href: "/career" },
+          { label: job.title },
         ]}
         bgImage="/insurance_img/online-insurance-concept-insurance-assurance-icons-including-family-health-real-estate-car-financial-risk-management-concept-online-insurance.jpg"
       />
 
       <main className="bg-[#f7faff] py-8 md:py-12">
         <div className="mx-auto grid max-w-300 items-start gap-4 px-4 sm:px-0 lg:grid-cols-[minmax(0,2fr)_minmax(280px,1fr)] ">
-          <article className="rounded-[10px] bg-white px-5 py-6 shadow-[0_8px_28px_rgba(8,43,94,0.06)] sm:px-7 sm:py-7">
+          <ScrollReveal direction="left" className="rounded-[10px] bg-white px-5 py-6 shadow-[0_8px_28px_rgba(8,43,94,0.06)] sm:px-7 sm:py-7">
             <div className="border-b border-slate-200 pb-5">
               <div className="mb-3 flex flex-wrap gap-2">
                 <span className="rounded-full bg-[#0875e1] px-3 py-1 text-[13px] font-extrabold text-white">{job.type}</span>
@@ -100,9 +96,9 @@ export default function CareerDetail({ job }: CareerDetailProps) {
                 })}
               </div>
             </section>
-          </article>
+          </ScrollReveal>
 
-          <aside className="space-y-3 lg:sticky lg:top-6">
+          <ScrollReveal direction="right" className="space-y-3 lg:sticky lg:top-6">
             <section className="rounded-[10px] bg-[#edf5ff] p-5 sm:p-6">
               <h2 className="text-lg font-bold sm:text-2xl text-[#082b5e]">Apply for This Position</h2>
               <p className="mt-1 text-[15px] leading-relaxed text-slate-500">Fill in the details below to apply for this job.</p>
@@ -143,7 +139,7 @@ export default function CareerDetail({ job }: CareerDetailProps) {
                 <p className="text-[14px] text-slate-500">Our HR team is here to help you.</p>
               </div>
             </section>
-          </aside>
+          </ScrollReveal>
         </div>
       </main>
     </>

@@ -1,9 +1,12 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Bannerpage from "../../shared/Bannerpage";
 import Ctabanner2 from "../../shared/Ctabanner2";
+import ScrollReveal from "../../shared/ScrollReveal";
 import { site } from "@/data";
+import { FiArrowRight } from "react-icons/fi";
 
 export default function Mission() {
   const missionData = (site as any)?.mission;
@@ -59,7 +62,7 @@ export default function Mission() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             
             {/* LEFT CONTENT */}
-            <div className="flex flex-col items-start space-y-4">
+            <ScrollReveal direction="left" className="flex flex-col items-start space-y-4">
               <div className="flex items-center gap-2">
                 <span className="text-sm sm:text-sm font-bold tracking-wider text-[#1a73e8] uppercase">
                   {vision.subtitle}
@@ -81,28 +84,18 @@ export default function Mission() {
                 className="inline-flex items-center gap-2 bg-[#1a73e8] hover:bg-[#1557b0] text-white font-bold text-sm sm:text-sm px-6 py-3 rounded-full shadow-md transition-all duration-300 mt-2"
               >
                 <span>{vision.buttonLabel}</span>
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
+                <FiArrowRight className="w-4 h-4" strokeWidth={2.5} />
               </a>
-            </div>
+            </ScrollReveal>
 
             {/* RIGHT IMAGE WITH OVERLAY TEXT */}
-            <div className="relative w-full h-[260px] sm:h-[340px] lg:h-[380px] rounded-2xl overflow-hidden shadow-lg border border-slate-100">
-              <img
+            <ScrollReveal direction="right" className="relative w-full h-[260px] sm:h-[340px] lg:h-[380px] rounded-2xl overflow-hidden shadow-lg border border-slate-100">
+              <Image
                 src={vision.image}
                 alt="Our Vision"
-                className="w-full h-full object-cover object-center"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               {vision.imageOverlayText && (
@@ -112,7 +105,7 @@ export default function Mission() {
                   </span>
                 </div>
               )}
-            </div>
+            </ScrollReveal>
 
           </div>
         </section>
@@ -122,11 +115,13 @@ export default function Mission() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             
             {/* LEFT IMAGE WITH OVERLAY TEXT */}
-            <div className="relative w-full h-[260px] sm:h-[340px] lg:h-[380px] rounded-2xl overflow-hidden shadow-lg border border-slate-100 order-2 lg:order-1">
-              <img
+            <ScrollReveal direction="left" className="relative w-full h-[260px] sm:h-[340px] lg:h-[380px] rounded-2xl overflow-hidden shadow-lg border border-slate-100 order-2 lg:order-1">
+              <Image
                 src={mission.image}
                 alt="Our Mission"
-                className="w-full h-full object-cover object-center"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-black/50 via-transparent to-transparent" />
               {mission.imageOverlayText && (
@@ -136,10 +131,10 @@ export default function Mission() {
                   </span>
                 </div>
               )}
-            </div>
+            </ScrollReveal>
 
             {/* RIGHT CONTENT */}
-            <div className="flex flex-col items-start space-y-4 order-1 lg:order-2">
+            <ScrollReveal direction="right" className="flex flex-col items-start space-y-4 order-1 lg:order-2">
               <div className="flex items-center gap-2">
                 <span className="text-sm sm:text-sm font-bold tracking-wider text-[#1a73e8] uppercase">
                   {mission.subtitle}
@@ -161,21 +156,9 @@ export default function Mission() {
                 className="inline-flex items-center gap-2 bg-[#082b5e] hover:bg-[#061e42] text-white font-bold text-sm sm:text-sm px-6 py-3 rounded-full shadow-md transition-all duration-300 mt-2"
               >
                 <span>{mission.buttonLabel}</span>
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
+                <FiArrowRight className="w-4 h-4" strokeWidth={2.5} />
               </a>
-            </div>
+            </ScrollReveal>
 
           </div>
         </section>

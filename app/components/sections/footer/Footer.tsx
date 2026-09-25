@@ -195,7 +195,7 @@ export default function Footer() {
                   key={src}
                   className="relative aspect-square overflow-hidden w-[130px] h-[90px] rounded-lg"
                 >
-                  <Image src={src} alt="" fill className=" h-fit w-fit " />
+                  <Image src={src} alt="" fill sizes="130px" className=" h-fit w-fit " />
                 </div>
               ))}
             </div>

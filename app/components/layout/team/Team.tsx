@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Bannerpage from "../../shared/Bannerpage";
 import {
   FaFacebookF,
@@ -12,6 +13,7 @@ import {
 } from "react-icons/fa";
 import { site, type InsuranceTeamData } from "@/data";
 import Link from "next/link";
+import ScrollReveal from "../../shared/ScrollReveal";
 
 const SOCIAL_ICONS: Record<
   string,
@@ -61,7 +63,7 @@ export default function Team() {
       <section className="bg-slate-50/60 py-8 md:py-12">
         <div className="container mx-auto px-4 sm:px-0 lg:px-12">
           {/* SECTION HEADER (CENTERED) */}
-          <div className="text-center max-w-2xl mx-auto mb-8">
+          <ScrollReveal direction="up" className="text-center max-w-2xl mx-auto mb-8">
             <div className="inline-flex items-center justify-center gap-2 mb-1">
               <span className="text-sm sm:text-sm font-bold tracking-widest text-[#1a73e8] uppercase">
                 {header.subtitle}
@@ -77,22 +79,27 @@ export default function Team() {
             <p className="text-slate-600 text-sm sm:text-sm lg:text-base leading-relaxed">
               {header.description}
             </p>
-          </div>
+          </ScrollReveal>
 
           {/* TEAM CARDS GRID (1 COL PHONE / 2 COLS TABLET & DESKTOP) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {members.map((member) => (
-              <div
+            {members.map((member, index) => (
+              <ScrollReveal
                 key={member.id}
+                direction="up"
+                index={index}
+                staggerChildren={0.1}
                 className="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col md:flex-row"
               >
                 {/* LEFT IMAGE (top on mobile) */}
-                <div className="md:w-2/5 shrink-0 bg-[#071d3d] overflow-hidden">
-                  <Link href={`/team/${member.slug}`}>
-                  <img
+                <div className="relative md:w-2/5 shrink-0 bg-[#071d3d] overflow-hidden aspect-4/3 md:aspect-auto md:min-h-full">
+                  <Link href={`/team/${member.slug}`} className="relative block w-full h-full">
+                  <Image
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover object-center aspect-4/3 md:aspect-auto md:min-h-full transition-transform duration-500 hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover object-center transition-transform duration-500 hover:scale-105"
                   />
                   </Link>
                 </div>
@@ -134,7 +141,7 @@ export default function Team() {
                     })}
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

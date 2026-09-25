@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Bannerpage from "../../shared/Bannerpage";
 import Ctabanner2 from "../../shared/Ctabanner2";
+import ScrollReveal from "../../shared/ScrollReveal";
 import { site } from "@/data";
 
 export default function Award() {
@@ -99,7 +101,7 @@ export default function Award() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-12">
           
           {/* SECTION HEADER */}
-          <div className="text-center max-w-2xl mx-auto mb-8">
+          <ScrollReveal direction="up" className="text-center max-w-2xl mx-auto mb-8">
             <div className="inline-flex items-center justify-center gap-2 mb-1">
               <span className="text-sm sm:text-sm font-bold tracking-widest text-[#1a73e8] uppercase">
                 {header.subtitle}
@@ -115,21 +117,26 @@ export default function Award() {
             <p className="text-slate-600 text-sm sm:text-sm lg:text-base leading-relaxed">
               {header.description}
             </p>
-          </div>
+          </ScrollReveal>
 
           {/* AWARDS GRID (3 COLUMNS x 2 ROWS) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-5">
-            {awardsList.map((item: any) => (
-              <div
+            {awardsList.map((item: any, index: number) => (
+              <ScrollReveal
                 key={item.id}
+                direction="up"
+                index={index}
+                staggerChildren={0.1}
                 className="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-row items-stretch min-h-[170px]"
               >
                 {/* LEFT DARK NAVY TROPHY CONTAINER */}
                 <div className="w-1/3 min-w-[160px] bg-[#071d3d]  flex items-center justify-center shrink-0 relative overflow-hidden">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full  min-w-[120px] drop-shadow-lg"
+                    fill
+                    sizes="(max-width: 640px) 33vw, (max-width: 1024px) 33vw, 25vw"
+                    className="min-w-[120px] drop-shadow-lg"
                   />
                 </div>
 
@@ -147,7 +154,7 @@ export default function Award() {
                     {item.description}
                   </p>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 

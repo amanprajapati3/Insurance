@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -25,6 +26,7 @@ import {
   FaWallet,
 } from "react-icons/fa";
 import Bannerpage from "../../shared/Bannerpage";
+import ScrollReveal from "../../shared/ScrollReveal";
 import { site, type InsurancePlanItem } from "@/data";
 
 type InsurancePlanDetailProps = {
@@ -162,7 +164,7 @@ export default function InsurancePlanDetail({ plan }: InsurancePlanDetailProps) 
         <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-7xl">
 
           {/* MOBILE / TABLET PLAN SELECTOR */}
-          <div className="mb-6 lg:hidden">
+          <ScrollReveal direction="up" className="mb-6 lg:hidden">
             <div className="bg-white rounded-2xl border border-slate-200/80 p-4 sm:p-5 shadow-2xs">
               <label
                 htmlFor="plan-selector"
@@ -186,12 +188,12 @@ export default function InsurancePlanDetail({ plan }: InsurancePlanDetailProps) 
                 <FaChevronDown className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-xs text-[#0066ff]" />
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
             {/* LEFT SIDEBAR */}
-            <aside className="hidden lg:block lg:col-span-4 xl:col-span-3 space-y-6 lg:sticky lg:top-6">
+            <ScrollReveal direction="left" className="hidden lg:block lg:col-span-4 xl:col-span-3 space-y-6 lg:sticky lg:top-6">
               
               {/* NAVIGATION WIDGET */}
               <div className="bg-white rounded-2xl border border-slate-200/80 p-3 shadow-2xs">
@@ -259,10 +261,10 @@ export default function InsurancePlanDetail({ plan }: InsurancePlanDetailProps) 
                 </Link>
               </div>
 
-            </aside>
+            </ScrollReveal>
 
             {/* MAIN CONTENT AREA */}
-            <article className="lg:col-span-8 xl:col-span-9 space-y-10">
+            <ScrollReveal direction="right" className="lg:col-span-8 xl:col-span-9 space-y-10">
               
               {/* TOP HEADER + HERO IMAGE + PILLARS */}
               <div className="">
@@ -312,11 +314,13 @@ export default function InsurancePlanDetail({ plan }: InsurancePlanDetailProps) 
 
                   {/* RIGHT PLAN IMAGE */}
                   <div className="md:col-span-5">
-                    <div className="rounded-2xl overflow-hidden shadow-xs aspect-4/3 sm:aspect-1/1 bg-slate-100">
-                      <img
+                    <div className="relative rounded-2xl overflow-hidden shadow-xs aspect-4/3 sm:aspect-1/1 bg-slate-100">
+                      <Image
                         src={plan.image || "/insurance_img/life-plan.jpg"}
                         alt={plan.title}
-                        className="w-full h-full object-cover object-center"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 40vw"
+                        className="object-cover object-center"
                       />
                     </div>
                   </div>
@@ -443,14 +447,16 @@ export default function InsurancePlanDetail({ plan }: InsurancePlanDetailProps) 
 
                   {/* RIGHT IMAGE CUTOUT */}
                   <div className="lg:col-span-3 block">
-                    <div className="w-full h-[180px] sm:rounded-r-2xl overflow-hidden shadow-xs">
-                      <img
+                    <div className="relative w-full h-[180px] sm:rounded-r-2xl overflow-hidden shadow-xs">
+                      <Image
                         src={ctaBanner.image}
                         alt="Safer Tomorrow"
-                        className="w-full h-full object-cover object-center"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 25vw"
+                        className="object-cover object-center"
                         onError={(e) => {
                           // Fallback image if custom image doesn't exist
-                          e.currentTarget.src =
+                          (e.target as HTMLImageElement).src =
                             plan.image || "/insurance_img/life-plan.jpg";
                         }}
                       />
@@ -461,7 +467,7 @@ export default function InsurancePlanDetail({ plan }: InsurancePlanDetailProps) 
                 </div>
               </div>
 
-            </article>
+            </ScrollReveal>
 
           </div>
         </div>

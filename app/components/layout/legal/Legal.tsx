@@ -2,6 +2,7 @@
 
 import React from "react";
 import Bannerpage from "../../shared/Bannerpage";
+import ScrollReveal from "../../shared/ScrollReveal";
 import { site, type InsuranceLegalSectionKey } from "@/data";
 
 interface LegalProps {
@@ -39,19 +40,19 @@ export default function Legal({ section = "privacy" }: LegalProps) {
           <div className=" mx-auto space-y-10">
             {/* 8 CONTENT POINTS */}
             {points.map((point, index) => (
-              <div key={index}>
+              <ScrollReveal key={index} direction="up" index={index} staggerChildren={0.1}>
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#082b5e] tracking-tight leading-tight mb-3">
                   {point.heading}
                 </h2>
                 <p className="text-black text-sm sm:text-base leading-relaxed">
                   {point.description}
                 </p>
-              </div>
+              </ScrollReveal>
             ))}
 
             {/* CONTACT US */}
             {contact && (
-              <div className="pt-6 border-t border-gray-200">
+              <ScrollReveal direction="up" delay={0.1} className="pt-6 border-t border-gray-200">
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#082b5e] tracking-tight leading-tight mb-3">
                   {contact.heading}
                 </h2>
@@ -81,7 +82,7 @@ export default function Legal({ section = "privacy" }: LegalProps) {
                 <p className="mt-4 text-sm text-gray-600">
                   Last Updated: {contact.lastUpdated}
                 </p>
-              </div>
+              </ScrollReveal>
             )}
           </div>
         </div>

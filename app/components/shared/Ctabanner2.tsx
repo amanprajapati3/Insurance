@@ -2,6 +2,8 @@
 
 import React from "react";
 import { site } from "@/data";
+import ScrollReveal from "./ScrollReveal";
+import { FiLock } from "react-icons/fi";
 
 export default function Ctabanner2({
   className = "",
@@ -28,42 +30,36 @@ export default function Ctabanner2({
 
           <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-8">
             {/* LEFT TITLE WITH TROPHY ICON */}
-            <div className="flex items-center gap-4 max-w-md shrink-0">
+            <ScrollReveal direction="left" className="flex items-center gap-4 max-w-md shrink-0">
               <div className="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0 text-white">
-                <svg
-                  className="w-6 h-6 text-[#1a73e8]"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                  />
-                </svg>
+                <FiLock className="w-6 h-6 text-[#1a73e8]" strokeWidth={2} />
               </div>
               <h3 className="text-lg sm:text-xl max-w-[250px] font-bold text-white leading-tight">
                 {highlightBox.title}
               </h3>
-            </div>
+            </ScrollReveal>
 
             {/* VERTICAL SEPARATOR LINE (Desktop) */}
             <div className="hidden lg:block w-[1px] h-12 bg-blue-400/20" />
 
             {/* MIDDLE DESCRIPTION */}
-            <p className="text-slate-200 text-sm sm:text-sm leading-relaxed max-w-xl">
+            <ScrollReveal
+              direction="up"
+              delay={0.15}
+              className="text-slate-200 text-sm sm:text-sm leading-relaxed max-w-xl"
+            >
               {highlightBox.description}
-            </p>
+            </ScrollReveal>
 
             {/* RIGHT BUTTON */}
-            <a
-              href={highlightBox.buttonLink}
-              className="inline-flex items-center gap-2 bg-[#1a73e8] hover:bg-[#1557b0] text-white font-bold text-sm sm:text-sm px-6 py-3 rounded-full shadow-md transition-all duration-300 whitespace-nowrap shrink-0"
-            >
-              <span>{highlightBox.buttonLabel}</span>
-            </a>
+            <ScrollReveal direction="right" delay={0.15} className="shrink-0">
+              <a
+                href={highlightBox.buttonLink}
+                className="inline-flex items-center gap-2 bg-[#1a73e8] hover:bg-[#1557b0] text-white font-bold text-sm sm:text-sm px-6 py-3 rounded-full shadow-md transition-all duration-300 whitespace-nowrap shrink-0"
+              >
+                <span>{highlightBox.buttonLabel}</span>
+              </a>
+            </ScrollReveal>
           </div>
         </div>
       </div>

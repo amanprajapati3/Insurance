@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
 import Bannerpage from "../../shared/Bannerpage";
 import {
   ChevronLeft,
@@ -11,6 +12,7 @@ import {
   ZoomIn,
 } from "lucide-react";
 import { site } from "@/data";
+import ScrollReveal from "../../shared/ScrollReveal";
 
 interface LightboxItem {
   id: number;
@@ -88,7 +90,7 @@ function SectionHeading({
   description: string;
 }) {
   return (
-    <div className="mb-10 md:mb-12">
+    <ScrollReveal direction="up" className="mb-10 md:mb-12">
       <div className="flex items-center gap-3 mb-1">
         <span className="text-sm sm:text-sm font-bold tracking-widest text-[#1a73e8] uppercase">
           Explore
@@ -106,7 +108,7 @@ function SectionHeading({
       <p className="text-slate-600 text-sm sm:text-sm lg:text-base leading-relaxed mt-3 max-w-2xl">
         {description}
       </p>
-    </div>
+    </ScrollReveal>
   );
 }
 
@@ -213,13 +215,15 @@ export default function Gallery() {
           className="relative max-w-5xl w-full"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[75vh] bg-black rounded-xl overflow-hidden">
+          <div className="relative w-full h-[60vh] sm:h-[70vh] lg:h-[75vh]  rounded-xl overflow-hidden">
             {kind === "image" ? (
-              <img
+              <Image
                 key={items[index].id}
                 src={items[index].src}
                 alt={items[index].title}
-                className="w-full h-full object-contain"
+                fill
+                sizes="100vw"
+                className="object-contain"
               />
             ) : (
               <VideoPlayer
@@ -269,22 +273,30 @@ export default function Gallery() {
 
           {/* IMAGES GRID */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
-            {images.map((item) => (
-              <button
+            {images.map((item, index) => (
+              <ScrollReveal
                 key={item.id}
-                type="button"
-                className="group relative overflow-hidden rounded-2xl cursor-pointer aspect-[4/3] bg-[#081f44] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a73e8]"
-                onClick={() =>
-                  setImageIndex(
-                    images.findIndex((img) => img.id === item.id),
-                  )
-                }
-                aria-label={`View ${item.title}`}
+                direction="up"
+                index={index}
+                staggerChildren={0.1}
+                className="group relative overflow-hidden rounded-2xl cursor-pointer aspect-[4/3] bg-[#081f44]"
               >
-                <img
+                <button
+                  type="button"
+                  className="relative block w-full h-full text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a73e8]"
+                  onClick={() =>
+                    setImageIndex(
+                      images.findIndex((img) => img.id === item.id),
+                    )
+                  }
+                  aria-label={`View ${item.title}`}
+                >
+                <Image
                   src={item.src}
                   alt={item.title}
-                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
                 />
 
                 <div className="absolute inset-0 bg-[#081f44]/0 group-hover:bg-[#081f44]/50 transition-colors duration-300" />
@@ -296,7 +308,8 @@ export default function Gallery() {
                 <div className="absolute bottom-3 right-3 w-10 h-10 bg-[#1a73e8] text-white rounded-full flex items-center justify-center shadow-lg opacity-0 translate-y-2 scale-90 group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 transition-all duration-300">
                   <ZoomIn className="w-5 h-5" />
                 </div>
-              </button>
+                </button>
+              </ScrollReveal>
             ))}
           </div>
 
@@ -309,8 +322,14 @@ export default function Gallery() {
               />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
-                {videoSection.items.map((item) => (
-                  <div key={item.id} className="group">
+                {videoSection.items.map((item, index) => (
+                  <ScrollReveal
+                    key={item.id}
+                    direction="up"
+                    index={index}
+                    staggerChildren={0.4}
+                    className="group"
+                  >
                     {/* VIDEO THUMBNAIL CARD */}
                     <button
                       type="button"
@@ -324,7 +343,7 @@ export default function Gallery() {
                       }
                       aria-label={`Play ${item.title}`}
                     >
-                      <img
+                      <Image
                         src={
                           item.thumbnail ||
                           (getYoutubeId(item.src)
@@ -332,7 +351,9 @@ export default function Gallery() {
                             : "")
                         }
                         alt={item.title}
-                        className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                       />
 
                       {/* OVERLAY */}
@@ -361,7 +382,7 @@ export default function Gallery() {
                         </p>
                       )}
                     </div>
-                  </div>
+                  </ScrollReveal>
                 ))}
               </div>
             </div>

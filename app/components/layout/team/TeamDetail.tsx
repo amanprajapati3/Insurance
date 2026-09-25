@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   FaArrowLeft,
@@ -22,6 +23,7 @@ import {
 } from "react-icons/fa";
 import { site, type InsuranceTeamMember } from "@/data";
 import Bannerpage from "../../shared/Bannerpage";
+import ScrollReveal from "../../shared/ScrollReveal";
 
 const SOCIAL_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   facebook: FaFacebookF,
@@ -107,7 +109,8 @@ export default function TeamDetail({ member }: TeamDetailProps) {
         title="Team Detail"
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "Team Detail" },
+          { label: "Our Team", href: "/team" },
+          { label: name },
         ]}
         bgImage={teamBanner.bgImage}
       />
@@ -119,12 +122,14 @@ export default function TeamDetail({ member }: TeamDetailProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start pb-12 border-b border-slate-200/80">
             
             {/* LEFT COLUMN: IMAGE CARD WITH QUOTE OVERLAY */}
-            <div className="lg:col-span-5 relative">
+            <ScrollReveal direction="left" className="lg:col-span-5 relative">
               <div className="relative rounded-3xl overflow-hidden shadow-sm aspect-4/5 sm:aspect-3/4 lg:aspect-4/5 max-h-[520px] w-full bg-slate-100">
-                <img
+                <Image
                   src={member?.image || "/insurance_img/team-1.jpg"}
                   alt={name}
-                  className="w-full h-full object-cover object-center"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                  className="object-cover object-center"
                 />
                 
                 {/* BLUE QUOTE OVERLAY BOX */}
@@ -135,10 +140,10 @@ export default function TeamDetail({ member }: TeamDetailProps) {
                   </p>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* RIGHT COLUMN: HEADER + CONTACT + ABOUT + PILLARS */}
-            <div className="lg:col-span-7 flex flex-col justify-between h-full">
+            <ScrollReveal direction="right" className="lg:col-span-7 flex flex-col justify-between h-full">
               
               {/* HEADER & CONTACT GRID */}
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 pb-3 border-b border-slate-200/80">
@@ -265,7 +270,7 @@ export default function TeamDetail({ member }: TeamDetailProps) {
 
               </div>
 
-            </div>
+            </ScrollReveal>
 
           </div>
 
@@ -273,7 +278,7 @@ export default function TeamDetail({ member }: TeamDetailProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 pt-12">
             
             {/* LEFT COLUMN: EXPERIENCE & JOURNEY TIMELINE */}
-            <div className="lg:col-span-6">
+            <ScrollReveal direction="left" className="lg:col-span-6">
               <div className="flex items-center gap-2 mb-6">
                 <h2 className="text-xl sm:text-3xl font-bold text-[#082b5e]">
                   Experience &amp; Journey
@@ -302,10 +307,10 @@ export default function TeamDetail({ member }: TeamDetailProps) {
                   </div>
                 ))}
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* RIGHT COLUMN: AREAS OF EXPERTISE & QUOTE CARD */}
-            <div className="lg:col-span-6">
+            <ScrollReveal direction="right" className="lg:col-span-6">
               <div className="flex items-center gap-2 mb-6">
                 <h2 className="text-xl sm:text-3xl font-bold text-[#082b5e]">
                   Areas of Expertise
@@ -349,19 +354,19 @@ export default function TeamDetail({ member }: TeamDetailProps) {
                 </div>
               </div>
 
-            </div>
+            </ScrollReveal>
 
           </div>
 
           {/* BACK TO TEAM LINK */}
-          <div className="mt-12 pt-6 border-t border-slate-100">
+          <ScrollReveal direction="up" className="mt-12 pt-6 border-t border-slate-100">
             <Link
               href="/team"
               className="inline-flex items-center gap-2 text-sm sm:text-sm font-bold text-[#0066ff] hover:text-[#082b5e] transition-colors"
             >
               <FaArrowLeft className="text-sm" /> Back to Our Team
             </Link>
-          </div>
+          </ScrollReveal>
 
         </div>
       </main>

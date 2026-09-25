@@ -1,6 +1,8 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
+import ScrollReveal from "./ScrollReveal";
 
 export interface BreadcrumbItem {
   label: string;
@@ -17,7 +19,7 @@ export interface BannerPageProps {
 export default function Bannerpage({
   title = "About Us",
   breadcrumbs = [{ label: "Home", href: "/" }, { label: "About Us" }],
-  bgImage = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=2000&q=80",
+  bgImage = "/insurance_img/online-insurance-concept-insurance-assurance-icons-including-family-health-real-estate-car-financial-risk-management-concept-online-insurance.jpg",
   className = "",
 }: BannerPageProps) {
   return (
@@ -26,10 +28,13 @@ export default function Bannerpage({
     >
       {/* 1. BACKGROUND IMAGE */}
       <div className="absolute inset-0 w-full h-full">
-        <img
+        <Image
           src={bgImage}
           alt={title}
-          className="w-full h-full object-cover object-center"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+          preload
         />
         {/* White / 80 - 85% Overlay Layer for optimal contrast */}
         <div className="absolute inset-0 bg-white/85 backdrop-blur-[1px]" />
@@ -117,7 +122,7 @@ export default function Bannerpage({
       </div>
 
       {/* 6. MAIN BANNER CONTENT CONTAINER */}
-      <div className="relative z-20 container mx-auto px-6 sm:px-12 lg:px-20 py-20 sm:py-24 lg:py-32 flex flex-col justify-center min-h-[280px] sm:min-h-[340px]">
+      <ScrollReveal direction="up" className="relative z-20 container mx-auto px-6 sm:px-12 lg:px-20 py-20 sm:py-24 lg:py-32 flex flex-col justify-center min-h-[280px] sm:min-h-[340px]">
         {/* PAGE TITLE */}
         <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold  text-[#081f44] tracking-tight leading-none mb-3">
           {title}
@@ -155,7 +160,7 @@ export default function Bannerpage({
             })}
           </nav>
         )}
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

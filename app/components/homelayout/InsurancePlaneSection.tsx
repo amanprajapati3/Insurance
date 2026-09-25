@@ -1,7 +1,45 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { site, SectionProps, InsurancePlansData } from "@/data/index";
+import ScrollReveal from "../shared/ScrollReveal";
+import {
+  FiArrowLeft,
+  FiArrowRight,
+  FiBriefcase,
+  FiHome,
+  FiInfo,
+  FiLock,
+  FiSend,
+  FiUser,
+} from "react-icons/fi";
+import {
+  FaBuilding,
+  FaCar,
+  FaHeartbeat,
+  FaPaw,
+  FaShip,
+  FaStethoscope,
+  FaUmbrella,
+} from "react-icons/fa";
+import { BsShieldCheck } from "react-icons/bs";
+
+const PLAN_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  umbrella: FaUmbrella,
+  car: FaCar,
+  home: FiHome,
+  plane: FiSend,
+  shield: BsShieldCheck,
+  briefcase: FiBriefcase,
+  paw: FaPaw,
+  lock: FiLock,
+  ship: FaShip,
+  user: FiUser,
+  stethoscope: FaStethoscope,
+  building: FaBuilding,
+  "heart-pulse": FaHeartbeat,
+};
 
 // Helper component for Plan Icons matching exact circular blue styling
 function PlanIcon({
@@ -11,206 +49,8 @@ function PlanIcon({
   name: string;
   className?: string;
 }) {
-  switch (name) {
-    case "umbrella":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 3a9 9 0 00-9 9h18a9 9 0 00-9-9zM12 12v7a2 2 0 01-4 0"
-          />
-        </svg>
-      );
-    case "car":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M8 17a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm8 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM3 11l2-5h14l2 5M5 11h14v4H5v-4z"
-          />
-        </svg>
-      );
-    case "home":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-          />
-        </svg>
-      );
-    case "plane":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-          />
-        </svg>
-      );
-    case "shield":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-          />
-        </svg>
-      );
-    case "briefcase":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-          />
-        </svg>
-      );
-    case "paw":
-      return (
-        <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 13a3.5 3.5 0 00-3.5 3.5c0 1.93 2.07 3.5 3.5 3.5s3.5-1.57 3.5-3.5A3.5 3.5 0 0012 13zm-5.5-4a2 2 0 100-4 2 2 0 000 4zm11 0a2 2 0 100-4 2 2 0 000 4zm-8.5-2a2 2 0 100-4 2 2 0 000 4zm6 0a2 2 0 100-4 2 2 0 000 4z" />
-        </svg>
-      );
-    case "lock":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-          />
-        </svg>
-      );
-    case "ship":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M13 10V3L4 14h7v7l9-11h-7z"
-          />
-        </svg>
-      );
-    case "user":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-          />
-        </svg>
-      );
-    case "stethoscope":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.684a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-          />
-        </svg>
-      );
-    case "building":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m0 0v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-          />
-        </svg>
-      );
-    default:
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-      );
-  }
+  const Icon = PLAN_ICONS[name] || FiInfo;
+  return <Icon className={className} />;
 }
 
 export default function InsurancePlanSection({
@@ -322,12 +162,10 @@ export default function InsurancePlanSection({
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12">
         {/* SECTION HEADER */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-5">
-          <div className="lg:col-span-7 text-white">
+          <ScrollReveal direction="left" className="lg:col-span-7 text-white">
             {/* BADGE */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0066ff] text-white text-sm sm:text-sm font-bold mb-1 shadow-sm">
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-              </svg>
+              <FiInfo className="w-4 h-4" />
               <span>{badge}</span>
             </div>
 
@@ -338,36 +176,25 @@ export default function InsurancePlanSection({
                 {highlightedTitle}
               </span>
             </h2>
-          </div>
+          </ScrollReveal>
 
           {/* DESCRIPTION */}
-          <div className="lg:col-span-5">
+          <ScrollReveal direction="right" className="lg:col-span-5">
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
               {description}
             </p>
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* CAROUSEL WRAPPER WITH NAVIGATION BUTTONS */}
-        <div className="relative flex items-center">
+        <ScrollReveal direction="up" className="relative flex items-center">
           {/* LEFT SLIDER ARROW (Only visible on Tablet & Desktop) */}
           <button
             onClick={handlePrev}
             aria-label="Previous Page"
             className="hidden sm:flex absolute -left-14 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#cce3ff] hover:bg-[#b3d6ff] text-[#0066ff] items-center justify-center transition-all duration-300 shadow-md cursor-pointer hover:scale-105 active:scale-95"
           >
-            <svg
-              className="w-6 h-6 stroke-current"
-              fill="none"
-              strokeWidth="2.5"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
+            <FiArrowLeft className="w-6 h-6" strokeWidth={2.5} />
           </button>
 
           {/* SLIDE CARDS CONTAINER */}
@@ -413,16 +240,7 @@ export default function InsurancePlanSection({
                           className="inline-flex items-center gap-2 text-[#0066ff] font-bold text-sm hover:text-[#0047b3] transition-colors group"
                         >
                           <span>{plan.button?.label || "Learn More"}</span>
-                          <svg
-                            className="w-4 h-4 fill-current transition-transform duration-200 group-hover:translate-x-1"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
+                          <FiArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                         </a>
                       </div>
                     </div>
@@ -442,10 +260,12 @@ export default function InsurancePlanSection({
                       </svg>
 
                       {/* Dynamic Image */}
-                      <img
+                      <Image
                         src={plan.image}
                         alt={plan.title}
-                        className="w-full h-full object-cover object-center"
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover object-center"
                       />
                     </div>
                   </div>
@@ -460,20 +280,9 @@ export default function InsurancePlanSection({
             aria-label="Next Page"
             className="hidden sm:flex absolute -right-14 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#cce3ff] hover:bg-[#b3d6ff] text-[#0066ff] items-center justify-center transition-all duration-300 shadow-md cursor-pointer hover:scale-105 active:scale-95"
           >
-            <svg
-              className="w-6 h-6 stroke-current"
-              fill="none"
-              strokeWidth="2.5"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+            <FiArrowRight className="w-6 h-6" strokeWidth={2.5} />
           </button>
-        </div>
+        </ScrollReveal>
 
         {/* DYNAMIC DOTS PAGINATION (Shows for ALL screens, calculated dynamically) */}
         {totalPages > 1 && (

@@ -1,15 +1,14 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { site, SectionProps, InsurancePartnersData } from "@/data/index";
+import ScrollReveal from "../shared/ScrollReveal";
+import { FaHandshake } from "react-icons/fa";
 
 // Helper Component for Handshake / Partner Icon
 function PartnerBadgeIcon({ className = "w-4 h-4" }: { className?: string }) {
-  return (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-      <path d="M18.364 4.636a1 1 0 010 1.414l-2.121 2.121a1 1 0 01-1.414 0L12 5.343l-2.829 2.828a1 1 0 01-1.414 0L5.636 6.05a1 1 0 011.414-1.414l1.414 1.414L11.293 3.22a1 1 0 011.414 0l2.829 2.829 1.414-1.414a1 1 0 011.414 0zM2.808 9.879a1 1 0 011.414 0l3.535 3.535a1 1 0 01-1.414 1.414L2.808 11.293a1 1 0 010-1.414zm18.384 0a1 1 0 010 1.414l-3.535 3.535a1 1 0 01-1.414-1.414l3.535-3.535a1 1 0 011.414 0zM8.464 15.536l2.122-2.122a1 1 0 011.414 0l2.122 2.122a1 1 0 01-1.414 1.414L12 16.243l-2.122 2.121a1 1 0 01-1.414-1.414z" />
-    </svg>
-  );
+  return <FaHandshake className={className} />;
 }
 
 export default function Partners({ className = "" }: SectionProps<InsurancePartnersData>) {
@@ -42,7 +41,7 @@ export default function Partners({ className = "" }: SectionProps<InsurancePartn
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* HEADER SECTION */}
-        <div className="flex flex-col items-center text-center mb-8">
+        <ScrollReveal direction="up" className="flex flex-col items-center text-center mb-8">
           
           {/* BADGE */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f2ff] text-[#0066ff] text-sm sm:text-sm font-bold mb-4 shadow-sm">
@@ -59,7 +58,7 @@ export default function Partners({ className = "" }: SectionProps<InsurancePartn
           <p className="text-gray-500 text-sm sm:text-sm md:text-base leading-relaxed max-w-2xl whitespace-pre-line font-medium">
             {description}
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* PARTNERS GRID:
             Mobile (<768px): 2 Columns (grid-cols-2) -> [2, 2, 2, 2, 2]
@@ -67,19 +66,24 @@ export default function Partners({ className = "" }: SectionProps<InsurancePartn
             Desktop (>=1024px): 5 Columns (lg:grid-cols-5) -> [5, 5]
         */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-3 max-w-7xl mx-auto">
-          {partners.map((partner) => (
-            <div
+          {partners.map((partner, index) => (
+            <ScrollReveal
               key={partner.id}
+              direction="up"
+              index={index}
+              staggerChildren={0.08}
               className="bg-white rounded-2xl border border-slate-100 p-5 sm:p-6 flex items-center justify-center min-h-[110px] sm:min-h-[120px] shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 group cursor-pointer"
             >
-              <div className="transition-transform duration-300 group-hover:scale-105">
-                <img
+              <div className="relative w-full h-16 sm:h-24 transition-transform duration-300 group-hover:scale-105">
+                <Image
                   src={partner.logo}
                   alt={partner.name}
-                  className="w-auto h-16 sm:h-24 object-contain max-w-full"
+                  fill
+                  sizes="(max-width: 768px) 40vw, (max-width: 1024px) 20vw, 15vw"
+                  className="object-contain max-w-full"
                 />
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
 

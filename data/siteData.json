@@ -20,6 +20,123 @@
               { "key": "Partners", "component": "InsurancePartners1" },
               { "key": "Blog", "component": "InsuranceBlog1" }
             ]
+          },
+          "about-us": {
+            "components": [
+              { "key": "About", "component": "InsuranceAbout1" },
+              { "key": "Process", "component": "InsuranceProcess1" }
+            ]
+          },
+          "award": {
+            "components": [
+              { "key": "Award", "component": "InsuranceAward1" }
+            ]
+          },
+          "blog": {
+            "components": [
+              { "key": "Blog", "component": "InsuranceBlog1" }
+            ]
+          },
+          "blog/[slug]": {
+            "components": [
+              { "key": "Blog", "component": "InsuranceBlog1" }
+            ]
+          },
+          "career": {
+            "components": [
+              { "key": "Career", "component": "InsuranceCareer1" }
+            ]
+          },
+          "career/[slug]": {
+            "components": [
+              { "key": "Career", "component": "InsuranceCareer1" }
+            ]
+          },
+          "choose": {
+            "components": [
+              { "key": "Choose", "component": "InsuranceChoose1" },
+              { "key": "Process", "component": "InsuranceProcess1" }
+            ]
+          },
+          "contact": {
+            "components": [
+              { "key": "Contact", "component": "InsuranceContact1" }
+            ]
+          },
+          "cookie": {
+            "components": [
+              { "key": "Legal", "component": "InsuranceLegal1" }
+            ]
+          },
+          "disclaimer": {
+            "components": [
+              { "key": "Legal", "component": "InsuranceLegal1" }
+            ]
+          },
+          "faq": {
+            "components": [
+              { "key": "Faq", "component": "InsuranceFaq1" }
+            ]
+          },
+          "gallery": {
+            "components": [
+              { "key": "Gallery", "component": "InsuranceGallery1" }
+            ]
+          },
+          "insurance": {
+            "components": [
+              { "key": "Plans", "component": "InsurancePlans1" }
+            ]
+          },
+          "insurance/[slug]": {
+            "components": [
+              { "key": "Plans", "component": "InsurancePlans1" }
+            ]
+          },
+          "mission": {
+            "components": [
+              { "key": "Mission", "component": "InsuranceMission1" }
+            ]
+          },
+          "partners": {
+            "components": [
+              { "key": "Partners", "component": "InsurancePartners1" }
+            ]
+          },
+          "privacy": {
+            "components": [
+              { "key": "Legal", "component": "InsuranceLegal1" }
+            ]
+          },
+          "quote": {
+            "components": [
+              { "key": "Quote", "component": "InsuranceQuote1" }
+            ]
+          },
+          "sitemap": {
+            "components": [
+              { "key": "Sitemap", "component": "InsuranceSitemap1" }
+            ]
+          },
+          "team": {
+            "components": [
+              { "key": "Team", "component": "InsuranceTeam1" }
+            ]
+          },
+          "team/[slug]": {
+            "components": [
+              { "key": "Team", "component": "InsuranceTeam1" }
+            ]
+          },
+          "terms": {
+            "components": [
+              { "key": "Legal", "component": "InsuranceLegal1" }
+            ]
+          },
+          "testimonial": {
+            "components": [
+              { "key": "Testimonial", "component": "InsuranceTestimonial1" }
+            ]
           }
         }
       }
@@ -209,11 +326,11 @@
               }
             ],
             "image": {
-              "src": "/insurance_img/hand-holding-tablet-with-concept-family.jpg",
+              "src": "/insurance/10.jpg",
               "alt": "Family smiling together"
             },
             "secondaryImage": {
-              "src": "/insurance_img/insurance-concept-insurance-agent-clients-insurance-company-wide-banner-composition-with-bokeh-background-high-quality-photo.jpg",
+              "src": "/insurance/3.jpg",
               "alt": "Insurance advisor meeting with a client"
             },
             "caption": "Protecting What Matters Most.",
@@ -262,7 +379,7 @@
                 "icon": "heart-pulse",
                 "title": "Health Insurance",
                 "description": "Comprehensive health coverage for you and your family, because good health builds brighter tomorrows.",
-                "image": "/insurance_img/health-insurance-web-site-brisk-registration-system.jpg",
+                "image": "/insurance/1.jpg",
                 "features": [
                   "Financial security",
                   "Long-term benefits",
@@ -279,7 +396,7 @@
                 "icon": "car",
                 "title": "Motor Insurance",
                 "description": "Drive with confidence. Get complete protection for your vehicle, on every journey.",
-                "image": "/insurance_img/car-insurance-online-website-computer-screen-insure-snugly.jpg",
+                "image": "/insurance/2.jpg",
                 "features": [
                   "Financial security",
                   "Long-term benefits",
@@ -296,7 +413,7 @@
                 "icon": "home",
                 "title": "Home Insurance",
                 "description": "Protect your home and everything that makes it special from the unexpected.",
-                "image": "/insurance_img/man-holding-house-with-house-icon-screen.jpg",
+                "image": "/insurance/3.jpg",
 
                 "features": [
                   "Financial security",
@@ -314,7 +431,7 @@
                 "icon": "plane",
                 "title": "Travel Insurance",
                 "description": "Explore the world with peace of mind. Stay protected, no matter where your journey takes you.",
-                "image": "/insurance_img/hand-holding-globe-with-word-insurance-itai.jpg",
+                "image": "/insurance/4.jpg",
                 "features": [
                   "Financial security",
                   "Long-term benefits",
@@ -331,7 +448,7 @@
                 "icon": "shield",
                 "title": "Life Insurance",
                 "description": "Secure your family's financial future with customizable term and whole life plans.",
-                "image": "/insurance_img/paper-cut-out-family-home-car-with-hands-businessman.jpg",
+                "image": "/insurance/5.jpg",
                 "features": [
                   "Financial security",
                   "Long-term benefits",
@@ -348,7 +465,7 @@
                 "icon": "briefcase",
                 "title": "Business Insurance",
                 "description": "Safeguard your enterprise, workforce, and commercial assets against operational risks.",
-                "image": "/insurance_img/business-insurance-management-concept.jpg",
+                "image": "/insurance/6.jpg",
                 "features": [
                   "Financial security",
                   "Long-term benefits",
@@ -365,7 +482,7 @@
                 "icon": "paw",
                 "title": "Pet Insurance",
                 "description": "Ensure your furry companions receive the best veterinary care whenever they need it.",
-                "image": "/insurance_img/hand-holding-tablet-with-concept-family.jpg",
+                "image": "/insurance/7.jpg",
 
                 "features": [
                   "Financial security",
@@ -383,7 +500,7 @@
                 "icon": "lock",
                 "title": "Cyber Insurance",
                 "description": "Protect digital assets and sensitive personal data against security breaches and online threats.",
-                "image": "/insurance_img/online-insurance-concept-insurance-assurance-icons-including-family-health-real-estate-car-financial-risk-management-concept-online-insurance.jpg",
+                "image": "/insurance/8.jpg",
 
                 "features": [
                   "Financial security",
@@ -401,7 +518,7 @@
                 "icon": "ship",
                 "title": "Marine Insurance",
                 "description": "Comprehensive protection for cargo, vessels, and marine transport operations worldwide.",
-                "image": "/insurance_img/customer-client-reading-term-agreement-contract-prodigy (1).jpg",
+                "image": "/insurance/9.jpg",
 
                 "features": [
                   "Financial security",
@@ -419,7 +536,7 @@
                 "icon": "user",
                 "title": "Disability Insurance",
                 "description": "Maintain your income stream and lifestyle continuity in case of unforeseen medical leave.",
-                "image": "/insurance_img/man-business-suit-is-sitting-front-laptop-with-man-with-light-bulb-it.jpg",
+                "image": "/insurance/10.jpg",
 
                 "features": [
                   "Financial security",
@@ -437,7 +554,7 @@
                 "icon": "stethoscope",
                 "title": "Critical Illness",
                 "description": "Lump-sum payouts to manage medical treatments and recovery costs for major health events.",
-                "image": "/insurance_img/customer-client-reading-term-agreement-contract-prodigy.jpg",
+                "image": "/insurance/11.jpg",
 
                 "features": [
                   "Financial security",
@@ -455,7 +572,7 @@
                 "icon": "building",
                 "title": "Property Insurance",
                 "description": "Protection for commercial real estate, equipment, and structural investments.",
-                "image": "/insurance_img/happy-business-team-meeting-collaboration-success.jpg",
+                "image": "/insurance/12.jpg",
 
                 "features": [
                   "Financial security",
@@ -1173,7 +1290,9 @@
             "highlightCard": {
               "icon": "badge-percent",
               "title": "Get a Free Quote",
-              "subtitle": "Quick, Simple, Hassle-Free."
+              "subtitle": "Quick, Simple, Hassle-Free.",
+              "videoThumbnail": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+              "videoUrl": "https://www.youtube.com/embed/qjXgpJpSlCc?autoplay=1"
             },
             "bulletPoints": [
               "Personalized insurance solutions for your unique needs.",
@@ -1181,10 +1300,10 @@
             ],
             "button": {
               "label": "Learn More",
-              "href": "/about-us"
+              "href": "/choose"
             },
             "sideImage": {
-              "src": "/insurance_img/customer-client-reading-term-agreement-contract-prodigy.jpg",
+              "src": "/insurance/6.jpg",
               "alt": "Insurance advisor with a family reviewing a policy"
             },
             "floatingBadges": [
@@ -1453,11 +1572,26 @@
               "highlighted": "from Our Blog"
             },
             "desc": "Stay informed with expert tips, industry updates and helpful guides to make better decisions for you and your family.",
+            "expertAdvice": {
+              "title": "Need Expert Advice?",
+              "description": "Our insurance experts are here to help you find the right plan for you and your family.",
+              "phone": "+91 98765 43210",
+              "phoneHref": "tel:+919876543210",
+              "email": "support@insurewise.com",
+              "emailHref": "mailto:support@insurewise.com",
+              "hours": "Mon - Sat, 9:00 AM - 6:00 PM"
+            },
+            "moreInsights": {
+              "title": "More Insights, Straight to You",
+              "description": "Get the latest insurance tips and updates.",
+              "buttonText": "Explore All Blogs",
+              "buttonHref": "/blog"
+            },
             "posts": [
               {
                 "id": 1,
                 "slug": "how-to-choose-the-right-insurance-plan-for-your-family",
-                "image": "/insurance_img/young-business-man-touching-insurance-icon.jpg",
+                "image": "/insurance/13.jpg",
                 "day": "20",
                 "month": "JAN",
                 "comments": "2",
@@ -1481,7 +1615,7 @@
               {
                 "id": 2,
                 "slug": "top-5-reasons-why-life-insurance-is-essential",
-                "image": "/insurance_img/online-insurance-concept-insurance-assurance-icons-including-family-health-real-estate-car-financial-risk-management-concept-online-insurance.jpg",
+                "image": "/insurance/14.jpg",
                 "day": "18",
                 "month": "JAN",
                 "comments": "6",
@@ -1505,7 +1639,7 @@
               {
                 "id": 3,
                 "slug": "health-insurance-myths-vs-facts-what-you-should-know",
-                "image": "/insurance_img/customer-client-reading-term-agreement-contract-prodigy (1).jpg",
+                "image": "/insurance/15.jpg",
                 "day": "15",
                 "month": "JAN",
                 "comments": "3",
@@ -1528,7 +1662,7 @@
               {
                 "id": 4,
                 "slug": "business-insurance-securing-your-company-for-the-long-run",
-                "image": "/insurance_img/man-business-suit-is-sitting-front-laptop-with-man-with-light-bulb-it.jpg",
+                "image": "/insurance/16.jpg",
                 "day": "12",
                 "month": "JAN",
                 "comments": "8",
@@ -1552,7 +1686,7 @@
               {
                 "id": 5,
                 "slug": "what-young-professionals-need-to-know-about-insurance",
-                "image": "/insurance_img/business-insurance-management-concept.jpg",
+                "image": "/insurance/17.jpg",
                 "day": "10",
                 "month": "JAN",
                 "comments": "5",
@@ -1575,7 +1709,7 @@
               {
                 "id": 6,
                 "slug": "travel-insurance-why-it-is-a-must-before-your-next-trip",
-                "image": "/insurance_img/hand-holding-globe-with-word-insurance-itai.jpg",
+                "image": "/insurance/18.jpg",
                 "day": "08",
                 "month": "JAN",
                 "comments": "4",
@@ -1692,7 +1826,7 @@
               "description": "To be the most trusted insurance partner, empowering individuals, families, and businesses to live with confidence through innovative solutions, unwavering support, and a commitment to a safer, brighter tomorrow.",
               "buttonLabel": "Learn More",
               "buttonLink": "#",
-              "image": "/insurance_img/customer-client-reading-term-agreement-contract-prodigy (1).jpg",
+              "image": "/insurance/11.jpg",
               "imageOverlayText": "A CLEARER TOMORROW"
             },
             "mission": {
@@ -1702,7 +1836,7 @@
               "description": "Our mission is to deliver simple, reliable, and personalized insurance solutions that protect what matters most. We are committed to exceptional service, ethical practices, and long-term relationships, helping our customers navigate life's uncertainties with peace of mind.",
               "buttonLabel": "Discover Our Mission",
               "buttonLink": "#",
-              "image": "/insurance_img/customer-client-reading-term-agreement-contract-prodigy.jpg",
+              "image": "/insurance/13.jpg",
               "imageOverlayText": "FOCUSED ON A SAFER TOMORROW"
             },
             "highlightBox": {
@@ -2023,7 +2157,7 @@
               {
                 "id": 3,
                 "title": "Family Insurance Plans",
-                "src": "/insurance/3.jpg"
+                "src": "/insurance/12.jpg"
               },
               {
                 "id": 4,
@@ -2073,7 +2207,7 @@
                   "id": 3,
                   "title": "Understanding Health Insurance Coverage",
                   "src": "https://www.youtube.com/embed/ifTxb9eY5jc?si=aAzuMqegHQPM6ZIK",
-                  "thumbnail": "/insurance/3.jpg",
+                  "thumbnail": "/insurance/8.jpg",
                   "date": "Mar 18, 2026"
                 },
                 {
@@ -2523,7 +2657,7 @@
               "buttonLabel": "Send Message"
             },
             "infoCard": {
-              "image": "/insurance_img/business-insurance-management-concept.jpg",
+              "image": "/insurance/7.jpg",
               "title": "Let's Connect for a Safer Tomorrow",
               "description": "Whether you have a question about our insurance plans, need help with a policy, or just want some expert advice — our team is here to assist you.",
               "highlights": [
@@ -2545,21 +2679,21 @@
                   "id": 1,
                   "name": "Head Office",
                   "address": "123 Business Park,\nNew Delhi – 110001",
-                  "image": "/insurance_img/man-holding-house-with-house-icon-screen.jpg",
+                  "image": "https://i.pinimg.com/736x/b6/4e/8f/b64e8fe1276e67ddcd5ece664f6e6333.jpg",
                   "mapLink": "https://maps.google.com"
                 },
                 {
                   "id": 2,
                   "name": "Mumbai Office",
                   "address": "456 Corporate Tower,\nMumbai – 400001",
-                  "image": "/insurance_img/car-insurance-online-website-computer-screen-insure-snugly.jpg",
+                  "image": "https://i.pinimg.com/736x/49/c9/9e/49c99e85730a5ba86f734231a90bf06a.jpg",
                   "mapLink": "https://maps.google.com"
                 },
                 {
                   "id": 3,
                   "name": "Bangalore Office",
                   "address": "789 Tech Park,\nBangalore – 560001",
-                  "image": "/insurance_img/paper-cut-out-family-home-car-with-hands-businessman.jpg",
+                  "image": "https://i.pinimg.com/1200x/fb/e3/a5/fbe3a56c0e7fd4df9eab3d29cb6bf65a.jpg",
                   "mapLink": "https://maps.google.com"
                 }
               ]

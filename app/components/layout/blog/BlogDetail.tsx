@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   FaArrowRight,
   FaCalendarAlt,
@@ -14,6 +15,7 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import Bannerpage from "../../shared/Bannerpage";
+import ScrollReveal from "../../shared/ScrollReveal";
 import { site, type InsuranceBlogPost } from "@/data";
 
 type BlogDetailProps = {
@@ -34,18 +36,24 @@ export default function BlogDetail({ post }: BlogDetailProps) {
     .filter((item) => item.slug !== post.slug)
     .slice(0, 4);
   const detail = post.detail;
+  const expertAdvice = site.blog.expertAdvice;
+  const moreInsights = site.blog.moreInsights;
 
   return (
     <>
       <Bannerpage
         title="Blogs Detail"
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Blogs Detail" }]}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Our Blog", href: "/blog" },
+          { label: post.title },
+        ]}
         bgImage={site.blog.banner.bgImage}
       />
 
       <main className="bg-[#fbfcfd] py-10 sm:py-12  ">
         <div className="mx-auto grid  items-start gap-6 px-4 sm:px-7 lg:grid-cols-[minmax(0,2fr)_minmax(280px,0.92fr)] lg:px-20">
-          <article className="min-w-0">
+          <ScrollReveal direction="left" className="min-w-0">
             <div className="mb-2 flex items-center gap-2 text-sm font-extrabold tracking-[0.16em] text-[#0b62c7]">
               <span>{detail.category}</span>
               <span className="h-px w-8 bg-[#0b62c7]" />
@@ -72,11 +80,15 @@ export default function BlogDetail({ post }: BlogDetailProps) {
               </span>
             </div>
 
-            <img
-              src={post.image}
-              alt={post.title}
-              className="mt-6 aspect-16/7 w-full rounded-xl object-cover object-center"
-            />
+            <div className="relative mt-6 w-full aspect-16/7 rounded-xl overflow-hidden">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 55vw"
+                className="object-cover object-center"
+              />
+            </div>
             <p className="mt-5 text-sm leading-[1.8] text-slate-600 sm:text-base">
               {detail.intro}
             </p>
@@ -159,9 +171,9 @@ export default function BlogDetail({ post }: BlogDetailProps) {
                 </div>
               </div>
             </div>
-          </article>
+          </ScrollReveal>
 
-          <aside className="space-y-4 lg:sticky lg:top-6">
+          <ScrollReveal direction="right" className="space-y-4 lg:sticky lg:top-6">
             <section className="rounded-xl border border-slate-100 bg-white p-4 shadow-[0_5px_20px_rgba(8,43,94,0.06)] sm:p-5">
               <h2 className="mb-4 text-lg sm:text-xl font-bold text-[#082b5e]">
                 Related Articles
@@ -173,9 +185,12 @@ export default function BlogDetail({ post }: BlogDetailProps) {
                     href={`/blog/${related.slug}`}
                     className="group flex gap-3"
                   >
-                    <img
+                    <Image
                       src={related.image}
                       alt=""
+                      width={96}
+                      height={64}
+                      sizes="96px"
                       className="h-16 w-24 shrink-0 rounded-lg object-cover"
                     />
                     <span className="min-w-0">
@@ -194,47 +209,46 @@ export default function BlogDetail({ post }: BlogDetailProps) {
 
             <section className="rounded-xl bg-[#edf5ff] p-5 sm:p-6">
               <h2 className="text-xl sm:text-3xl font-bold text-[#082b5e]">
-                Need Expert Advice?
+                {expertAdvice.title}
               </h2>
               <p className="mt-2 text-sm sm:text-lg leading-relaxed text-slate-600">
-                Our insurance experts are here to help you find the right plan
-                for you and your family.
+                {expertAdvice.description}
               </p>
               <a
-                href="tel:+919876543210"
+                href={expertAdvice.phoneHref}
                 className="mt-4 flex h-11 items-center justify-center gap-3 rounded-full bg-[#0875e1] text-sm sm:text-base font-bold text-white"
               >
                 <FaPhoneAlt />
-                +91 98765 43210
+                {expertAdvice.phone}
               </a>
               <a
-                href="mailto:support@insurewise.com"
+                href={expertAdvice.emailHref}
                 className="mt-4 flex items-center gap-3 text-sm sm:text-base text-slate-600"
               >
                 <FaEnvelope className="text-[#082b5e]" />
-                support@insurewise.com
+                {expertAdvice.email}
               </a>
               <p className="mt-3 flex items-center gap-3 text-sm sm:text-base text-slate-600">
                 <FaClock className="text-[#082b5e]" />
-                Mon - Sat, 9:00 AM - 6:00 PM
+                {expertAdvice.hours}
               </p>
             </section>
 
             <section className="rounded-xl bg-[#edf5ff] p-5 sm:p-6">
               <h2 className="text-xl sm:text-2xl font-bold text-[#082b5e]">
-                More Insights, Straight to You
+                {moreInsights.title}
               </h2>
               <p className="mt-2 text-sm sm:text-base leading-relaxed text-slate-600">
-                Get the latest insurance tips and updates.
+                {moreInsights.description}
               </p>
               <Link
-                href="/blog"
+                href={moreInsights.buttonHref}
                 className="mt-4 flex h-10 items-center justify-center gap-2 rounded-full border-2 border-[#0875e1] text-sm font-bold text-[#0875e1]"
               >
-                Explore All Blogs <FaArrowRight />
+                {moreInsights.buttonText} <FaArrowRight />
               </Link>
             </section>
-          </aside>
+          </ScrollReveal>
         </div>
       </main>
     </>

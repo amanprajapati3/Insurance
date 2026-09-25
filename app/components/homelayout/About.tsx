@@ -1,7 +1,20 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { site, SectionProps } from "@/data/index";
+import ScrollReveal from "../shared/ScrollReveal";
+import {
+  FiArrowRight,
+  FiFileText,
+  FiHeart,
+  FiHome,
+  FiSend,
+  FiTrendingUp,
+  FiUsers,
+} from "react-icons/fi";
+import { FaHandshake } from "react-icons/fa";
+import { BsShieldCheck } from "react-icons/bs";
 
 // Animated Counter Component (Counts up from 0 when visible in viewport)
 function AnimatedCounter({
@@ -60,6 +73,16 @@ function AnimatedCounter({
 }
 
 // Icon helper components
+const ABOUT_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  users: FiUsers,
+  handshake: FaHandshake,
+  growth: FiTrendingUp,
+  shield: BsShieldCheck,
+  home: FiHome,
+  heart: FiHeart,
+  plane: FiSend,
+};
+
 function RenderIcon({
   name,
   className = "w-6 h-6",
@@ -67,122 +90,9 @@ function RenderIcon({
   name: string;
   className?: string;
 }) {
-  switch (name) {
-    case "users":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-          />
-        </svg>
-      );
-    case "handshake":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 11H4a2 2 0 00-2 2v2a2 2 0 002 2h3"
-          />
-        </svg>
-      );
-    case "growth":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-          />
-        </svg>
-      );
-    case "shield":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-          />
-        </svg>
-      );
-    case "home":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-          />
-        </svg>
-      );
-    case "heart":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.684a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-          />
-        </svg>
-      );
-    case "plane":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-          />
-        </svg>
-      );
-    default:
-      return null;
-  }
+  const Icon = ABOUT_ICONS[name];
+  if (!Icon) return null;
+  return <Icon className={className} />;
 }
 
 export default function AboutUs({
@@ -256,7 +166,7 @@ export default function AboutUs({
       <div className="container mx-auto px-4 ">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-5 items-stretch">
           {/*  LEFT VERTICAL STATS COLUMN  */}
-          <div className="order-3  w-full lg:w-[200px] xl:w-[220px] lg:order-1 lg:col-span-2 bg-[#f3f7fd] rounded-l-2xl p-6 flex flex-col justify-between divide-y divide-gray-200/80 shadow-sm shrink-0">
+          <ScrollReveal direction="left" className="order-3  w-full lg:w-[200px] xl:w-[220px] lg:order-1 lg:col-span-2 bg-[#f3f7fd] rounded-l-2xl p-6 flex flex-col justify-between divide-y divide-gray-200/80 shadow-sm shrink-0">
             {stats.map((stat: any, index: number) => (
               <div
                 key={stat.id || index}
@@ -278,15 +188,17 @@ export default function AboutUs({
                 </p>
               </div>
             ))}
-          </div>
+          </ScrollReveal>
 
           {/* ================= CENTER IMAGE SECTION (EXPANDED LEFTWARD) ================= */}
-          <div className="order-2 lg:order-2 lg:col-span-5 relative min-h-[420px] sm:min-h-[480px] lg:min-h-full w-full rounded-r-2xl overflow-hidden shadow-sm flex-1">
+          <ScrollReveal direction="scale" className="order-2 lg:order-2 lg:col-span-5 relative min-h-[420px] sm:min-h-[480px] lg:min-h-full w-full rounded-r-2xl overflow-hidden shadow-sm flex-1">
             {/* Main Primary Image */}
-            <img
+            <Image
               src={images.main.src}
               alt={images.main.alt}
-              className="w-full h-full object-cover object-center rounded-r-2xl"
+              fill
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="object-cover object-center rounded-r-2xl"
             />
 
             {/* Bottom-Left Blue Slanted Overlay Banner */}
@@ -300,23 +212,22 @@ export default function AboutUs({
 
             {/* Bottom-Right Inset Image with Thick Curved White Border */}
             <div className="absolute bottom-0 right-0 w-[49%] h-[30%] sm:h-[32%] rounded-2xl overflow-hidden border-[2px] sm:border-[4px] border-white z-20 shadow-xl">
-              <img
+              <Image
                 src={images.inset.src}
                 alt={images.inset.alt}
-                className="w-full h-full object-cover object-center"
+                fill
+                sizes="(max-width: 1024px) 49vw, 20vw"
+                className="object-cover object-center"
               />
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* ================= RIGHT CONTENT SECTION ================= */}
-          <div className="order-1 lg:order-3 lg:col-span-5 flex flex-col justify-center lg:pl-4">
+          <ScrollReveal direction="right" className="order-1 lg:order-3 lg:col-span-5 flex flex-col justify-center lg:pl-4">
             {/* BADGE WITH ICON */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f2ff] text-[#0066ff] text-sm sm:text-sm md:text-base font-bold w-fit mb-4">
               {/* Building/Document Icon */}
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4V5h12v10z" />
-                <path d="M6 7h4v2H6V7zm6 0h2v2h-2V7zm-6 4h4v2H6v-2zm6 0h2v2h-2v-2z" />
-              </svg>
+              <FiFileText className="w-4 h-4 fill-current" />
               <span>{badge}</span>
             </div>
 
@@ -366,18 +277,12 @@ export default function AboutUs({
 
                   {/* 30% Bright Sky Blue Part with Arrow */}
                   <span className="bg-[#007bff] hover:bg-[#0060c7] text-white px-4 py-3.5 sm:px-5 sm:py-4 flex items-center justify-center transition-colors duration-200">
-                    <svg className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                      <path
-                        fillRule="evenodd"
-                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    <FiArrowRight className="w-5 h-5" />
                   </span>
                 </a>
               </div>
             )}
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

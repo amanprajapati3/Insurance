@@ -1,7 +1,25 @@
 "use client";
 
 import React, { useState, useRef, useCallback } from "react";
+import Image from "next/image";
 import { site, SectionProps } from "@/data/index";
+import ScrollReveal from "../shared/ScrollReveal";
+import {
+  FiChevronLeft,
+  FiChevronRight,
+  FiMessageCircle,
+} from "react-icons/fi";
+import { FaGoogle, FaQuoteLeft, FaStar, FaUser } from "react-icons/fa";
+
+const TESTIMONIAL_ICONS: Record<string, { Icon: React.ComponentType<{ className?: string; strokeWidth?: number; style?: React.CSSProperties }>; strokeWidth?: number; color?: string }> = {
+  chat: { Icon: FiMessageCircle },
+  quote: { Icon: FaQuoteLeft },
+  star: { Icon: FaStar, color: "#ffb800" },
+  people: { Icon: FaUser },
+  google: { Icon: FaGoogle },
+  "chevron-left": { Icon: FiChevronLeft, strokeWidth: 2.5 },
+  "chevron-right": { Icon: FiChevronRight, strokeWidth: 2.5 },
+};
 
 // Icon Helper Component
 function TestimonialIcon({
@@ -11,93 +29,10 @@ function TestimonialIcon({
   name: string;
   className?: string;
 }) {
-  switch (name) {
-    case "chat":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-          />
-        </svg>
-      );
-    case "quote":
-      return (
-        <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-        </svg>
-      );
-    case "star":
-      return (
-        <svg className={className} fill="#ffb800" viewBox="0 0 20 20">
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-        </svg>
-      );
-    case "people":
-      return (
-        <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-        </svg>
-      );
-    case "google":
-      return (
-        <svg className={className} viewBox="0 0 24 24">
-          <path
-            fill="#4285F4"
-            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-          />
-          <path
-            fill="#34A853"
-            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-          />
-          <path
-            fill="#FBBC05"
-            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
-          />
-          <path
-            fill="#EA4335"
-            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
-          />
-        </svg>
-      );
-    case "chevron-left":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-      );
-    case "chevron-right":
-      return (
-        <svg
-          className={className}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.5"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      );
-    default:
-      return null;
-  }
+  const entry = TESTIMONIAL_ICONS[name];
+  if (!entry) return null;
+  const { Icon, strokeWidth, color } = entry;
+  return <Icon className={className} strokeWidth={strokeWidth} style={color ? { color } : undefined} />;
 }
 
 export default function TestimonialSection({
@@ -196,7 +131,7 @@ export default function TestimonialSection({
       <div className="container mx-auto  px-4 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* LEFT FIXED OVERVIEW SECTION */}
-          <div className="lg:col-span-5 flex flex-col justify-between pr-0 lg:pr-6">
+          <ScrollReveal direction="left" className="lg:col-span-5 flex flex-col justify-between pr-0 lg:pr-6">
             <div>
               {/* BADGE */}
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8f2ff] text-[#0066ff] text-sm sm:text-sm font-bold mb-5 shadow-sm">
@@ -224,7 +159,11 @@ export default function TestimonialSection({
             {/* RATING CARDS CONTAINER */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               {/* CARD 1: AVG RATING */}
-              <div className="bg-[#f4f8ff] rounded-2xl p-2 flex items-center gap-3.5 border border-slate-100 shadow-sm">
+              <ScrollReveal
+                index={0}
+                staggerChildren={0.15}
+                className="bg-[#f4f8ff] rounded-2xl p-2 flex items-center gap-3.5 border border-slate-100 shadow-sm"
+              >
                 <div className="w-16 h-16 rounded-full bg-[#0b3374] text-white flex items-center justify-center shrink-0 shadow-sm">
                   <TestimonialIcon name="people" className="w-8 h-8" />
                 </div>
@@ -242,10 +181,14 @@ export default function TestimonialSection({
                     ))}
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
 
               {/* CARD 2: GOOGLE REVIEWS */}
-              <div className="bg-[#f4f8ff] rounded-2xl p-2 flex items-center gap-3.5 border border-slate-100 shadow-sm">
+              <ScrollReveal
+                index={1}
+                staggerChildren={0.15}
+                className="bg-[#f4f8ff] rounded-2xl p-2 flex items-center gap-3.5 border border-slate-100 shadow-sm"
+              >
                 <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm border border-slate-100">
                   <TestimonialIcon name="google" className="w-8 h-8" />
                 </div>
@@ -266,12 +209,12 @@ export default function TestimonialSection({
                     ))}
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* RIGHT SMOOTH SLIDING TESTIMONIAL CAROUSEL WITH VERTICAL DIVIDER */}
-          <div className="lg:col-span-7 lg:border-l lg:border-gray-200/80 lg:pl-12 pt-8 lg:pt-0 relative">
+          <ScrollReveal direction="right" className="lg:col-span-7 lg:border-l lg:border-gray-200/80 lg:pl-12 pt-8 lg:pt-0 relative">
             <div
               className="w-full overflow-hidden"
               onTouchStart={handleTouchStart}
@@ -308,9 +251,12 @@ export default function TestimonialSection({
 
                     {/* AUTHOR INFORMATION */}
                     <div className="flex items-center gap-4">
-                      <img
+                      <Image
                         src={item.avatar}
                         alt={item.name}
+                        width={56}
+                        height={56}
+                        sizes="56px"
                         className="w-14 h-14 rounded-full object-cover border-2 border-[#e8f2ff] shadow-sm"
                       />
                       <div>
@@ -363,7 +309,7 @@ export default function TestimonialSection({
                 <TestimonialIcon name="chevron-right" className="w-5 h-5" />
               </button>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

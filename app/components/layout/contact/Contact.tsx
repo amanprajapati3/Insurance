@@ -1,39 +1,23 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Bannerpage from "../../shared/Bannerpage";
+import ScrollReveal from "../../shared/ScrollReveal";
 import { site } from "@/data";
+import { FiArrowRight, FiCheck, FiMail, FiMapPin, FiMessageCircle, FiPhone } from "react-icons/fi";
+
+const FEATURE_CARD_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  phone: FiPhone,
+  mail: FiMail,
+  "map-pin": FiMapPin,
+  chat: FiMessageCircle,
+};
 
 // FEATURE CARD ICON RENDER HELPER
 const renderFeatureIcon = (iconName: string) => {
-  switch (iconName) {
-    case "phone":
-      return (
-        <svg className="w-7 md:w-9 md:h-9 h-7 text-[#0066ff]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
-      );
-    case "mail":
-      return (
-        <svg className="w-7 h-7 md:w-9 md:h-9 text-[#0066ff]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      );
-    case "map-pin":
-      return (
-        <svg className="w-7 h-7 md:w-9 md:h-9 text-[#0066ff]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      );
-    case "chat":
-    default:
-      return (
-        <svg className="w-7 h-7 md:w-9 md:h-9 text-[#0066ff]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-      );
-  }
+  const Icon = FEATURE_CARD_ICONS[iconName] || FiMessageCircle;
+  return <Icon className="w-7 md:w-9 md:h-9 h-7 text-[#0066ff]" />;
 };
 
 export default function Contact() {
@@ -89,12 +73,12 @@ export default function Contact() {
           
           {/* TOP 4 CONTACT FEATURE CARDS */}
           <div className="grid grid-cols-1 shadow-md shadow-blue-200 rounded-xl py-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
-            {featureCards.map((card: any) => (
-              <a
-                key={card.id}
-                href={card.href || "#"}
-                className="p-5 border-r border-r-slate-300 transition-all duration-300 flex gap-4 group"
-              >
+            {featureCards.map((card: any, index: number) => (
+              <ScrollReveal key={card.id} direction="up" index={index} staggerChildren={0.1} className="h-full">
+                <a
+                  href={card.href || "#"}
+                  className="p-5 border-r border-r-slate-300 transition-all duration-300 flex gap-4 group h-full"
+                >
                 {/* BLUE CIRCLE ICON CONTAINER */}
                 <div className="w-12 md:w-16 md:h-16 h-12 rounded-full bg-[#edf4ff] group-hover:text-white transition-colors flex items-center justify-center shrink-0">
                   {renderFeatureIcon(card.icon)}
@@ -112,7 +96,8 @@ export default function Contact() {
                     {card.subtext}
                   </p>
                 </div>
-              </a>
+                </a>
+              </ScrollReveal>
             ))}
           </div>
 
@@ -120,7 +105,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch mb-10 md:mb-16">
             
             {/* LEFT COLUMN: CONTACT FORM */}
-            <div className="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm flex flex-col justify-between h-full">
+            <ScrollReveal direction="left" className="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-sm flex flex-col justify-between h-full">
               <div>
                 <span className="text-sm sm:text-sm font-bold tracking-widest text-[#0e3877] uppercase block mb-1">
                   {formSection.badge || "SEND US A MESSAGE"}
@@ -228,23 +213,23 @@ export default function Contact() {
                     className="w-full bg-[#0066ff] hover:bg-[#0052cc] text-white font-bold py-3.5 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 text-sm sm:text-sm cursor-pointer"
                   >
                     <span>{formSection.buttonLabel || "Send Message"}</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
+                    <FiArrowRight className="w-4 h-4" strokeWidth={2.5} />
                   </button>
                 </form>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* RIGHT COLUMN: INFO CARD */}
-            <div className="bg-[#f0f6ff] rounded-2xl border border-slate-200/80 flex flex-col justify-between h-full">
+            <ScrollReveal direction="right" className="bg-[#f0f6ff] rounded-2xl border border-slate-200/80 flex flex-col justify-between h-full">
               <div>
                 {/* CARD TOP IMAGE WITH GRAPHIC BANNER */}
                 <div className="relative rounded-xl overflow-hidden mb-6 h-56 sm:h-64 shadow-sm group">
-                  <img
+                  <Image
                     src={infoCard.image}
                     alt="Let's Connect"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 45vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* OVERLAY GRAPHIC TEXT */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end p-6">
@@ -267,9 +252,7 @@ export default function Contact() {
                   {(infoCard.highlights || []).map((highlight: string, idx: number) => (
                     <div key={idx} className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-[#0066ff] text-white flex items-center justify-center shrink-0">
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
+                        <FiCheck className="w-3 h-3" strokeWidth={3} />
                       </div>
                       <span className="text-sm sm:text-[16px] font-bold text-slate-800">
                         {highlight}
@@ -278,7 +261,7 @@ export default function Contact() {
                   ))}
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
 
           </div>
 
@@ -288,7 +271,7 @@ export default function Contact() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
               
               {/* LEFT SIDE: GOOGLE MAP EMBED */}
-              <div className="lg:col-span-6 rounded-2xl overflow-hidden border border-slate-200 shadow-sm relative min-h-[340px] h-full bg-slate-200">
+              <ScrollReveal direction="left" className="lg:col-span-6 rounded-2xl overflow-hidden border border-slate-200 shadow-sm relative min-h-[340px] h-full bg-slate-200">
                 <iframe
                   title="InsureWise Head Office Map"
                   src={locationsSection.mapEmbedUrl}
@@ -297,10 +280,10 @@ export default function Contact() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
-              </div>
+              </ScrollReveal>
 
               {/* RIGHT SIDE: HEADING & 3 OFFICE LOCATION CARDS */}
-              <div className="lg:col-span-6 flex flex-col justify-between">
+              <ScrollReveal direction="right" className="lg:col-span-6 flex flex-col justify-between">
                 
                 {/* HEADING SECTION */}
                 <div className="mb-3">
@@ -320,18 +303,23 @@ export default function Contact() {
 
                 {/* 3 OFFICE CARDS GRID */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-5">
-                  {(locationsSection.offices || []).map((office: any) => (
-                    <div
+                  {(locationsSection.offices || []).map((office: any, index: number) => (
+                    <ScrollReveal
                       key={office.id}
+                      direction="up"
+                      index={index}
+                      staggerChildren={0.1}
                       className="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
                     >
                       <div className="">
                         {/* OFFICE BUILDING PHOTO */}
-                        <div className="h-28 w-full overflow-hidden">
-                          <img
+                        <div className="relative h-28 w-full overflow-hidden">
+                          <Image
                             src={office.image}
                             alt={office.name}
-                            className="w-full h-full object-cover"
+                            fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 30vw, 15vw"
+                            className="object-cover"
                           />
                         </div>
 
@@ -355,16 +343,14 @@ export default function Contact() {
                           className="inline-flex items-center gap-1.5 text-sm font-bold text-[#0066ff] hover:gap-2 transition-all"
                         >
                           <span>Get Directions</span>
-                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                          </svg>
+                          <FiArrowRight className="w-3.5 h-3.5" strokeWidth={2.5} />
                         </a>
                       </div>
-                    </div>
+                    </ScrollReveal>
                   ))}
                 </div>
 
-              </div>
+              </ScrollReveal>
 
             </div>
           </div>

@@ -1,9 +1,25 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Bannerpage from "../../shared/Bannerpage";
 import { site } from "@/data";
+import ScrollReveal from "../../shared/ScrollReveal";
 import { MdOutlineCurrencyRupee } from "react-icons/md";
+import {
+  FiArrowRight,
+  FiChevronDown,
+  FiClock,
+  FiFileText,
+  FiLock,
+  FiMail,
+  FiMapPin,
+  FiMessageCircle,
+  FiPhone,
+  FiUser,
+  FiUsers,
+} from "react-icons/fi";
+import { BsShieldCheck } from "react-icons/bs";
 
 
 export default function Quote() {
@@ -67,7 +83,7 @@ export default function Quote() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-7 items-stretch">
             
             {/* LEFT COLUMN: REQUEST A QUOTE FORM */}
-            <div className="lg:col-span-7 xl:col-span-8 flex flex-col justify-between h-full bg-white rounded-3xl p-6 sm:p-8 md:p-9 border border-slate-200/80 shadow-sm">
+            <ScrollReveal direction="left" className="lg:col-span-7 xl:col-span-8 flex flex-col justify-between h-full bg-white rounded-3xl p-6 sm:p-8 md:p-9 border border-slate-200/80 shadow-sm">
               <div>
                 {/* SECTION HEADER */}
                 <div className="mb-6">
@@ -94,9 +110,7 @@ export default function Quote() {
                       </label>
                       <div className="relative">
                         <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                          </svg>
+                          <FiUser className="w-4 h-4" />
                         </span>
                         <input
                           type="text"
@@ -117,9 +131,7 @@ export default function Quote() {
                       </label>
                       <div className="relative">
                         <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                          </svg>
+                          <FiPhone className="w-4 h-4" />
                         </span>
                         <input
                           type="tel"
@@ -140,9 +152,7 @@ export default function Quote() {
                       </label>
                       <div className="relative">
                         <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                          </svg>
+                          <FiMail className="w-4 h-4" strokeWidth={2} />
                         </span>
                         <input
                           type="email"
@@ -163,9 +173,7 @@ export default function Quote() {
                       </label>
                       <div className="relative">
                         <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                          </svg>
+                          <BsShieldCheck className="w-4 h-4" />
                         </span>
                         <select
                           name="insuranceType"
@@ -186,9 +194,7 @@ export default function Quote() {
                           ))}
                         </select>
                         <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                          </svg>
+                          <FiChevronDown className="w-4 h-4" strokeWidth={2} />
                         </span>
                       </div>
                     </div>
@@ -200,10 +206,7 @@ export default function Quote() {
                       </label>
                       <div className="relative">
                         <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                          </svg>
+                          <FiMapPin className="w-4 h-4" strokeWidth={2} />
                         </span>
                         <input
                           type="text"
@@ -224,9 +227,7 @@ export default function Quote() {
                       </label>
                       <div className="relative">
                         <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500">
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                          </svg>
+                          <FiFileText className="w-4 h-4" strokeWidth={2} />
                         </span>
                         <input
                           type="text"
@@ -248,9 +249,7 @@ export default function Quote() {
                     </label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-3.5 text-slate-500">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                        </svg>
+                        <FiMessageCircle className="w-4 h-4" strokeWidth={2} />
                       </span>
                       <textarea
                         name="message"
@@ -285,33 +284,31 @@ export default function Quote() {
                       className="w-full bg-[#0066ff] hover:bg-[#0052cc] text-white font-bold py-3.5 px-6 rounded-full transition-all duration-300 flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 text-sm sm:text-sm cursor-pointer"
                     >
                       <span>{formSection.buttonText || "Get My Quote"}</span>
-                      <svg className="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
+                      <FiArrowRight className="w-4 h-4" strokeWidth={2.5} />
                     </button>
                   </div>
 
                   {/* SECURITY NOTE */}
                   <div className="flex items-center justify-center gap-1.5 text-sm text-slate-500 font-medium pt-1">
-                    <svg className="w-3.5 h-3.5 text-[#0066ff]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
+                    <FiLock className="w-3.5 h-3.5 text-[#0066ff]" strokeWidth={2} />
                     <span>{formSection.securityText || "Your information is safe with us."}</span>
                   </div>
 
                 </form>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* RIGHT COLUMN: INFO CARDS */}
-            <div className="lg:col-span-5 xl:col-span-4 flex flex-col justify-between gap-6 h-full">
+            <ScrollReveal direction="right" className="lg:col-span-5 xl:col-span-4 flex flex-col justify-between gap-6 h-full">
               
               {/* TOP IMAGE CARD */}
               <div className="relative rounded-2xl overflow-hidden shadow-sm h-[40%]  shrink-0 group">
-                <img
+                <Image
                   src={infoSection.image || "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?auto=format&fit=crop&w=800&q=80"}
                   alt="Protect What Matters Most"
-                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 35vw"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                 />
                 
                 {/* DARK BLUE OVERLAY AT BOTTOM */}
@@ -342,9 +339,7 @@ export default function Quote() {
                     {/* FEATURE 1 */}
                     <div className="flex items-start gap-3.5">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white    text-[#0066ff]  flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                        <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
+                        <BsShieldCheck className="w-8 h-8" />
                       </div>
                       <div>
                         <h4 className="text-sm sm:text-lg font-bold text-[#082b5e]">Personalized Plans</h4>
@@ -366,9 +361,7 @@ export default function Quote() {
                     {/* FEATURE 3 */}
                     <div className="flex items-start gap-3.5">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white    text-[#0066ff]  flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                        <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
+                        <FiUsers className="w-8 h-8" />
                       </div>
                       <div>
                         <h4 className="text-sm sm:text-lg font-bold text-[#082b5e]">Expert Support</h4>
@@ -379,9 +372,7 @@ export default function Quote() {
                     {/* FEATURE 4 */}
                     <div className="flex items-start gap-3.5">
                       <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white    text-[#0066ff]  flex items-center justify-center shrink-0 shadow-sm mt-0.5">
-                        <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                        <FiClock className="w-8 h-8" strokeWidth={2} />
                       </div>
                       <div>
                         <h4 className="text-sm sm:text-lg font-bold text-[#082b5e]">Quick Response</h4>
@@ -393,7 +384,7 @@ export default function Quote() {
                 </div>
               </div>
 
-            </div>
+            </ScrollReveal>
 
           </div>
         </div>

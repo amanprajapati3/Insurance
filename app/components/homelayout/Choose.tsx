@@ -1,60 +1,41 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { site, SectionProps, InsuranceChooseData } from "@/data/index";
+import ScrollReveal from "../shared/ScrollReveal";
+import {
+  FiArrowRight,
+  FiChevronsRight,
+  FiUsers,
+  FiX,
+} from "react-icons/fi";
+import { FaPlay, FaUmbrella } from "react-icons/fa";
+import { BsShieldCheck } from "react-icons/bs";
+
+const CHOOSE_ICONS: Record<string, { Icon: React.ComponentType<{ className?: string; strokeWidth?: number }>; strokeWidth?: number }> = {
+  shield: { Icon: BsShieldCheck },
+  umbrella: { Icon: FaUmbrella },
+  users: { Icon: FiUsers },
+  play: { Icon: FaPlay },
+  "chevron-double": { Icon: FiChevronsRight, strokeWidth: 2.5 },
+  "arrow-right": { Icon: FiArrowRight, strokeWidth: 2.5 },
+  close: { Icon: FiX },
+};
 
 // Helper Icon Component
 function ChooseIcon({ name, className = "w-6 h-6" }: { name: string; className?: string }) {
-  switch (name) {
-    case "shield":
-      return (
-        <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      );
-    case "umbrella":
-      return (
-        <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 3a9 9 0 00-9 9h18a9 9 0 00-9-9zM12 12v7a2 2 0 01-4 0" />
-        </svg>
-      );
-    case "users":
-      return (
-        <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-      );
-    case "play":
-      return (
-        <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-          <path d="M8 5v14l11-7z" />
-        </svg>
-      );
-    case "chevron-double":
-      return (
-        <svg className={className} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M13 5l7 7-7 7M6 5l7 7-7 7" />
-        </svg>
-      );
-    case "arrow-right":
-      return (
-        <svg className={className} fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-        </svg>
-      );
-    case "close":
-      return (
-        <svg className={className} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      );
-    default:
-      return null;
-  }
+  const entry = CHOOSE_ICONS[name];
+  if (!entry) return null;
+  const { Icon, strokeWidth } = entry;
+  return <Icon className={className} strokeWidth={strokeWidth} />;
 }
 
 export default function Choose({ className = "" }: SectionProps<InsuranceChooseData>) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const pathname = usePathname();
+  const isChoosePage = pathname === "/choose";
 
   const data = site.choose;
 
@@ -69,8 +50,10 @@ export default function Choose({ className = "" }: SectionProps<InsuranceChooseD
     title: data?.highlightCard?.title || "Get a Free Quote",
     subtitle: data?.highlightCard?.subtitle || "Quick. Simple. Hassle-Free.",
     videoThumb:
+      data?.highlightCard?.videoThumbnail ||
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1",
+    videoUrl:
+      data?.highlightCard?.videoUrl || "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1",
   };
 
   const features = data?.bulletPoints || [
@@ -107,7 +90,7 @@ export default function Choose({ className = "" }: SectionProps<InsuranceChooseD
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* LEFT CONTENT COLUMN */}
-          <div className="lg:col-span-6 flex flex-col items-start z-10">
+          <ScrollReveal direction="left" className="lg:col-span-6 flex flex-col items-start z-10">
             
             {/* FLOATING BADGE */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0b3366] text-white text-sm sm:text-sm font-semibold mb-3 border border-[#0066ff]/40 shadow-sm">
@@ -149,10 +132,12 @@ export default function Choose({ className = "" }: SectionProps<InsuranceChooseD
                 onClick={() => setIsVideoOpen(true)}
                 className="relative  w-36 sm:w-40 h-20 rounded-xl overflow-hidden cursor-pointer group shrink-0 border border-white/20 shadow-lg"
               >
-                <img
+                <Image
                   src={quoteBox.videoThumb}
                   alt="Watch Video"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 640px) 144px, 160px"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors flex items-center justify-center">
                   <div className="w-9 h-9 rounded-full bg-[#0066ff] text-white flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-110">
@@ -173,23 +158,25 @@ export default function Choose({ className = "" }: SectionProps<InsuranceChooseD
               ))}
             </div>
 
-            {/* 80% WHITE / 20% BLUE BUTTON */}
-            <a
-              href={ctaButton.href}
-              className="inline-flex items-center rounded-full overflow-hidden shadow-lg group transition-transform duration-300 hover:scale-105 active:scale-95 mt-2"
-            >
-              <span className="bg-white text-[#041d3d] font-extrabold text-sm sm:text-base px-7 py-3 flex items-center justify-center">
-                {ctaButton.label}
-              </span>
-              <span className="bg-[#0066ff] text-white px-5 py-3.5 flex items-center justify-center group-hover:bg-[#0052cc] transition-colors">
-                <ChooseIcon name="arrow-right" className="w-5 h-5" />
-              </span>
-            </a>
+            {/* Learn More BUTTON (hidden on the Why Choose Us page itself) */}
+            {!isChoosePage && (
+              <a
+                href={ctaButton.href}
+                className="inline-flex items-center rounded-full overflow-hidden shadow-lg group transition-transform duration-300 hover:scale-105 active:scale-95 mt-2"
+              >
+                <span className="bg-white text-[#041d3d] font-extrabold text-sm sm:text-base px-7 py-3 flex items-center justify-center">
+                  {ctaButton.label}
+                </span>
+                <span className="bg-[#0066ff] text-white px-5 py-3.5 flex items-center justify-center group-hover:bg-[#0052cc] transition-colors">
+                  <ChooseIcon name="arrow-right" className="w-5 h-5" />
+                </span>
+              </a>
+            )}
 
-          </div>
+          </ScrollReveal>
 
           {/* RIGHT IMAGE COLUMN WITH ACCENTS & FLOATING BADGES */}
-          <div className="lg:col-span-6 relative mt-6 lg:mt-0 px-4 sm:px-8">
+          <ScrollReveal direction="right" className="lg:col-span-6 relative mt-6 lg:mt-0 px-4 sm:px-8">
             <div className="relative w-full max-w-lg lg:max-w-none mx-auto">
               
               {/* TOP-LEFT EXTENDED BLUE ACCENT TAB */}
@@ -203,10 +190,12 @@ export default function Choose({ className = "" }: SectionProps<InsuranceChooseD
 
               {/* MAIN RECTANGULAR ROUNDED IMAGE */}
               <div className="relative z-10 w-full h-[360px] sm:h-[450px] lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl bg-slate-800">
-                <img
+                <Image
                   src={mainImage}
                   alt="Why Choose Us"
-                  className="w-full h-full object-cover object-center"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover object-center"
                 />
               </div>
 
@@ -241,7 +230,7 @@ export default function Choose({ className = "" }: SectionProps<InsuranceChooseD
               </div>
 
             </div>
-          </div>
+          </ScrollReveal>
 
         </div>
       </div>

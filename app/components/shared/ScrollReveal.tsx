@@ -87,7 +87,7 @@ export default function ScrollReveal({
 
   return (
     <motion.div
-      className={className}
+      className={`${className} will-change-transform`}
       variants={getVariants()}
       initial="hidden"
       whileInView="visible"
