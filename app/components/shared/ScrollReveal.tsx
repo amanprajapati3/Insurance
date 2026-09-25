@@ -88,6 +88,9 @@ export default function ScrollReveal({
   return (
     <motion.div
       className={`${className} will-change-transform`}
+      style={{
+        transitionProperty: "box-shadow, background-color, border-color, color",
+      }}
       variants={getVariants()}
       initial="hidden"
       whileInView="visible"

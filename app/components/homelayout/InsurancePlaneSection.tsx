@@ -161,10 +161,10 @@ export default function InsurancePlanSection({
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12">
         {/* SECTION HEADER */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end mb-5">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end my-7">
           <ScrollReveal direction="left" className="lg:col-span-7 text-white">
             {/* BADGE */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0066ff] text-white text-sm sm:text-sm font-bold mb-1 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0066ff] text-white text-sm sm:text-sm font-bold mb-3 shadow-sm">
               <FiInfo className="w-4 h-4" />
               <span>{badge}</span>
             </div>
