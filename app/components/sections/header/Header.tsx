@@ -62,7 +62,7 @@ export default function Header() {
       >
         <div className="mx-auto flex items-center justify-between px-4 py-2 text-sm sm:px-6 sm:text-sm lg:px-5">
           {/* Address & Email — Desktop (Shifted right to give room to the overlapping logo badge) */}
-          <div className="hidden items-center gap-6 pl-48 md:flex lg:pl-84">
+          <div className="hidden items-center gap-6 pl-12 md:flex lg:pl-84">
             <span className="inline-flex items-center gap-2 font-medium text-white/90">
               <MapPin className="h-3.5 w-3.5 text-white" />
               {topbar.address}
@@ -209,7 +209,6 @@ export default function Header() {
                               className="group flex items-center justify-between px-5 py-2.5 text-[15px] font-medium text-slate-700 transition-all duration-200 hover:bg-[#eaf1ff] hover:text-[#0066ff]"
                             >
                               <span>{child.label}</span>
-                              <ChevronRight className="h-4 w-4 text-[#0066ff] opacity-0 transition-all duration-200 -translate-x-1 group-hover:translate-x-0 group-hover:opacity-100" />
                             </Link>
                           ))}
                         </div>

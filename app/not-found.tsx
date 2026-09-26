@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Bannerpage from "./components/shared/Bannerpage";
 import { site } from "@/data";
 import { FiArrowRight } from "react-icons/fi";
 
@@ -28,11 +27,11 @@ export default function NotFound() {
   return (
     <>
       {/* REUSABLE PAGE BANNER */}
-      <Bannerpage
+      {/* <Bannerpage
         title={banner.title}
         breadcrumbs={banner.breadcrumbs}
         bgImage={banner.bgImage}
-      />
+      /> */}
 
       {/* ERROR SECTION */}
       <section className="relative w-full overflow-hidden bg-[#fafcff] py-20 sm:py-28 lg:py-32 flex items-center justify-center min-h-[500px]">

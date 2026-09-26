@@ -3,10 +3,10 @@
 import React from "react";
 import Image from "next/image";
 import Bannerpage from "../../shared/Bannerpage";
-import Ctabanner2 from "../../shared/Ctabanner2";
 import ScrollReveal from "../../shared/ScrollReveal";
 import { site } from "@/data";
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiMail, FiPhone } from "react-icons/fi";
+import { BiHeadphone } from "react-icons/bi";
 
 export default function Mission() {
   const missionData = (site as any)?.mission;
@@ -47,6 +47,20 @@ export default function Mission() {
     imageOverlayText: "FOCUSED ON A SAFER TOMORROW",
   };
 
+  const ctaBanner = missionData?.ctaBanner || {
+    badge: "We're Here for You",
+    title: "Have questions?",
+    highlightedTitle: "Get in touch!",
+    description:
+      "Our experts are ready to help you find the right coverage for you and your family.",
+    contactButton: {
+      label: "CONTACT US",
+      href: "/contact",
+    },
+    phoneNumber: "+1 234 567 8910",
+    phoneHref: "tel:+12345678910",
+  };
+
   return (
     <>
       {/* PAGE BANNER HEADER */}
@@ -56,15 +70,15 @@ export default function Mission() {
         bgImage={banner.bgImage}
       />
 
-      <div className="bg-slate-50/50 py-8 md:py-12 space-y-16 ">
-        {/* SECTION 1: OUR VISION (LEFT CONTENT / RIGHT IMAGE) */}
+      <div className="bg-slate-50/50 py-8 md:py-12 space-y-16">
+        {/* SECTION 1: OUR VISION */}
         <section className="container mx-auto px-4 sm:px-0 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             
             {/* LEFT CONTENT */}
             <ScrollReveal direction="left" className="flex flex-col items-start space-y-4">
               <div className="flex items-center gap-2">
-                <span className="text-sm sm:text-sm font-bold tracking-wider text-[#1a73e8] uppercase">
+                <span className="text-sm font-bold tracking-wider text-[#1a73e8] uppercase">
                   {vision.subtitle}
                 </span>
                 <div className="w-8 h-[2px] bg-[#1a73e8]" />
@@ -78,14 +92,6 @@ export default function Mission() {
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
                 {vision.description}
               </p>
-
-              <a
-                href={vision.buttonLink}
-                className="inline-flex items-center gap-2 bg-[#1a73e8] hover:bg-[#1557b0] text-white font-bold text-sm sm:text-sm px-6 py-3 rounded-full shadow-md transition-all duration-300 mt-2"
-              >
-                <span>{vision.buttonLabel}</span>
-                <FiArrowRight className="w-4 h-4" strokeWidth={2.5} />
-              </a>
             </ScrollReveal>
 
             {/* RIGHT IMAGE WITH OVERLAY TEXT */}
@@ -100,7 +106,7 @@ export default function Mission() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               {vision.imageOverlayText && (
                 <div className="absolute top-6 right-8 text-right">
-                  <span className="text-sm sm:text-sm font-semibold tracking-widest text-white/90 uppercase drop-shadow-md">
+                  <span className="text-sm font-semibold tracking-widest text-white/90 uppercase drop-shadow-md">
                     {vision.imageOverlayText}
                   </span>
                 </div>
@@ -110,7 +116,7 @@ export default function Mission() {
           </div>
         </section>
 
-        {/* SECTION 2: OUR MISSION (LEFT IMAGE / RIGHT CONTENT) */}
+        {/* SECTION 2: OUR MISSION */}
         <section className="container mx-auto px-4 sm:px-0 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             
@@ -126,7 +132,7 @@ export default function Mission() {
               <div className="absolute inset-0 bg-gradient-to-tr from-black/50 via-transparent to-transparent" />
               {mission.imageOverlayText && (
                 <div className="absolute bottom-6 left-8 text-left">
-                  <span className="text-sm sm:text-sm font-semibold tracking-widest text-white/90 uppercase drop-shadow-md">
+                  <span className="text-sm font-semibold tracking-widest text-white/90 uppercase drop-shadow-md">
                     {mission.imageOverlayText}
                   </span>
                 </div>
@@ -136,7 +142,7 @@ export default function Mission() {
             {/* RIGHT CONTENT */}
             <ScrollReveal direction="right" className="flex flex-col items-start space-y-4 order-1 lg:order-2">
               <div className="flex items-center gap-2">
-                <span className="text-sm sm:text-sm font-bold tracking-wider text-[#1a73e8] uppercase">
+                <span className="text-sm font-bold tracking-wider text-[#1a73e8] uppercase">
                   {mission.subtitle}
                 </span>
                 <div className="w-8 h-[2px] bg-[#1a73e8]" />
@@ -150,22 +156,75 @@ export default function Mission() {
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
                 {mission.description}
               </p>
-
-              <a
-                href={mission.buttonLink}
-                className="inline-flex items-center gap-2 bg-[#082b5e] hover:bg-[#061e42] text-white font-bold text-sm sm:text-sm px-6 py-3 rounded-full shadow-md transition-all duration-300 mt-2"
-              >
-                <span>{mission.buttonLabel}</span>
-                <FiArrowRight className="w-4 h-4" strokeWidth={2.5} />
-              </a>
             </ScrollReveal>
 
           </div>
         </section>
-      </div>
 
-      {/* CALL TO ACTION BANNER */}
-      <Ctabanner2 section="mission" />
+        {/* CUSTOM CTA BANNER (MATCHING EXACT DESIGN REFERENCE) */}
+        <section className="container mx-auto px-4 sm:px-0 lg:px-12 py-6">
+          <div className="relative bg-[#0d2346] rounded-2xl sm:rounded-3xl p-6 sm:p-10 lg:p-12 overflow-hidden shadow-xl text-white">
+            {/* Decorative background gradients & dot patterns */}
+            <div className="absolute -left-16 -bottom-16 w-64 h-64 bg-blue-600/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute -right-16 -top-16 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-6 right-10 grid grid-cols-4 gap-1.5 opacity-20 pointer-events-none hidden sm:grid">
+              {Array.from({ length: 16 }).map((_, i) => (
+                <div key={i} className="w-1.5 h-1.5 bg-white rounded-full" />
+              ))}
+            </div>
+
+            <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+              
+              {/* LEFT TEXT & BADGE */}
+              <div className="space-y-3 max-w-xl">
+                <div className="inline-flex items-center gap-2 bg-[#1b3a6b] border border-blue-400/20 text-white px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium shadow-inner">
+                  <BiHeadphone className="w-4 h-4 text-blue-300" />
+                  <span>{ctaBanner.badge}</span>
+                </div>
+
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
+                  {ctaBanner.title}{" "}
+                  <span className="text-[#3b82f6]">{ctaBanner.highlightedTitle}</span>
+                </h3>
+
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  {ctaBanner.description}
+                </p>
+              </div>
+
+              {/* RIGHT BUTTONS */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full lg:w-auto">
+                {/* Contact Us Pill Button */}
+                <a
+                  href={ctaBanner.contactButton.href}
+                  className="group inline-flex items-center justify-between bg-white hover:bg-slate-100 text-[#0d2346] font-bold text-sm px-2 py-2 rounded-full shadow-lg transition-all duration-300 pl-6"
+                >
+                  <div className="flex items-center gap-3">
+                    <FiMail className="w-4 h-4 text-[#0d2346]" />
+                    <span className="tracking-wide">{ctaBanner.contactButton.label}</span>
+                  </div>
+                  <div className="w-9 h-9 bg-[#1a73e8] group-hover:bg-[#1557b0] rounded-full flex items-center justify-center text-white transition-colors ml-4">
+                    <FiArrowRight className="w-4 h-4" strokeWidth={2.5} />
+                  </div>
+                </a>
+
+                {/* Phone Number Pill Button */}
+                <a
+                  href={ctaBanner.phoneHref}
+                  className="inline-flex items-center justify-center gap-3 bg-[#1a73e8] hover:bg-[#1557b0] text-white font-semibold text-sm px-6 py-3.5 rounded-full shadow-lg transition-all duration-300"
+                >
+                  <div className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center">
+                    <FiPhone className="w-3.5 h-3.5 text-white" />
+                  </div>
+                  <span className="tracking-wide">{ctaBanner.phoneNumber}</span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+      </div>
     </>
   );
 }

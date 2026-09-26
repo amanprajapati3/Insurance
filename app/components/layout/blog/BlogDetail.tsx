@@ -10,7 +10,6 @@ import {
   FaFileAlt,
   FaLink,
   FaLinkedinIn,
-  FaMapMarkerAlt,
   FaPhoneAlt,
   FaTwitter,
 } from "react-icons/fa";
@@ -51,8 +50,10 @@ export default function BlogDetail({ post }: BlogDetailProps) {
         bgImage={site.blog.banner.bgImage}
       />
 
-      <main className="bg-[#fbfcfd] py-10 sm:py-12  ">
-        <div className="mx-auto grid  items-start gap-6 px-4 sm:px-7 lg:grid-cols-[minmax(0,2fr)_minmax(280px,0.92fr)] lg:px-20">
+      <main className="bg-[#fbfcfd] py-10 sm:py-12">
+        <div className="mx-auto grid items-start gap-6 px-4 sm:px-7 lg:grid-cols-[minmax(0,2fr)_minmax(280px,0.92fr)] lg:px-20">
+          
+          {/* LEFT ARTICLE CONTENT */}
           <ScrollReveal direction="left" className="min-w-0">
             <div className="mb-2 flex items-center gap-2 text-sm font-extrabold tracking-[0.16em] text-[#0b62c7]">
               <span>{detail.category}</span>
@@ -173,7 +174,8 @@ export default function BlogDetail({ post }: BlogDetailProps) {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal direction="right" className="space-y-4 lg:sticky lg:top-6">
+          {/* RIGHT SIDEBAR (FIXED / STICKY WITHOUT SCROLLREVEAL CONFLICTS) */}
+          <div className="space-y-4 lg:sticky lg:top-24">
             <section className="rounded-xl border border-slate-100 bg-white p-4 shadow-[0_5px_20px_rgba(8,43,94,0.06)] sm:p-5">
               <h2 className="mb-4 text-lg sm:text-xl font-bold text-[#082b5e]">
                 Related Articles
@@ -207,7 +209,7 @@ export default function BlogDetail({ post }: BlogDetailProps) {
               </div>
             </section>
 
-            <section className="rounded-xl bg-[#edf5ff] p-5 sm:p-6">
+            {/* <section className="rounded-xl bg-[#edf5ff] p-5 sm:p-6">
               <h2 className="text-xl sm:text-3xl font-bold text-[#082b5e]">
                 {expertAdvice.title}
               </h2>
@@ -232,9 +234,9 @@ export default function BlogDetail({ post }: BlogDetailProps) {
                 <FaClock className="text-[#082b5e]" />
                 {expertAdvice.hours}
               </p>
-            </section>
+            </section> */}
 
-            <section className="rounded-xl bg-[#edf5ff] p-5 sm:p-6">
+            {/* <section className="rounded-xl bg-[#edf5ff] p-5 sm:p-6">
               <h2 className="text-xl sm:text-2xl font-bold text-[#082b5e]">
                 {moreInsights.title}
               </h2>
@@ -247,8 +249,9 @@ export default function BlogDetail({ post }: BlogDetailProps) {
               >
                 {moreInsights.buttonText} <FaArrowRight />
               </Link>
-            </section>
-          </ScrollReveal>
+            </section> */}
+          </div>
+
         </div>
       </main>
     </>

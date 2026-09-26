@@ -193,7 +193,7 @@ export default function Footer() {
               {footer.sideBlock.images.map((src) => (
                 <div
                   key={src}
-                  className="relative aspect-square overflow-hidden w-[130px] h-[90px] rounded-lg"
+                  className="relative aspect-square overflow-hidden lg:w-[130px]  sm:h-[90px] rounded-lg"
                 >
                   <Image src={src} alt="" fill sizes="130px" className=" h-fit w-fit " />
                 </div>

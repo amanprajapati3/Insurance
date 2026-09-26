@@ -188,11 +188,11 @@ export default function Banner({
                   <stop offset="100%" stopColor="#005cd6" stopOpacity="0.8" />
                 </linearGradient>
               </defs>
-
+{/* 
               <polygon
                 points="460,0 515,0 655,600 600,600"
                 fill={`url(#lightBlueAccent-${idx})`}
-              />
+              /> */}
               <polygon
                 points="415,0 475,0 615,600 555,600"
                 fill={`url(#brightBlueAccent-${idx})`}

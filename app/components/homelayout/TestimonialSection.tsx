@@ -171,7 +171,7 @@ export default function TestimonialSection({
                   <p className="text-sm sm:text-sm font-bold text-[#4267a1] leading-tight">
                     {avgRating.label} {avgRating.score}
                   </p>
-                  <div className="flex items-center gap-1 mt-1">
+                  {/* <div className="flex items-center gap-1 mt-1">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <TestimonialIcon
                         key={i}
@@ -179,7 +179,7 @@ export default function TestimonialSection({
                         className="w-5 h-5"
                       />
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </ScrollReveal>
 
@@ -199,7 +199,7 @@ export default function TestimonialSection({
                       {googleReviews.score}
                     </span>
                   </p>
-                  <div className="flex items-center gap-1 mt-1">
+                  {/* <div className="flex items-center gap-1 mt-1">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <TestimonialIcon
                         key={i}
@@ -207,7 +207,7 @@ export default function TestimonialSection({
                         className="w-5 h-5"
                       />
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </ScrollReveal>
             </div>

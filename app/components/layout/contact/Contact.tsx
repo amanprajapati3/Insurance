@@ -178,7 +178,7 @@ export default function Contact() {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className="w-full bg-[#f8fafc] border border-slate-200 rounded-xl px-4 py-3 text-sm sm:text-sm text-slate-800 outline-none focus:border-[#0066ff] focus:bg-white transition-all appearance-none cursor-pointer"
+                        className="w-full bg-[#f8fafc] border border-slate-200 rounded-xl px-4 py-3 text-sm sm:text-sm text-slate-800 outline-none focus:border-[#0066ff] focus:bg-white transition-all cursor-pointer"
                       >
                         {(formSection.subjects || ["Select a subject"]).map(
                           (sub: string, idx: number) => (
@@ -268,7 +268,7 @@ export default function Contact() {
           {/* OUR LOCATIONS & GOOGLE MAP SECTION */}
           <div>
             {/* MAP & LOCATION CARDS GRID */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            <div className="">
               
               {/* LEFT SIDE: GOOGLE MAP EMBED */}
               <ScrollReveal direction="left" className="lg:col-span-6 rounded-2xl overflow-hidden border border-slate-200 shadow-sm relative min-h-[340px] h-full bg-slate-200">
@@ -281,77 +281,6 @@ export default function Contact() {
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </ScrollReveal>
-
-              {/* RIGHT SIDE: HEADING & 3 OFFICE LOCATION CARDS */}
-              <ScrollReveal direction="right" className="lg:col-span-6 flex flex-col justify-between">
-                
-                {/* HEADING SECTION */}
-                <div className="mb-3">
-                  <span className="text-sm sm:text-sm font-bold tracking-widest text-[#13448d] uppercase block mb-0">
-                    {locationsSection.badge || "OUR LOCATIONS"}
-                  </span>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-[#082b5e] tracking-tight mb-2">
-                    {locationsSection.title?.normal || "Visit"}{" "}
-                    <span className="text-[#0066ff]">
-                      {locationsSection.title?.highlighted || "Our Offices"}
-                    </span>
-                  </h2>
-                  <p className="text-slate-800 text-sm sm:text-base">
-                    {locationsSection.description}
-                  </p>
-                </div>
-
-                {/* 3 OFFICE CARDS GRID */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-5">
-                  {(locationsSection.offices || []).map((office: any, index: number) => (
-                    <ScrollReveal
-                      key={office.id}
-                      direction="up"
-                      index={index}
-                      staggerChildren={0.1}
-                      className="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
-                    >
-                      <div className="">
-                        {/* OFFICE BUILDING PHOTO */}
-                        <div className="relative h-28 w-full overflow-hidden">
-                          <Image
-                            src={office.image}
-                            alt={office.name}
-                            fill
-                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 30vw, 15vw"
-                            className="object-cover"
-                          />
-                        </div>
-
-                        {/* OFFICE DETAILS */}
-                        <div className="p-2">
-                          <h4 className="text-sm font-bold text-[#082b5e] mb-0">
-                            {office.name}
-                          </h4>
-                          <p className="text-sm text-slate-700 whitespace-pre-line leading-relaxed mb-4">
-                            {office.address}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* GET DIRECTIONS LINK */}
-                      <div className="p-2 pt-0">
-                        <a
-                          href={office.mapLink || "#"}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 text-sm font-bold text-[#0066ff] hover:gap-2 transition-all"
-                        >
-                          <span>Get Directions</span>
-                          <FiArrowRight className="w-3.5 h-3.5" strokeWidth={2.5} />
-                        </a>
-                      </div>
-                    </ScrollReveal>
-                  ))}
-                </div>
-
-              </ScrollReveal>
-
             </div>
           </div>
 

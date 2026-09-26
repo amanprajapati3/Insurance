@@ -52,10 +52,8 @@ export type InsuranceQuoteData =
   typeof insuranceData.InsuranceIndustries.sections.Quote.variants.InsuranceQuote1;
 export type InsuranceCareerData =
   typeof insuranceData.InsuranceIndustries.sections.Career.variants.InsuranceCareer1;
-export type InsuranceSitemapData =
-  typeof insuranceData.InsuranceIndustries.sections.Sitemap.variants.InsuranceSitemap1;
-export type InsuranceSitemapGroup = InsuranceSitemapData["groups"][number];
-export type InsuranceSitemapLink = InsuranceSitemapGroup["links"][number];
+export type InsuranceThankYouData =
+  typeof insuranceData.InsuranceIndustries.sections.ThankYou.variants.InsuranceThankYou1;
 export type InsuranceFaqItem = InsuranceFaqData["faqs"][number];
 export type InsuranceLegalSectionKey = keyof InsuranceLegalData;
 export type InsuranceLegalSection = InsuranceLegalData[InsuranceLegalSectionKey];
@@ -124,7 +122,7 @@ export const site = {
   faq: sec.Faq.variants.InsuranceFaq1,
   quote: sec.Quote.variants.InsuranceQuote1,
   career: sec.Career.variants.InsuranceCareer1,
-  sitemap: sec.Sitemap.variants.InsuranceSitemap1,
+  thankYou: sec.ThankYou.variants.InsuranceThankYou1,
 };
 
 const planItems = sec.Plans.variants.InsurancePlans1.plans as InsurancePlanItem[];

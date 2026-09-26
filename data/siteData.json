@@ -28,29 +28,19 @@
             ]
           },
           "award": {
-            "components": [
-              { "key": "Award", "component": "InsuranceAward1" }
-            ]
+            "components": [{ "key": "Award", "component": "InsuranceAward1" }]
           },
           "blog": {
-            "components": [
-              { "key": "Blog", "component": "InsuranceBlog1" }
-            ]
+            "components": [{ "key": "Blog", "component": "InsuranceBlog1" }]
           },
           "blog/[slug]": {
-            "components": [
-              { "key": "Blog", "component": "InsuranceBlog1" }
-            ]
+            "components": [{ "key": "Blog", "component": "InsuranceBlog1" }]
           },
           "career": {
-            "components": [
-              { "key": "Career", "component": "InsuranceCareer1" }
-            ]
+            "components": [{ "key": "Career", "component": "InsuranceCareer1" }]
           },
           "career/[slug]": {
-            "components": [
-              { "key": "Career", "component": "InsuranceCareer1" }
-            ]
+            "components": [{ "key": "Career", "component": "InsuranceCareer1" }]
           },
           "choose": {
             "components": [
@@ -64,19 +54,13 @@
             ]
           },
           "cookie": {
-            "components": [
-              { "key": "Legal", "component": "InsuranceLegal1" }
-            ]
+            "components": [{ "key": "Legal", "component": "InsuranceLegal1" }]
           },
           "disclaimer": {
-            "components": [
-              { "key": "Legal", "component": "InsuranceLegal1" }
-            ]
+            "components": [{ "key": "Legal", "component": "InsuranceLegal1" }]
           },
           "faq": {
-            "components": [
-              { "key": "Faq", "component": "InsuranceFaq1" }
-            ]
+            "components": [{ "key": "Faq", "component": "InsuranceFaq1" }]
           },
           "gallery": {
             "components": [
@@ -84,14 +68,10 @@
             ]
           },
           "insurance": {
-            "components": [
-              { "key": "Plans", "component": "InsurancePlans1" }
-            ]
+            "components": [{ "key": "Plans", "component": "InsurancePlans1" }]
           },
           "insurance/[slug]": {
-            "components": [
-              { "key": "Plans", "component": "InsurancePlans1" }
-            ]
+            "components": [{ "key": "Plans", "component": "InsurancePlans1" }]
           },
           "mission": {
             "components": [
@@ -104,34 +84,24 @@
             ]
           },
           "privacy": {
-            "components": [
-              { "key": "Legal", "component": "InsuranceLegal1" }
-            ]
+            "components": [{ "key": "Legal", "component": "InsuranceLegal1" }]
           },
           "quote": {
-            "components": [
-              { "key": "Quote", "component": "InsuranceQuote1" }
-            ]
-          },
-          "sitemap": {
-            "components": [
-              { "key": "Sitemap", "component": "InsuranceSitemap1" }
-            ]
+            "components": [{ "key": "Quote", "component": "InsuranceQuote1" }]
           },
           "team": {
-            "components": [
-              { "key": "Team", "component": "InsuranceTeam1" }
-            ]
+            "components": [{ "key": "Team", "component": "InsuranceTeam1" }]
           },
           "team/[slug]": {
+            "components": [{ "key": "Team", "component": "InsuranceTeam1" }]
+          },
+          "thank-you": {
             "components": [
-              { "key": "Team", "component": "InsuranceTeam1" }
+              { "key": "ThankYou", "component": "InsuranceThankYou1" }
             ]
           },
           "terms": {
-            "components": [
-              { "key": "Legal", "component": "InsuranceLegal1" }
-            ]
+            "components": [{ "key": "Legal", "component": "InsuranceLegal1" }]
           },
           "testimonial": {
             "components": [
@@ -146,7 +116,7 @@
         "variants": {
           "InsuranceTopbar1": {
             "address": "30 Commercial Road Fratton, Australia",
-            "email": "needhelp@company.com",
+            "email": "info@xyz@gmail.com",
             "socialLinks": [
               { "label": "facebook", "href": "https://www.facebook.com/" },
               { "label": "twitter", "href": "https://www.twitter.com/" },
@@ -215,8 +185,8 @@
             ],
             "phoneBlock": {
               "label": "Emergency call",
-              "phone": "+92 3800 8060",
-              "phoneHref": "tel:+9238008060"
+              "phone": "+91 00000 00000",
+              "phoneHref": "tel:+9100000 00000"
             }
           }
         }
@@ -259,7 +229,7 @@
                   }
                 ],
                 "image": {
-                  "src": "/insurance_img/health-insurance-web-site-brisk-registration-system.jpg",
+                  "src": "/insurance_img/customer-client-reading-term-agreement-contract-prodigy (1).jpg",
                   "alt": "Family outdoors enjoying healthy lifestyle"
                 }
               },
@@ -278,7 +248,7 @@
                   }
                 ],
                 "image": {
-                  "src": "/insurance_img/car-insurance-online-website-computer-screen-insure-snugly.jpg",
+                  "src": "/insurance_img/happy-business-team-meeting-collaboration-success.jpg",
                   "alt": "Car driving on open scenic road"
                 }
               }
@@ -1215,8 +1185,8 @@
               "icon": "headset",
               "title": "Need Assistance?",
               "description": "Our experts are here to help you choose the right plan.",
-              "phone": "+919876543210",
-              "phoneDisplay": "+91 98765 43210",
+              "phone": "+91 00000 00000",
+              "phoneDisplay": "+91 00000 00000",
               "buttonLabel": "Talk to an Expert",
               "buttonHref": "/contact"
             },
@@ -1490,8 +1460,8 @@
                 "variant": "outline"
               },
               {
-                "label": "+1 234 567 8910",
-                "href": "tel:+12345678910",
+                "label": "+91 00000 00000",
+                "href": "tel:+19 00000 00000",
                 "icon": "phone",
                 "variant": "primary"
               }
@@ -1575,10 +1545,10 @@
             "expertAdvice": {
               "title": "Need Expert Advice?",
               "description": "Our insurance experts are here to help you find the right plan for you and your family.",
-              "phone": "+91 98765 43210",
-              "phoneHref": "tel:+919876543210",
-              "email": "support@insurewise.com",
-              "emailHref": "mailto:support@insurewise.com",
+              "phone": "+91 00000 00000",
+              "phoneHref": "tel:+910000 00000",
+              "email": "info@xyz@gmail.com",
+              "emailHref": "mailto:info@xyz@gmail.com",
               "hours": "Mon - Sat, 9:00 AM - 6:00 PM"
             },
             "moreInsights": {
@@ -1605,10 +1575,36 @@
                   "author": "Priya Sharma",
                   "intro": "Choosing insurance can feel complicated, but the right plan gives your family a clear financial safety net. Start with what matters most, understand the cover available, and choose protection that fits your life today and tomorrow.",
                   "sections": [
-                    { "title": "Why the Right Insurance Plan Matters", "paragraphs": ["The right policy helps your family manage unexpected medical, financial, and lifestyle costs without losing sight of long-term goals."], "bullets": ["Protect essential family expenses", "Keep savings focused on future goals", "Create dependable financial stability", "Get support when the unexpected happens"] },
-                    { "title": "Understand Your Family's Needs", "paragraphs": ["Consider your dependents, existing savings, health needs, income, and major commitments. A useful policy should reflect the risks your family would find hardest to manage alone."] },
-                    { "title": "Compare Coverage Carefully", "paragraphs": ["Review the sum insured, exclusions, waiting periods, deductibles, claim process, and renewal terms before making a decision. The cheapest plan is not always the plan that offers the strongest value."] },
-                    { "title": "Build Confidence for the Future", "paragraphs": ["Insurance works best when it is reviewed as your family changes. Revisit your cover after major milestones so your protection keeps pace with the life you are building."] }
+                    {
+                      "title": "Why the Right Insurance Plan Matters",
+                      "paragraphs": [
+                        "The right policy helps your family manage unexpected medical, financial, and lifestyle costs without losing sight of long-term goals."
+                      ],
+                      "bullets": [
+                        "Protect essential family expenses",
+                        "Keep savings focused on future goals",
+                        "Create dependable financial stability",
+                        "Get support when the unexpected happens"
+                      ]
+                    },
+                    {
+                      "title": "Understand Your Family's Needs",
+                      "paragraphs": [
+                        "Consider your dependents, existing savings, health needs, income, and major commitments. A useful policy should reflect the risks your family would find hardest to manage alone."
+                      ]
+                    },
+                    {
+                      "title": "Compare Coverage Carefully",
+                      "paragraphs": [
+                        "Review the sum insured, exclusions, waiting periods, deductibles, claim process, and renewal terms before making a decision. The cheapest plan is not always the plan that offers the strongest value."
+                      ]
+                    },
+                    {
+                      "title": "Build Confidence for the Future",
+                      "paragraphs": [
+                        "Insurance works best when it is reviewed as your family changes. Revisit your cover after major milestones so your protection keeps pace with the life you are building."
+                      ]
+                    }
                   ]
                 }
               },
@@ -1629,10 +1625,36 @@
                   "author": "Steven Park",
                   "intro": "Life insurance is a practical promise to the people who depend on you. It helps replace income, protect plans, and give your loved ones time and space to recover when life changes unexpectedly.",
                   "sections": [
-                    { "title": "Financial Protection for Loved Ones", "paragraphs": ["A life policy can help your family manage everyday costs, education, housing, and outstanding commitments if your income is no longer available."], "bullets": ["Replace lost income", "Protect children's education", "Support household commitments", "Create a dependable financial cushion"] },
-                    { "title": "Support Long-Term Goals", "paragraphs": ["With the right cover in place, your family can keep moving toward important goals instead of making rushed financial decisions during a difficult time."] },
-                    { "title": "Peace of Mind for You and Your Family", "paragraphs": ["Knowing that your loved ones have a plan can make it easier to focus on the present. Life insurance is one part of a thoughtful, long-term financial strategy."] },
-                    { "title": "Review Your Cover Regularly", "paragraphs": ["Your protection should grow with your responsibilities. Review your policy after marriage, a new child, a home purchase, or a meaningful change in income."] }
+                    {
+                      "title": "Financial Protection for Loved Ones",
+                      "paragraphs": [
+                        "A life policy can help your family manage everyday costs, education, housing, and outstanding commitments if your income is no longer available."
+                      ],
+                      "bullets": [
+                        "Replace lost income",
+                        "Protect children's education",
+                        "Support household commitments",
+                        "Create a dependable financial cushion"
+                      ]
+                    },
+                    {
+                      "title": "Support Long-Term Goals",
+                      "paragraphs": [
+                        "With the right cover in place, your family can keep moving toward important goals instead of making rushed financial decisions during a difficult time."
+                      ]
+                    },
+                    {
+                      "title": "Peace of Mind for You and Your Family",
+                      "paragraphs": [
+                        "Knowing that your loved ones have a plan can make it easier to focus on the present. Life insurance is one part of a thoughtful, long-term financial strategy."
+                      ]
+                    },
+                    {
+                      "title": "Review Your Cover Regularly",
+                      "paragraphs": [
+                        "Your protection should grow with your responsibilities. Review your policy after marriage, a new child, a home purchase, or a meaningful change in income."
+                      ]
+                    }
                   ]
                 }
               },
@@ -1653,9 +1675,32 @@
                   "author": "Priya Sharma",
                   "intro": "Health insurance is easier to understand when common assumptions are separated from the facts. Clear information helps you choose useful cover before you need it.",
                   "sections": [
-                    { "title": "Why Health Insurance Is Important", "paragraphs": ["Medical emergencies can happen at any time, and the cost of treatment can be overwhelming. A good health insurance plan helps you prepare without putting your family's financial stability at risk."], "bullets": ["Cover hospitalization and treatment costs", "Ensure financial stability for your family", "Access quality healthcare without delays", "Get preventive care and regular check-ups", "Reduce out-of-pocket expenses", "Focus on recovery, not medical bills"] },
-                    { "title": "Choosing the Right Plan", "paragraphs": ["When selecting a health insurance plan, consider factors like coverage amount, network hospitals, waiting periods, and additional benefits such as maternity or critical illness cover. The right plan should match your family's unique needs and lifestyle."] },
-                    { "title": "Peace of Mind for a Brighter Tomorrow", "paragraphs": ["Health insurance is not just about treating illness. It is about securing your family's well-being and giving you the confidence to face life's uncertainties."] }
+                    {
+                      "title": "Why Health Insurance Is Important",
+                      "paragraphs": [
+                        "Medical emergencies can happen at any time, and the cost of treatment can be overwhelming. A good health insurance plan helps you prepare without putting your family's financial stability at risk."
+                      ],
+                      "bullets": [
+                        "Cover hospitalization and treatment costs",
+                        "Ensure financial stability for your family",
+                        "Access quality healthcare without delays",
+                        "Get preventive care and regular check-ups",
+                        "Reduce out-of-pocket expenses",
+                        "Focus on recovery, not medical bills"
+                      ]
+                    },
+                    {
+                      "title": "Choosing the Right Plan",
+                      "paragraphs": [
+                        "When selecting a health insurance plan, consider factors like coverage amount, network hospitals, waiting periods, and additional benefits such as maternity or critical illness cover. The right plan should match your family's unique needs and lifestyle."
+                      ]
+                    },
+                    {
+                      "title": "Peace of Mind for a Brighter Tomorrow",
+                      "paragraphs": [
+                        "Health insurance is not just about treating illness. It is about securing your family's well-being and giving you the confidence to face life's uncertainties."
+                      ]
+                    }
                   ]
                 }
               },
@@ -1676,10 +1721,36 @@
                   "author": "Michael Chen",
                   "intro": "Every business faces uncertainty, from property damage and liability claims to interruptions that affect revenue. Business insurance helps turn those risks into manageable, planned protection.",
                   "sections": [
-                    { "title": "Protect What You Have Built", "paragraphs": ["A business policy can protect your premises, equipment, stock, and essential operations against events that could otherwise slow or stop your progress."], "bullets": ["Protect property and equipment", "Manage liability exposures", "Support employees and partners", "Recover faster after an interruption"] },
-                    { "title": "Choose Cover for Your Industry", "paragraphs": ["Your insurance needs depend on your sector, business size, location, contracts, and customers. A tailored review helps you avoid gaps as well as unnecessary cover."] },
-                    { "title": "Plan for Continuity", "paragraphs": ["Insurance is strongest when it sits alongside a practical continuity plan. Together, they help your team respond quickly and keep customers informed when disruption occurs."] },
-                    { "title": "Review as You Grow", "paragraphs": ["New employees, locations, products, and contracts can change your risk profile. Schedule regular reviews so your policy keeps pace with the business you are building."] }
+                    {
+                      "title": "Protect What You Have Built",
+                      "paragraphs": [
+                        "A business policy can protect your premises, equipment, stock, and essential operations against events that could otherwise slow or stop your progress."
+                      ],
+                      "bullets": [
+                        "Protect property and equipment",
+                        "Manage liability exposures",
+                        "Support employees and partners",
+                        "Recover faster after an interruption"
+                      ]
+                    },
+                    {
+                      "title": "Choose Cover for Your Industry",
+                      "paragraphs": [
+                        "Your insurance needs depend on your sector, business size, location, contracts, and customers. A tailored review helps you avoid gaps as well as unnecessary cover."
+                      ]
+                    },
+                    {
+                      "title": "Plan for Continuity",
+                      "paragraphs": [
+                        "Insurance is strongest when it sits alongside a practical continuity plan. Together, they help your team respond quickly and keep customers informed when disruption occurs."
+                      ]
+                    },
+                    {
+                      "title": "Review as You Grow",
+                      "paragraphs": [
+                        "New employees, locations, products, and contracts can change your risk profile. Schedule regular reviews so your policy keeps pace with the business you are building."
+                      ]
+                    }
                   ]
                 }
               },
@@ -1700,9 +1771,30 @@
                   "author": "Sarah Johnson",
                   "intro": "Starting your career is the right time to build simple financial habits. The right insurance choices can protect your health, income, and growing independence without overcomplicating your budget.",
                   "sections": [
-                    { "title": "Start with the Basics", "paragraphs": ["Begin by understanding health, life, motor, and personal accident cover. Each policy protects a different part of your financial life and should be considered against your actual responsibilities."], "bullets": ["Protect your health and earning ability", "Cover essential personal assets", "Keep premiums within a realistic budget", "Build protection before responsibilities grow"] },
-                    { "title": "Avoid Buying on Price Alone", "paragraphs": ["A low premium is useful only when the policy responds when you need it. Check limits, exclusions, deductibles, and the claim support available before you commit."] },
-                    { "title": "Keep Your Portfolio Simple", "paragraphs": ["Good insurance does not need to be confusing. Start with essential protection, keep your records organized, and increase cover as your income and responsibilities develop."] }
+                    {
+                      "title": "Start with the Basics",
+                      "paragraphs": [
+                        "Begin by understanding health, life, motor, and personal accident cover. Each policy protects a different part of your financial life and should be considered against your actual responsibilities."
+                      ],
+                      "bullets": [
+                        "Protect your health and earning ability",
+                        "Cover essential personal assets",
+                        "Keep premiums within a realistic budget",
+                        "Build protection before responsibilities grow"
+                      ]
+                    },
+                    {
+                      "title": "Avoid Buying on Price Alone",
+                      "paragraphs": [
+                        "A low premium is useful only when the policy responds when you need it. Check limits, exclusions, deductibles, and the claim support available before you commit."
+                      ]
+                    },
+                    {
+                      "title": "Keep Your Portfolio Simple",
+                      "paragraphs": [
+                        "Good insurance does not need to be confusing. Start with essential protection, keep your records organized, and increase cover as your income and responsibilities develop."
+                      ]
+                    }
                   ]
                 }
               },
@@ -1723,9 +1815,30 @@
                   "author": "David Miller",
                   "intro": "Travel should be about discovering new places, not worrying about the unexpected. Travel insurance gives you practical support for delays, medical needs, lost baggage, and other disruptions away from home.",
                   "sections": [
-                    { "title": "Protection Beyond Your Suitcase", "paragraphs": ["A well-chosen travel plan can help with more than lost luggage. It may support emergency medical care, trip cancellation, delays, and assistance while you are abroad."], "bullets": ["Get support for emergency medical care", "Protect against trip cancellation", "Cover lost or delayed baggage", "Access assistance while travelling"] },
-                    { "title": "Read the Details Before You Fly", "paragraphs": ["Check the destinations, activities, medical exclusions, claim documents, and limits that apply to your trip. Understanding the details makes the policy more useful when plans change."] },
-                    { "title": "Travel with More Confidence", "paragraphs": ["Travel insurance is a small part of the trip budget that can make a meaningful difference when an unexpected event affects your plans. Choose cover that matches where you are going and what you will do."] }
+                    {
+                      "title": "Protection Beyond Your Suitcase",
+                      "paragraphs": [
+                        "A well-chosen travel plan can help with more than lost luggage. It may support emergency medical care, trip cancellation, delays, and assistance while you are abroad."
+                      ],
+                      "bullets": [
+                        "Get support for emergency medical care",
+                        "Protect against trip cancellation",
+                        "Cover lost or delayed baggage",
+                        "Access assistance while travelling"
+                      ]
+                    },
+                    {
+                      "title": "Read the Details Before You Fly",
+                      "paragraphs": [
+                        "Check the destinations, activities, medical exclusions, claim documents, and limits that apply to your trip. Understanding the details makes the policy more useful when plans change."
+                      ]
+                    },
+                    {
+                      "title": "Travel with More Confidence",
+                      "paragraphs": [
+                        "Travel insurance is a small part of the trip budget that can make a meaningful difference when an unexpected event affects your plans. Choose cover that matches where you are going and what you will do."
+                      ]
+                    }
                   ]
                 }
               }
@@ -1765,10 +1878,10 @@
             "footerContact": {
               "title": "Contact Information",
               "callLabel": "Call Us",
-              "phone": "+91 98765 43210",
-              "phoneHref": "tel:+919876543210",
+              "phone": "+91 00000 00000",
+              "phoneHref": "tel:+910000 00000",
               "emailLabel": "Email Us",
-              "email": "support@insurewise.com",
+              "email": "info@xyz@gmail.com",
               "officeLabel": "Our Office",
               "address": "123 Business Park, Sector 62 Noida, Uttar Pradesh 201309",
               "hoursLabel": "Working Hours",
@@ -1802,7 +1915,7 @@
               { "label": "Terms & Conditions", "href": "/terms" },
               { "label": "Cookie Policy", "href": "/cookie" },
               { "label": "Disclaimer", "href": "/disclaimer" },
-              { "label": "Sitemap", "href": "/sitemap" }
+              { "label": "Thank You", "href": "/thank-you" }
             ],
             "backToTop": true
           }
@@ -1839,11 +1952,17 @@
               "image": "/insurance/13.jpg",
               "imageOverlayText": "FOCUSED ON A SAFER TOMORROW"
             },
-            "highlightBox": {
-              "title": "Committed to Your Peace of Mind",
-              "description": "Our promise is simple — reliable coverage, ethical practices, and a partnership you can trust through every stage of life.",
-              "buttonLabel": "Learn More",
-              "buttonLink": "/about-us"
+            "ctaBanner": {
+              "badge": "We're Here for You",
+              "title": "Have questions?",
+              "highlightedTitle": "Get in touch!",
+              "description": "Our experts are ready to help you find the right coverage for you and your family.",
+              "contactButton": {
+                "label": "CONTACT US",
+                "href": "/contact"
+              },
+              "phoneNumber": "+19 00000 00000",
+              "phoneHref": "tel:+19 00000 00000"
             }
           }
         }
@@ -1967,8 +2086,8 @@
               "contact": {
                 "heading": "Contact Us",
                 "description": "If you have any questions about our privacy practices or how we handle your information, please feel free to reach out to us.",
-                "email": "support@insurewise.com",
-                "phone": "+91 98765 43210",
+                "email": "info@xyz@gmail.com",
+                "phone": "+91 00000 00000",
                 "lastUpdated": "September 23, 2026"
               }
             },
@@ -2018,8 +2137,8 @@
               "contact": {
                 "heading": "Contact Us",
                 "description": "If you have any questions about these terms or the use of our services, please do not hesitate to contact us.",
-                "email": "support@insurewise.com",
-                "phone": "+91 98765 43210",
+                "email": "info@xyz@gmail.com",
+                "phone": "+91 00000 00000",
                 "lastUpdated": "September 23, 2026"
               }
             },
@@ -2069,8 +2188,8 @@
               "contact": {
                 "heading": "Contact Us",
                 "description": "If you have any questions about how we use cookies on our website, please get in touch with our team.",
-                "email": "support@insurewise.com",
-                "phone": "+91 98765 43210",
+                "email": "info@xyz@gmail.com",
+                "phone": "+91 00000 00000",
                 "lastUpdated": "September 23, 2026"
               }
             },
@@ -2120,8 +2239,8 @@
               "contact": {
                 "heading": "Contact Us",
                 "description": "If you have any questions, concerns, or feedback regarding this disclaimer, please feel free to contact us.",
-                "email": "support@insurewise.com",
-                "phone": "+91 98765 43210",
+                "email": "info@xyz@gmail.com",
+                "phone": "+91 00000 00000",
                 "lastUpdated": "September 23, 2026"
               }
             }
@@ -2182,7 +2301,27 @@
               {
                 "id": 8,
                 "title": "Community Outreach",
-                "src": "/insurance/8.jpg"
+                "src": "/insurance/7.jpg"
+              },
+              {
+                "id": 9,
+                "title": "Community Outreach",
+                "src": "/insurance/5.jpg"
+              },
+              {
+                "id": 10,
+                "title": "Community Outreach",
+                "src": "/insurance/12.jpg"
+              },
+              {
+                "id": 11,
+                "title": "Community Outreach",
+                "src": "/insurance/11.jpg"
+              },
+              {
+                "id": 12,
+                "title": "Community Outreach",
+                "src": "/insurance/10.jpg"
               }
             ],
             "videos": {
@@ -2215,6 +2354,34 @@
                   "title": "Protecting What Matters Most with Insurance",
                   "src": "https://www.youtube.com/embed/ifTxb9eY5jc?si=aAzuMqegHQPM6ZIK",
                   "thumbnail": "/insurance/4.jpg",
+                  "date": "Apr 25, 2026"
+                },
+                {
+                  "id": 5,
+                  "title": "Protecting What Matters Most with Insurance",
+                  "src": "https://www.youtube.com/embed/ifTxb9eY5jc?si=aAzuMqegHQPM6ZIK",
+                  "thumbnail": "/insurance/2.jpg",
+                  "date": "Apr 25, 2026"
+                },
+                {
+                  "id": 6,
+                  "title": "Protecting What Matters Most with Insurance",
+                  "src": "https://www.youtube.com/embed/ifTxb9eY5jc?si=aAzuMqegHQPM6ZIK",
+                  "thumbnail": "/insurance/5.jpg",
+                  "date": "Apr 25, 2026"
+                },
+                {
+                  "id": 7,
+                  "title": "Protecting What Matters Most with Insurance",
+                  "src": "https://www.youtube.com/embed/ifTxb9eY5jc?si=aAzuMqegHQPM6ZIK",
+                  "thumbnail": "/insurance/7.jpg",
+                  "date": "Apr 25, 2026"
+                },
+                {
+                  "id": 8,
+                  "title": "Protecting What Matters Most with Insurance",
+                  "src": "https://www.youtube.com/embed/ifTxb9eY5jc?si=aAzuMqegHQPM6ZIK",
+                  "thumbnail": "/insurance/8.jpg",
                   "date": "Apr 25, 2026"
                 }
               ]
@@ -2618,7 +2785,7 @@
                 "id": 2,
                 "icon": "mail",
                 "title": "Email Us",
-                "value": "support@insurewise.com",
+                "value": "info@xyz@gmail.com",
                 "subtext": "We reply within 24 hours",
                 "href": "mailto:support@insurewise.com"
               },
@@ -2776,8 +2943,8 @@
               "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
               "title": "Still Have Questions?",
               "description": "Our friendly team is always here to help you with personalized guidance.",
-              "phone": "+91 98765 43210",
-              "email": "support@insurewise.com",
+              "phone": "+91 00000 00000",
+              "email": "info@xyz@gmail.com",
               "hours": "Mon - Sat, 9:00 AM - 6:00 PM",
               "footerTitle": "We're just a call or message away.",
               "footerSubtext": "Your peace of mind is our priority."
@@ -2902,9 +3069,32 @@
                 "detail": {
                   "experience": "1-3 Years Experience",
                   "overview": "We are looking for a dynamic and motivated Sales Executive to join our growing team. You will be responsible for identifying new business opportunities, building strong client relationships, and helping individuals and businesses find the right insurance solutions for their needs.",
-                  "responsibilities": ["Identify and reach out to potential clients through various channels.", "Understand client needs and recommend suitable insurance plans.", "Achieve and exceed sales targets.", "Build and maintain long-term client relationships.", "Conduct product presentations and policy consultations.", "Collaborate with internal teams to ensure seamless customer onboarding."],
-                  "requirements": ["Bachelor’s degree in any field.", "1-3 years of experience in sales (preferably in insurance/financial services).", "Excellent communication and interpersonal skills.", "Strong negotiation and problem-solving abilities.", "Self-motivated with a positive attitude.", "Proficiency in MS Office and CRM tools."],
-                  "benefits": ["Competitive Salary", "Performance Incentives", "Health Insurance", "Career Growth", "Flexible Work Environment", "Training & Development", "Supportive Team Culture", "Employee Wellness Programs"]
+                  "responsibilities": [
+                    "Identify and reach out to potential clients through various channels.",
+                    "Understand client needs and recommend suitable insurance plans.",
+                    "Achieve and exceed sales targets.",
+                    "Build and maintain long-term client relationships.",
+                    "Conduct product presentations and policy consultations.",
+                    "Collaborate with internal teams to ensure seamless customer onboarding."
+                  ],
+                  "requirements": [
+                    "Bachelor’s degree in any field.",
+                    "1-3 years of experience in sales (preferably in insurance/financial services).",
+                    "Excellent communication and interpersonal skills.",
+                    "Strong negotiation and problem-solving abilities.",
+                    "Self-motivated with a positive attitude.",
+                    "Proficiency in MS Office and CRM tools."
+                  ],
+                  "benefits": [
+                    "Competitive Salary",
+                    "Performance Incentives",
+                    "Health Insurance",
+                    "Career Growth",
+                    "Flexible Work Environment",
+                    "Training & Development",
+                    "Supportive Team Culture",
+                    "Employee Wellness Programs"
+                  ]
                 }
               },
               {
@@ -2919,9 +3109,32 @@
                 "detail": {
                   "experience": "2-4 Years Experience",
                   "overview": "We are looking for a thoughtful Relationship Manager to strengthen client partnerships and make every interaction with InsureWise clear, helpful, and dependable.",
-                  "responsibilities": ["Manage a portfolio of clients and understand their evolving needs.", "Build trusted relationships through regular communication.", "Coordinate with advisors and claims teams to resolve requests.", "Identify opportunities to improve client coverage.", "Track satisfaction and follow up on service commitments.", "Maintain accurate records in the CRM system."],
-                  "requirements": ["Bachelor’s degree in business, finance, or a related field.", "2-4 years of experience in relationship management.", "Strong communication and listening skills.", "Customer-first mindset with sound commercial awareness.", "Excellent organization and follow-through.", "Comfortable working with CRM and office tools."],
-                  "benefits": ["Competitive Salary", "Performance Incentives", "Health Insurance", "Career Growth", "Flexible Work Environment", "Training & Development", "Supportive Team Culture", "Employee Wellness Programs"]
+                  "responsibilities": [
+                    "Manage a portfolio of clients and understand their evolving needs.",
+                    "Build trusted relationships through regular communication.",
+                    "Coordinate with advisors and claims teams to resolve requests.",
+                    "Identify opportunities to improve client coverage.",
+                    "Track satisfaction and follow up on service commitments.",
+                    "Maintain accurate records in the CRM system."
+                  ],
+                  "requirements": [
+                    "Bachelor’s degree in business, finance, or a related field.",
+                    "2-4 years of experience in relationship management.",
+                    "Strong communication and listening skills.",
+                    "Customer-first mindset with sound commercial awareness.",
+                    "Excellent organization and follow-through.",
+                    "Comfortable working with CRM and office tools."
+                  ],
+                  "benefits": [
+                    "Competitive Salary",
+                    "Performance Incentives",
+                    "Health Insurance",
+                    "Career Growth",
+                    "Flexible Work Environment",
+                    "Training & Development",
+                    "Supportive Team Culture",
+                    "Employee Wellness Programs"
+                  ]
                 }
               },
               {
@@ -2936,9 +3149,32 @@
                 "detail": {
                   "experience": "2-5 Years Experience",
                   "overview": "Join our marketing team as a Digital Marketing Specialist and help make insurance easier to understand through useful, engaging, and measurable digital experiences.",
-                  "responsibilities": ["Plan and execute multi-channel digital campaigns.", "Create briefs for content, social, and performance marketing.", "Monitor campaign performance and optimize for qualified leads.", "Research audience needs and insurance market trends.", "Collaborate with design and sales teams on campaign delivery.", "Prepare clear reports with insights and recommendations."],
-                  "requirements": ["Bachelor’s degree in marketing, communications, or a related field.", "2-5 years of digital marketing experience.", "Experience with analytics, social, and paid campaign platforms.", "Strong writing and communication skills.", "Creative, curious, and detail-oriented approach.", "Comfort with reporting and performance data."],
-                  "benefits": ["Competitive Salary", "Performance Incentives", "Health Insurance", "Career Growth", "Flexible Work Environment", "Training & Development", "Supportive Team Culture", "Employee Wellness Programs"]
+                  "responsibilities": [
+                    "Plan and execute multi-channel digital campaigns.",
+                    "Create briefs for content, social, and performance marketing.",
+                    "Monitor campaign performance and optimize for qualified leads.",
+                    "Research audience needs and insurance market trends.",
+                    "Collaborate with design and sales teams on campaign delivery.",
+                    "Prepare clear reports with insights and recommendations."
+                  ],
+                  "requirements": [
+                    "Bachelor’s degree in marketing, communications, or a related field.",
+                    "2-5 years of digital marketing experience.",
+                    "Experience with analytics, social, and paid campaign platforms.",
+                    "Strong writing and communication skills.",
+                    "Creative, curious, and detail-oriented approach.",
+                    "Comfort with reporting and performance data."
+                  ],
+                  "benefits": [
+                    "Competitive Salary",
+                    "Performance Incentives",
+                    "Health Insurance",
+                    "Career Growth",
+                    "Flexible Work Environment",
+                    "Training & Development",
+                    "Supportive Team Culture",
+                    "Employee Wellness Programs"
+                  ]
                 }
               },
               {
@@ -2953,9 +3189,32 @@
                 "detail": {
                   "experience": "1-3 Years Experience",
                   "overview": "We are seeking a caring Customer Support Executive to help policyholders get timely answers and a smooth experience across their insurance journey.",
-                  "responsibilities": ["Respond to customer questions across phone, email, and chat.", "Explain policy details and next steps in simple language.", "Record requests and maintain accurate case notes.", "Coordinate with claims and operations teams on escalations.", "Follow service standards and resolve issues promptly.", "Share recurring customer feedback with the wider team."],
-                  "requirements": ["Bachelor’s degree or equivalent practical experience.", "1-3 years of customer support experience.", "Excellent written and verbal communication.", "Patient, empathetic, and solution-oriented approach.", "Strong attention to detail and case ownership.", "Comfort with support systems and office tools."],
-                  "benefits": ["Competitive Salary", "Performance Incentives", "Health Insurance", "Career Growth", "Flexible Work Environment", "Training & Development", "Supportive Team Culture", "Employee Wellness Programs"]
+                  "responsibilities": [
+                    "Respond to customer questions across phone, email, and chat.",
+                    "Explain policy details and next steps in simple language.",
+                    "Record requests and maintain accurate case notes.",
+                    "Coordinate with claims and operations teams on escalations.",
+                    "Follow service standards and resolve issues promptly.",
+                    "Share recurring customer feedback with the wider team."
+                  ],
+                  "requirements": [
+                    "Bachelor’s degree or equivalent practical experience.",
+                    "1-3 years of customer support experience.",
+                    "Excellent written and verbal communication.",
+                    "Patient, empathetic, and solution-oriented approach.",
+                    "Strong attention to detail and case ownership.",
+                    "Comfort with support systems and office tools."
+                  ],
+                  "benefits": [
+                    "Competitive Salary",
+                    "Performance Incentives",
+                    "Health Insurance",
+                    "Career Growth",
+                    "Flexible Work Environment",
+                    "Training & Development",
+                    "Supportive Team Culture",
+                    "Employee Wellness Programs"
+                  ]
                 }
               },
               {
@@ -2970,9 +3229,32 @@
                 "detail": {
                   "experience": "1-3 Years Experience",
                   "overview": "Our HR Executive will help create a supportive employee experience through organized recruitment, thoughtful engagement, and dependable day-to-day people operations.",
-                  "responsibilities": ["Coordinate recruitment activities from screening to onboarding.", "Maintain employee records and HR documentation.", "Support employee engagement and internal communication programs.", "Assist with leave, attendance, and policy administration.", "Schedule interviews and coordinate with hiring managers.", "Prepare HR reports and support compliance activities."],
-                  "requirements": ["Bachelor’s degree in human resources or a related discipline.", "1-3 years of HR or people operations experience.", "Clear communication and strong interpersonal skills.", "Discreet and responsible approach to confidential information.", "Highly organized with excellent follow-through.", "Working knowledge of HR systems and office tools."],
-                  "benefits": ["Competitive Salary", "Performance Incentives", "Health Insurance", "Career Growth", "Flexible Work Environment", "Training & Development", "Supportive Team Culture", "Employee Wellness Programs"]
+                  "responsibilities": [
+                    "Coordinate recruitment activities from screening to onboarding.",
+                    "Maintain employee records and HR documentation.",
+                    "Support employee engagement and internal communication programs.",
+                    "Assist with leave, attendance, and policy administration.",
+                    "Schedule interviews and coordinate with hiring managers.",
+                    "Prepare HR reports and support compliance activities."
+                  ],
+                  "requirements": [
+                    "Bachelor’s degree in human resources or a related discipline.",
+                    "1-3 years of HR or people operations experience.",
+                    "Clear communication and strong interpersonal skills.",
+                    "Discreet and responsible approach to confidential information.",
+                    "Highly organized with excellent follow-through.",
+                    "Working knowledge of HR systems and office tools."
+                  ],
+                  "benefits": [
+                    "Competitive Salary",
+                    "Performance Incentives",
+                    "Health Insurance",
+                    "Career Growth",
+                    "Flexible Work Environment",
+                    "Training & Development",
+                    "Supportive Team Culture",
+                    "Employee Wellness Programs"
+                  ]
                 }
               },
               {
@@ -2987,89 +3269,45 @@
                 "detail": {
                   "experience": "2-4 Years Experience",
                   "overview": "We are looking for an IT Support Specialist to keep our teams productive with responsive technical support, secure systems, and practical solutions to everyday technology needs.",
-                  "responsibilities": ["Provide first-line technical support across the business.", "Set up and maintain laptops, accounts, and workplace tools.", "Troubleshoot hardware, software, and connectivity issues.", "Track incidents and resolutions in the support system.", "Support security, access, and backup procedures.", "Create simple documentation for recurring technical tasks."],
-                  "requirements": ["Bachelor’s degree or relevant technical certification.", "2-4 years of experience in IT support.", "Strong troubleshooting and problem-solving skills.", "Good understanding of networks, devices, and cloud tools.", "Clear communication with technical and non-technical users.", "Able to work independently in a hybrid environment."],
-                  "benefits": ["Competitive Salary", "Performance Incentives", "Health Insurance", "Career Growth", "Flexible Work Environment", "Training & Development", "Supportive Team Culture", "Employee Wellness Programs"]
+                  "responsibilities": [
+                    "Provide first-line technical support across the business.",
+                    "Set up and maintain laptops, accounts, and workplace tools.",
+                    "Troubleshoot hardware, software, and connectivity issues.",
+                    "Track incidents and resolutions in the support system.",
+                    "Support security, access, and backup procedures.",
+                    "Create simple documentation for recurring technical tasks."
+                  ],
+                  "requirements": [
+                    "Bachelor’s degree or relevant technical certification.",
+                    "2-4 years of experience in IT support.",
+                    "Strong troubleshooting and problem-solving skills.",
+                    "Good understanding of networks, devices, and cloud tools.",
+                    "Clear communication with technical and non-technical users.",
+                    "Able to work independently in a hybrid environment."
+                  ],
+                  "benefits": [
+                    "Competitive Salary",
+                    "Performance Incentives",
+                    "Health Insurance",
+                    "Career Growth",
+                    "Flexible Work Environment",
+                    "Training & Development",
+                    "Supportive Team Culture",
+                    "Employee Wellness Programs"
+                  ]
                 }
               }
             ]
           }
         }
       },
-      "Sitemap": {
+      "ThankYou": {
         "variants": {
-          "InsuranceSitemap1": {
-            "banner": {
-              "title": "Sitemap",
-              "breadcrumbs": [
-                { "label": "Home", "href": "/" },
-                { "label": "Sitemap" }
-              ],
-              "bgImage": "/insurance_img/online-insurance-concept-insurance-assurance-icons-including-family-health-real-estate-car-financial-risk-management-concept-online-insurance.jpg"
-            },
-            "heading": {
-              "title": "Explore InsureWise Sitemap",
-              "description": "Find the page you are looking for quickly. Browse our complete site structure with clear links to every section, from our main pages and insurance plans to blogs, support and legal information."
-            },
-            "groups": [
-              {
-                "title": "Main Pages",
-                "links": [
-                  { "label": "Home", "href": "/" },
-                  { "label": "About Us", "href": "/about-us" },
-                  { "label": "Insurance Plans", "href": "/insurance" },
-                  { "label": "Health Insurance", "href": "/insurance/health-insurance" },
-                  { "label": "Our Blog", "href": "/blog" },
-                  { "label": "Contact Us", "href": "/contact" },
-                  { "label": "Get a Quote", "href": "/quote" }
-                ]
-              },
-              {
-                "title": "Other Pages",
-                "links": [
-                  { "label": "Our Team", "href": "/team" },
-                  { "label": "Career", "href": "/career" },
-                  { "label": "Testimonials", "href": "/testimonial" },
-                  { "label": "Our Partners", "href": "/partners" },
-                  { "label": "Gallery", "href": "/gallery" },
-                  { "label": "Awards", "href": "/award" },
-                  { "label": "Our Mission", "href": "/mission" }
-                ]
-              },
-              {
-                "title": "Blog",
-                "links": [
-                  { "label": "All Blog Posts", "href": "/blog" },
-                  { "label": "Blog Details", "href": "/blog/how-to-choose-the-right-insurance-plan-for-your-family" }
-                ]
-              },
-              {
-                "title": "Insurance Plan",
-                "links": [
-                  { "label": "All Insurance Plans", "href": "/insurance" },
-                  { "label": "Insurance Details", "href": "insurance/motor-insurance" }
-                ]
-              },
-              {
-                "title": "Support",
-                "links": [
-                  { "label": "Contact Us", "href": "/contact" },
-                  { "label": "Frequently Asked Questions", "href": "/faq" },
-                  { "label": "Get a Quote", "href": "/quote" },
-                  { "label": "Testimonials", "href": "/testimonial" },
-                  { "label": "Talk to an Expert", "href": "/contact" }
-                ]
-              },
-              {
-                "title": "Legal",
-                "links": [
-                  { "label": "Privacy Policy", "href": "/privacy" },
-                  { "label": "Terms & Conditions", "href": "/terms" },
-                  { "label": "Cookie Policy", "href": "/cookie" },
-                  { "label": "Disclaimer", "href": "/disclaimer" }
-                ]
-              }
-            ]
+          "InsuranceThankYou1": {
+            "badge": "FORM SUBMITTED SUCCESSFULLY",
+            "title": "Thank You",
+            "highlightedTitle": "for Submitting the Form",
+            "description": "We have successfully received your details. Our insurance expert will review your request and get back to you shortly with the right guidance."
           }
         }
       }

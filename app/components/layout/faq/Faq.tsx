@@ -89,7 +89,7 @@ export default function Faq() {
                         <button
                           onClick={() => toggleFaq(item.id)}
                           type="button"
-                          className="w-full text-left px-4 py-3.5 sm:px-5 sm:py-4 flex items-center justify-between gap-3 cursor-pointer select-none"
+                          className="w-full text-left px-4 py-3.5 sm:px-5 sm:py-2.5 flex items-center justify-between gap-3 cursor-pointer select-none"
                         >
                           <div className="flex items-center gap-3 sm:gap-4 pr-2">
                             {/* NUMBER BADGE */}

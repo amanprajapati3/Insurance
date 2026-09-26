@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useRef, useState } from "react";
 import Link from "next/link";
 import {
   FaArrowRight,
@@ -17,6 +17,7 @@ import {
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaShieldAlt,
+  FaTimes,
   FaUsers,
 } from "react-icons/fa";
 import Bannerpage from "../../shared/Bannerpage";
@@ -31,11 +32,24 @@ const benefitIcons = [FaBriefcase, FaChartLine, FaShieldAlt, FaChartLine, FaUser
 
 export default function CareerDetail({ job }: CareerDetailProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [resume, setResume] = useState<File | null>(null);
+  const resumeInputRef = useRef<HTMLInputElement>(null);
   const detail = job.detail;
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitted(true);
+  }
+
+  function handleResumeChange(event: ChangeEvent<HTMLInputElement>) {
+    setResume(event.target.files?.[0] ?? null);
+  }
+
+  function clearResume() {
+    setResume(null);
+    if (resumeInputRef.current) {
+      resumeInputRef.current.value = "";
+    }
   }
 
   return (
@@ -108,11 +122,36 @@ export default function CareerDetail({ job }: CareerDetailProps) {
                 <Field label="Phone Number *" icon={<FaPhoneAlt />} type="tel" placeholder="Enter your phone number" required />
                 <div>
                   <label htmlFor="resume" className="mb-1 block text-[15px] font-semibold text-[#315477]">Upload Resume *</label>
-                  <label htmlFor="resume" className="flex h-9 cursor-pointer items-center justify-between overflow-hidden rounded-md bg-white text-[15px] text-slate-500">
-                    <span className="flex items-center gap-2 px-3"><FaFileUpload className="text-[#0875e1]" />Choose file</span>
-                    <span className="h-full border-l border-slate-100 px-3 py-3 font-bold text-[#315477]">Browse</span>
-                  </label>
-                  <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" required className="sr-only" />
+                  <div className="flex h-9 items-stretch rounded-md bg-white">
+                    <label htmlFor="resume" className="flex min-w-0 flex-1 cursor-pointer items-center gap-2 overflow-hidden px-3 text-[15px]">
+                      {resume ? (
+                        <>
+                          <FaCheckCircle className="shrink-0 text-[#0875e1]" />
+                          <span className="truncate font-semibold text-[#315477]">{resume.name}</span>
+                          <span className="shrink-0 text-[13px] text-slate-400">{formatFileSize(resume.size)}</span>
+                        </>
+                      ) : (
+                        <>
+                          <FaFileUpload className="shrink-0 text-[#0875e1]" />
+                          <span className="truncate text-slate-500">Choose file</span>
+                        </>
+                      )}
+                    </label>
+                    {resume ? (
+                      <button
+                        type="button"
+                        onClick={clearResume}
+                        aria-label={`Remove ${resume.name}`}
+                        title="Remove file"
+                        className="flex w-9 shrink-0 items-center justify-center border-l border-slate-100 text-slate-400 transition hover:bg-red-50 hover:text-red-500"
+                      >
+                        <FaTimes />
+                      </button>
+                    ) : (
+                      <span className="flex shrink-0 items-center border-l border-slate-100 px-3 font-bold text-[#315477]">Browse</span>
+                    )}
+                  </div>
+                  <input ref={resumeInputRef} id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" required onChange={handleResumeChange} className="sr-only" />
                 </div>
                 <div>
                   <label htmlFor="cover-letter" className="mb-1 block text-[15px] font-semibold text-[#315477]">Cover Letter (Optional)</label>
@@ -161,6 +200,12 @@ function BulletList({ items }: { items: string[] }) {
       {items.map((item) => <li key={item} className="flex items-start gap-2"><FaCheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#0875e1]" /><span>{item}</span></li>)}
     </ul>
   );
+}
+
+function formatFileSize(bytes: number) {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
 function Field({ label, icon, type, placeholder, required }: { label: string; icon: React.ReactNode; type: string; placeholder: string; required?: boolean }) {

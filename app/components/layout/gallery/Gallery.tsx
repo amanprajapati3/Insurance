@@ -22,6 +22,9 @@ interface LightboxItem {
   date?: string;
 }
 
+const INITIAL_IMAGE_COUNT = 8;
+const INITIAL_VIDEO_COUNT = 4;
+
 function getYoutubeEmbedUrl(src: string): string | null {
   const clean = src.trim();
 
@@ -112,6 +115,43 @@ function SectionHeading({
   );
 }
 
+function LoadMoreButton({
+  expanded,
+  hiddenCount,
+  onClick,
+}: {
+  expanded: boolean;
+  hiddenCount: number;
+  onClick: () => void;
+}) {
+  return (
+    <div className="flex justify-center mt-8 md:mt-10">
+      <button
+        type="button"
+        onClick={onClick}
+        aria-expanded={expanded}
+        className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#1a73e8] hover:bg-[#0f5cba] text-white text-sm sm:text-base font-semibold tracking-wide shadow-lg shadow-[#1a73e8]/25 hover:shadow-xl hover:shadow-[#1a73e8]/35 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a73e8] focus-visible:ring-offset-2 active:scale-[0.98] cursor-pointer"
+      >
+        {expanded ? "Show Less" : "Load More"}
+
+        {!expanded && (
+          <span className="text-white/70 text-xs font-medium">
+            (+{hiddenCount})
+          </span>
+        )}
+
+        <ChevronRight
+          className={`w-4 h-4 transition-transform duration-300 ${
+            expanded
+              ? "-rotate-90 group-hover:-translate-x-1"
+              : "group-hover:translate-x-1"
+          }`}
+        />
+      </button>
+    </div>
+  );
+}
+
 export default function Gallery() {
   const galleryData = site.gallery;
 
@@ -141,6 +181,31 @@ export default function Gallery() {
 
   const [imageIndex, setImageIndex] = useState<number | null>(null);
   const [videoIndex, setVideoIndex] = useState<number | null>(null);
+  const [showAllImages, setShowAllImages] = useState(false);
+  const [showAllVideos, setShowAllVideos] = useState(false);
+
+  const videoItems = videoSection.items as LightboxItem[];
+  const allImages = images as LightboxItem[];
+
+  const visibleImages = showAllImages
+    ? allImages
+    : allImages.slice(0, INITIAL_IMAGE_COUNT);
+
+  const visibleVideos = showAllVideos
+    ? videoItems
+    : videoItems.slice(0, INITIAL_VIDEO_COUNT);
+
+  const hasMoreImages = allImages.length > INITIAL_IMAGE_COUNT;
+  const hasMoreVideos = videoItems.length > INITIAL_VIDEO_COUNT;
+
+  const hiddenImageCount = Math.max(
+    0,
+    allImages.length - INITIAL_IMAGE_COUNT,
+  );
+  const hiddenVideoCount = Math.max(
+    0,
+    videoItems.length - INITIAL_VIDEO_COUNT,
+  );
 
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === "Escape") {
@@ -158,13 +223,12 @@ export default function Gallery() {
   const renderLightbox = () => {
     const isImage = imageIndex !== null;
 
-    const items = isImage
-      ? (images as LightboxItem[])
-      : (videoSection.items as LightboxItem[]);
+    const items = isImage ? visibleImages : visibleVideos;
 
     const index = isImage ? imageIndex : videoIndex;
 
     if (index === null) return null;
+    if (index < 0 || index >= items.length) return null;
 
     const kind: "image" | "video" = isImage ? "image" : "video";
 
@@ -273,7 +337,7 @@ export default function Gallery() {
 
           {/* IMAGES GRID */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
-            {images.map((item, index) => (
+            {visibleImages.map((item, index) => (
               <ScrollReveal
                 key={item.id}
                 direction="up"
@@ -286,7 +350,7 @@ export default function Gallery() {
                   className="relative block w-full h-full text-left cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a73e8]"
                   onClick={() =>
                     setImageIndex(
-                      images.findIndex((img) => img.id === item.id),
+                      visibleImages.findIndex((img) => img.id === item.id),
                     )
                   }
                   aria-label={`View ${item.title}`}
@@ -313,8 +377,17 @@ export default function Gallery() {
             ))}
           </div>
 
+          {hasMoreImages && (
+            
+              <LoadMoreButton
+                expanded={showAllImages}
+                hiddenCount={hiddenImageCount}
+                onClick={() => setShowAllImages((prev) => !prev)}
+              />
+          )}
+
           {/* VIDEOS SECTION */}
-          {videoSection.items.length > 0 && (
+          {videoItems.length > 0 && (
             <div className="mt-16 md:mt-24">
               <SectionHeading
                 title={videoSection.title}
@@ -322,12 +395,12 @@ export default function Gallery() {
               />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
-                {videoSection.items.map((item, index) => (
+                {visibleVideos.map((item, index) => (
                   <ScrollReveal
                     key={item.id}
                     direction="up"
                     index={index}
-                    staggerChildren={0.4}
+                    staggerChildren={0.1}
                     className="group"
                   >
                     {/* VIDEO THUMBNAIL CARD */}
@@ -336,9 +409,7 @@ export default function Gallery() {
                       className="relative w-full overflow-hidden rounded-2xl cursor-pointer aspect-video bg-[#081f44] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1a73e8]"
                       onClick={() =>
                         setVideoIndex(
-                          videoSection.items.findIndex(
-                            (v) => v.id === item.id,
-                          ),
+                          visibleVideos.findIndex((v) => v.id === item.id),
                         )
                       }
                       aria-label={`Play ${item.title}`}
@@ -385,6 +456,16 @@ export default function Gallery() {
                   </ScrollReveal>
                 ))}
               </div>
+
+              {hasMoreVideos && (
+                <ScrollReveal direction="up">
+                  <LoadMoreButton
+                    expanded={showAllVideos}
+                    hiddenCount={hiddenVideoCount}
+                    onClick={() => setShowAllVideos((prev) => !prev)}
+                  />
+                </ScrollReveal>
+              )}
             </div>
           )}
         </div>

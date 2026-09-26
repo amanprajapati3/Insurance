@@ -120,7 +120,7 @@ export default function Testimonial() {
       />
 
       {/* MAIN TESTIMONIALS SECTION */}
-      <section className="bg-slate-50/50 py-8 md:py-12">
+      <section className="bg-slate-50/50 py-8 md:pt-12">
         <div className="container mx-auto px-4 sm:px-0 lg:px-12">
           {/* SECTION HEADER */}
           <ScrollReveal direction="up" className="max-w-2xl mb-8">
@@ -166,14 +166,14 @@ export default function Testimonial() {
                           {item.location}
                         </p>
                         {/* 5-STAR RATING */}
-                        <div className="flex mt-2 items-center gap-1 mb-0">
+                        {/* <div className="flex mt-2 items-center gap-1 mb-0">
                           {[...Array(item.rating || 5)].map((_, i) => (
                             <FaStar
                               key={i}
                               className="w-6 h-6 text-amber-400"
                             />
                           ))}
-                        </div>
+                        </div> */}
                       </div>
                     </div>
 
@@ -200,7 +200,7 @@ export default function Testimonial() {
           </div>
 
           {/* BOTTOM STATS BAR WITH ANIMATED COUNTER FROM 0 */}
-          <ScrollReveal direction="up" delay={0.1} className="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 sm:p-8">
+          {/* <ScrollReveal direction="up" delay={0.1} className="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 sm:p-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
               {stats.map((stat: any, idx: number) => (
                 <div
@@ -209,12 +209,10 @@ export default function Testimonial() {
                     idx !== 0 ? "pt-4 sm:pt-0 sm:pl-6 lg:pl-8" : ""
                   }`}
                 >
-                  {/* ICON CONTAINING CIRCLE */}
                   <div className="w-16 h-16 rounded-full bg-[#eaf2ff] flex items-center justify-center shrink-0">
                     {renderStatIcon(stat.icon)}
                   </div>
 
-                  {/* VALUE AND LABEL */}
                   <div>
                     <AnimatedCounter
                       targetValue={stat.targetValue}
@@ -228,7 +226,7 @@ export default function Testimonial() {
                 </div>
               ))}
             </div>
-          </ScrollReveal>
+          </ScrollReveal> */}
         </div>
       </section>
     </>
